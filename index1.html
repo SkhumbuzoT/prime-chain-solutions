@@ -44,12 +44,25 @@
     
     <link rel="stylesheet" href="assets/styles.css">
     <style>
+        /* Brand Color Variables */
+        :root {
+            --jet-black: #000000;
+            --teal: #008080;
+            --gold: #D4AF37;
+            --navy-blue: #0A1F44;
+            --white: #FFFFFF;
+            --light-gray: #f8f9fa;
+            --medium-gray: #6b7280;
+            --dark-gray: #1e293b;
+        }
+    
     /* Hero Section */
         .hero {
             position: relative;
             padding: 10rem 0 6rem;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #152642 100%);
             overflow: hidden;
+            color: var(--white);
         }
         
         .hero-content {
@@ -66,12 +79,12 @@
         }
         
         .hero-highlight {
-            color: #2563eb;
+            color: var(--teal);
         }
         
         /* Trust Reassurance Section */
         .trust-reassurance {
-            background: white;
+            background: var(--white);
             padding: 2rem;
             border-radius: 12px;
             max-width: 900px;
@@ -83,7 +96,7 @@
         
         .trust-tagline {
             font-size: 1.1rem;
-            color: #475569;
+            color: var(--navy-blue);
             margin-bottom: 1.5rem;
             font-weight: 500;
         }
@@ -101,20 +114,21 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.95rem;
-            color: #4b5563;
+            color: var(--navy-blue);
         }
         
         .trust-point i {
-            color: #10b981;
+            color: var(--teal);
         }
         
         /* Who This Is For Section */
         .qualification-section {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
             border-radius: 16px;
             padding: 3rem;
             margin: 4rem auto;
             max-width: 900px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         .qualification-header {
@@ -124,7 +138,7 @@
         
         .qualification-header h3 {
             font-size: 1.75rem;
-            color: #92400e;
+            color: var(--navy-blue);
             margin-bottom: 1rem;
         }
         
@@ -139,12 +153,13 @@
             align-items: flex-start;
             gap: 0.75rem;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.8);
+            background: var(--white);
             border-radius: 8px;
+            border-left: 3px solid var(--teal);
         }
         
         .qualification-point i {
-            color: #dc2626;
+            color: var(--teal);
             margin-top: 0.25rem;
         }
         
@@ -152,9 +167,9 @@
             text-align: center;
             margin-top: 2rem;
             padding-top: 2rem;
-            border-top: 2px dashed #f59e0b;
+            border-top: 2px dashed var(--gold);
             font-size: 1.1rem;
-            color: #92400e;
+            color: var(--navy-blue);
             font-weight: 600;
         }
         
@@ -164,15 +179,16 @@
             max-width: 800px;
             margin: 0 auto 3rem;
             font-size: 1.25rem;
-            color: #6b7280;
+            color: var(--medium-gray);
         }
         
         /* The Shift Section */
         .shift-section {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            background: linear-gradient(135deg, rgba(0, 128, 128, 0.1) 0%, rgba(0, 128, 128, 0.05) 100%);
             border-radius: 16px;
             padding: 4rem 2rem;
             margin: 4rem 0;
+            border: 1px solid rgba(0, 128, 128, 0.15);
         }
         
         .shift-content {
@@ -183,7 +199,7 @@
         
         .shift-content h3 {
             font-size: 2rem;
-            color: #1e40af;
+            color: var(--navy-blue);
             margin-bottom: 2rem;
         }
         
@@ -195,22 +211,24 @@
         }
         
         .shift-point {
-            background: white;
+            background: var(--white);
             padding: 1.5rem;
             border-radius: 12px;
             text-align: left;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid rgba(10, 31, 68, 0.1);
         }
         
         .shift-point i {
-            color: #2563eb;
+            color: var(--teal);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
         
         /* What This Looks Like Section */
         .transformation-section {
-            background: #f8fafc;
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #152642 100%);
+            color: var(--white);
             border-radius: 16px;
             padding: 4rem 2rem;
             margin: 4rem 0;
@@ -219,6 +237,10 @@
         .transformation-header {
             text-align: center;
             margin-bottom: 3rem;
+        }
+        
+        .transformation-header h2 {
+            color: var(--white);
         }
         
         .transformation-comparison {
@@ -230,23 +252,24 @@
         }
         
         .before-after {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .before-after h4 {
             font-size: 1.5rem;
-            color: #dc2626;
+            color: #fca5a5;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid #fca5a5;
+            border-bottom: 2px solid rgba(252, 165, 165, 0.3);
         }
         
         .after h4 {
-            color: #10b981;
-            border-bottom: 2px solid #a7f3d0;
+            color: #86efac;
+            border-bottom: 2px solid rgba(134, 239, 172, 0.3);
         }
         
         .comparison-point {
@@ -254,6 +277,7 @@
             align-items: flex-start;
             gap: 0.75rem;
             margin-bottom: 1rem;
+            color: #e2e8f0;
         }
         
         .comparison-point i {
@@ -261,11 +285,11 @@
         }
         
         .before .comparison-point i {
-            color: #ef4444;
+            color: #fca5a5;
         }
         
         .after .comparison-point i {
-            color: #10b981;
+            color: #86efac;
         }
         
         .transformation-footer {
@@ -273,98 +297,7 @@
             margin-top: 3rem;
             font-size: 1.25rem;
             font-weight: 700;
-            color: #1e293b;
-        }
-        
-        /* Services Section */
-        .services-subtitle {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            color: #6b7280;
-            font-size: 1.1rem;
-        }
-        
-        /* About Section */
-        .about-mission {
-            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-            border-radius: 16px;
-            padding: 3rem;
-            margin: 3rem auto;
-            max-width: 900px;
-        }
-        
-        .about-mission p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .mission-highlight {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #7c3aed;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-            border-radius: 16px;
-            margin: 4rem 0;
-        }
-        
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-        
-        .cta-section p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: #cbd5e1;
-        }
-        
-        .cta-points {
-            max-width: 600px;
-            margin: 2rem auto 3rem;
-            text-align: left;
-        }
-        
-        .cta-point {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-point i {
-            color: #60a5fa;
-            margin-top: 0.25rem;
-        }
-        
-        .cta-note {
-            font-size: 0.95rem;
-            color: #94a3b8;
-            margin-top: 2rem;
-            font-style: italic;
-        }
-        
-        /* Form Success Message */
-        .form-success {
-            text-align: center;
-            color: #10b981;
-            font-weight: 600;
-            margin-top: 1rem;
-            padding: 1rem;
-            background: #d1fae5;
-            border-radius: 8px;
-            display: none;
+            color: var(--gold);
         }
         
         /* Sections */
@@ -386,11 +319,12 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            color: var(--navy-blue);
         }
         
         .section-title p, .section-header .subtitle {
             font-size: 1.25rem;
-            color: #6b7280;
+            color: var(--medium-gray);
         }
         
         /* Problems Section */
@@ -405,14 +339,15 @@
             align-items: flex-start;
             gap: 1rem;
             padding: 1.5rem;
-            background: white;
+            background: var(--white);
             border-radius: 12px;
             margin-bottom: 1rem;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--teal);
         }
         
         .problem-list i {
-            color: #2563eb;
+            color: var(--teal);
             font-size: 1.5rem;
             margin-top: 0.25rem;
         }
@@ -423,45 +358,44 @@
             text-align: center;
             font-size: 1.25rem;
             font-style: italic;
-            color: #6b7280;
+            color: var(--medium-gray);
             padding: 2rem;
-            border-left: 4px solid #2563eb;
-            background: white;
+            border-left: 4px solid var(--gold);
+            background: var(--white);
             border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
         /* Solutions Section */
-        /* The parent grid container */
         .solutions-container {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
           gap: 2rem;
-          justify-items: center; /* centers each card */
-          text-align: center; /* centers text inside each card */
+          justify-items: center;
+          text-align: center;
           margin-top: 3rem;
         }
         
-        /* Each card */
         .solution-pillar {
-          background: #fff;
+          background: var(--white);
           border-radius: 16px;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
           padding: 2rem;
           max-width: 500px;
           width: 100%;
-          text-align: center; /* centers text in each card */
+          text-align: center;
           display: flex;
           flex-direction: column;
           align-items: center;
+          border: 1px solid rgba(10, 31, 68, 0.1);
         }
         
-        /* Pillar features list */
         .pillar-features {
           list-style: none;
           padding: 0;
           margin: 1rem 0 0;
-          text-align: left; /* keeps bullet list readable */
-          display: inline-block; /* centers the list block inside */
+          text-align: left;
+          display: inline-block;
         }
         
         .pillar-features li {
@@ -469,11 +403,11 @@
           align-items: center;
           justify-content: flex-start;
           gap: 0.5rem;
+          margin-bottom: 0.5rem;
         }
         
-        /* Optional: Icon style */
         .pillar-features i {
-          color: #00b67a;
+          color: var(--teal);
         }
                 
         .pillar-header {
@@ -486,8 +420,8 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: #2563eb;
-            color: white;
+            background: var(--teal);
+            color: var(--white);
             border-radius: 50%;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -496,45 +430,22 @@
         .pillar-header h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: var(--navy-blue);
         }
         
         .pillar-subtitle {
-            color: #6b7280;
+            color: var(--medium-gray);
         }
         
-        /* Our Story Section */
-        .our-story-section {
-            text-align: center;
-        }
-        
-        .our-story-icon {
-            font-size: 3rem;
-            color: #2563eb;
-            margin-bottom: 1.5rem;
-        }
-        
-        .our-story-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* 🔹 Style the heading properly */
-        .our-story-section h2 {
-            font-size: 2.25rem;      /* larger, visually distinct */
-            font-weight: 700;        /* bold to stand out */
-            margin-bottom: 1rem;
-            color: #1e293b;          /* dark slate tone for contrast */
-            letter-spacing: 0.5px;
-        }
-        
-        /* 🔹 Style the paragraph text */
-        .our-story-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.125rem;
-            line-height: 1.7;
-            color: #475569;          /* softer gray for readability */
-        }
         /* Services Section */
+        .services-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -542,32 +453,35 @@
         }
         
         .card {
-            background: white;
+            background: var(--white);
             border-radius: 12px;
             padding: 2rem;
             text-align: center;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(10, 31, 68, 0.1);
         }
         
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--teal);
         }
         
         .card-icon {
             font-size: 2.5rem;
-            color: #2563eb;
+            color: var(--teal);
             margin-bottom: 1.5rem;
         }
         
-        .card h3 {
+        .card h3, .card h4 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: var(--navy-blue);
         }
         
         .card p {
-            color: #6b7280;
+            color: var(--medium-gray);
         }
         
         /* Approach Section */
@@ -577,20 +491,131 @@
             gap: 2rem;
         }
         
+        /* About Section */
+        .about-mission {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem auto;
+            max-width: 900px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        
+        .about-mission p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: var(--navy-blue);
+        }
+        
+        .mission-highlight {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #152642 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-radius: 16px;
+            margin: 4rem 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #cbd5e1;
+        }
+        
+        .cta-points {
+            max-width: 600px;
+            margin: 2rem auto 3rem;
+            text-align: left;
+        }
+        
+        .cta-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+        }
+        
+        .cta-point i {
+            color: var(--gold);
+            margin-top: 0.25rem;
+        }
+        
+        .cta-note {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-top: 2rem;
+            font-style: italic;
+        }
+        
         /* Contact Section */
         .contact-section {
             text-align: center;
         }
         
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-            margin-bottom: 1.5rem;
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         
-        .btn-whatsapp:hover {
-            background-color: #128c7e;
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--navy-blue);
+        }
+        
+        .btn-primary:hover {
+            background-color: #c19b2e;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--navy-blue);
+            border: 2px solid var(--navy-blue);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
         
         /* Animations */
@@ -649,16 +674,88 @@
             }
         }
        
-        @keyframes fall {
-            from {
-                transform: translateY(-100px) rotate(0deg);
-            }
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
+        /* Contact Form Styling */
+        #contactForm {
+          background: var(--white);
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 2.5rem 2rem;
+          border-radius: 16px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+          text-align: left;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border: 1px solid rgba(10, 31, 68, 0.1);
         }
         
-        /* Mobile Responsive Styles for Index-specific content */
+        #contactForm:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Labels */
+        #contactForm label {
+          display: block;
+          font-weight: 600;
+          color: var(--navy-blue);
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+        }
+        
+        /* Inputs and Textareas */
+        #contactForm input,
+        #contactForm textarea {
+          width: 100%;
+          padding: 0.85rem 1rem;
+          border: 1px solid rgba(10, 31, 68, 0.2);
+          border-radius: 8px;
+          font-size: 1rem;
+          color: var(--navy-blue);
+          background: #f9fafb;
+          transition: border-color 0.2s, box-shadow 0.2s;
+          font-family: inherit;
+        }
+        
+        #contactForm input:focus,
+        #contactForm textarea:focus {
+          border-color: var(--teal);
+          box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+          outline: none;
+          background: var(--white);
+        }
+        
+        /* Button */
+        #contactForm button {
+          width: 100%;
+          background-color: var(--teal);
+          color: var(--white);
+          font-size: 1.1rem;
+          font-weight: 600;
+          padding: 0.9rem 1.2rem;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background 0.3s ease, transform 0.2s ease;
+        }
+        
+        #contactForm button:hover {
+          background-color: #006666;
+          transform: translateY(-2px);
+        }
+        
+        /* Form Success Message */
+        .form-success {
+            text-align: center;
+            font-weight: 600;
+            color: var(--teal);
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0, 128, 128, 0.1);
+            border-radius: 8px;
+            display: none;
+            border: 1px solid rgba(0, 128, 128, 0.2);
+        }
+        
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .hero {
                 padding: 8rem 0 4rem;
@@ -685,113 +782,6 @@
                 font-size: 2rem;
             }
             
-            /* Center all section content */
-            .section-title,
-            .section-header {
-                text-align: center;
-            }
-            
-            .section-title h2,
-            .section-header h2 {
-                text-align: center;
-            }
-            
-            .section-title p,
-            .section-header .subtitle {
-                text-align: center;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        
-            /* Center hero content */
-            .hero-content {
-                text-align: center;
-            }
-        
-            /* Center cards and their content */
-            .card {
-                text-align: center;
-                margin: 0 auto;
-            }
-        
-            .card h3,
-            .card h4,
-            .card p {
-                text-align: center;
-            }
-        
-            /* Center problem list */
-            .problem-list {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        
-            .problem-list li {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-                padding: 24px 20px;
-            }
-        
-            .problem-list span {
-                text-align: center;
-            }
-        
-            /* Center solutions */
-            .solutions-container {
-              display: grid;                    
-              grid-template-columns: 1fr;       
-              justify-items: center;             
-              text-align: center;                
-              gap: 2rem;                        
-            }
-        
-            .solution-pillar {
-                text-align: center;
-                margin: 0 auto;
-            }
-        
-            .pillar-features {
-                text-align: center;
-            }
-        
-            .pillar-features li {
-                justify-content: center;
-                text-align: center;
-            }
-        
-            /* Center mission message */
-            .mission-message {
-                text-align: center;
-            }
-        
-            /* Center buttons */
-            .btn-group {
-                justify-content: center;
-                text-align: center;
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .btn {
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                max-width: 280px;
-            }
-        
-            /* Center contact section */
-            .contact-cta {
-                text-align: center;
-            }
-        
-            /* Center our story section */
-            .our-story-content {
-                text-align: center;
-                padding: 40px 24px;
-            }
-            
-            /* Mobile adjustments for new sections */
             .trust-points {
                 flex-direction: column;
                 align-items: center;
@@ -817,6 +807,16 @@
             .cta-section h2 {
                 font-size: 2rem;
             }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            #contactForm {
+                padding: 2rem 1.5rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -827,117 +827,10 @@
             .section-title h2, .section-header h2 {
                 font-size: 1.75rem;
             }
-        }
-        .contact-form iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 800px;
-            border: none;
-            display: block;
-            margin: 0 auto;
-            border-radius: 12px;
-        }
-        iframe {
-          overflow: hidden;
-          display: block;
-        }
-        /* ✳️ Custom Contact Form Styling */
-        #contactForm {
-          background: white;
-          max-width: 600px;
-          margin: 0 auto;
-          padding: 2.5rem 2rem;
-          border-radius: 16px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-          text-align: left;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        #contactForm:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        /* Labels */
-        #contactForm label {
-          display: block;
-          font-weight: 600;
-          color: #1e293b;
-          margin-bottom: 0.5rem;
-          font-size: 1rem;
-        }
-        
-        /* Inputs and Textareas */
-        #contactForm input,
-        #contactForm textarea {
-          width: 100%;
-          padding: 0.85rem 1rem;
-          border: 1px solid #cbd5e1;
-          border-radius: 12px;
-          font-size: 1rem;
-          color: #1e293b;
-          background: #f9fafb;
-          transition: border-color 0.2s, box-shadow 0.2s;
-          font-family: inherit;
-        }
-        
-        #contactForm input:focus,
-        #contactForm textarea:focus {
-          border-color: #2563eb;
-          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-          outline: none;
-          background: white;
-        }
-        
-        /* Button */
-        #contactForm button {
-          width: 100%;
-          background-color: #2563eb;
-          color: white;
-          font-size: 1.1rem;
-          font-weight: 600;
-          padding: 0.9rem 1.2rem;
-          border: none;
-          border-radius: 12px;
-          cursor: pointer;
-          transition: background 0.3s ease, transform 0.2s ease;
-        }
-        
-        #contactForm button:hover {
-          background-color: #1d4ed8;
-          transform: translateY(-2px);
-        }
-        
-        /* Section alignment */
-        .contact-section {
-          background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-          padding: 6rem 1rem;
-        }
-        
-        .contact-section h2 {
-          font-size: 2.25rem;
-          font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 2rem;
-          text-align: center;
-        }
-        
-        /* Success Message */
-        .form-success {
-          text-align: center;
-          font-weight: 600;
-          color: #00b67a;
-          margin-top: 1rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-          #contactForm {
-            padding: 2rem 1.5rem;
-          }
-          .contact-section h2 {
-            font-size: 1.75rem;
-          }
+            
+            .qualification-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -946,7 +839,7 @@
     <div class="scroll-progress"></div>
     
     <!-- Global Header -->
-    <header id="header">
+    <header id="header" style="background-color: var(--navy-blue);">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="Prime Chain Solutions Home">
                 <img src="/assets/Primary on Transparent.png" alt="Prime Chain Solutions logo" />
@@ -1122,7 +1015,7 @@
                     </div>
                 </div>
                 
-                <p style="margin-top: 2rem; font-size: 1.2rem; font-weight: 600;">
+                <p style="margin-top: 2rem; font-size: 1.2rem; font-weight: 600; color: var(--navy-blue);">
                     That's the difference between reacting to problems and running your operation deliberately.
                 </p>
             </div>
@@ -1150,7 +1043,7 @@
                         <li><i class="fas fa-check-circle"></i> Drill-down views for managers and teams</li>
                         <li><i class="fas fa-check-circle"></i> Accessible from anywhere</li>
                     </ul>
-                    <p style="margin-top: 1rem; font-style: italic; color: #6b7280;">
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--medium-gray);">
                         No more guessing. No more outdated reports.
                     </p>
                 </div>
@@ -1167,7 +1060,7 @@
                         <li><i class="fas fa-check-circle"></i> Alerts and notifications triggered by real events</li>
                         <li><i class="fas fa-check-circle"></i> Reduced dependency on individuals</li>
                     </ul>
-                    <p style="margin-top: 1rem; font-style: italic; color: #6b7280;">
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--medium-gray);">
                         Your operation runs the same way every day — even when people change.
                     </p>
                 </div>
@@ -1310,7 +1203,7 @@
                 </div>
             </div>
             
-            <p style="text-align: center; margin-top: 3rem; font-style: italic; color: #6b7280;">
+            <p style="text-align: center; margin-top: 3rem; font-style: italic; color: var(--medium-gray);">
                 You stay involved.<br>Nothing is built in isolation.
             </p>
         </div>
@@ -1365,7 +1258,7 @@
             </p>
             
             <div class="btn-group animate-fade-in-up delay-400" style="margin-top: 3rem;">
-                <a href="#contactForm" class="btn btn-primary" style="background: #60a5fa; color: #1e293b; font-weight: 700; padding: 1rem 2rem; font-size: 1.2rem;">
+                <a href="#contactForm" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.2rem;">
                     <i class="fas fa-calendar-alt"></i>
                     Book Your Free Session
                 </a>
@@ -1378,32 +1271,32 @@
     </section>
     
     <!-- Contact Form Section -->
-    <section class="contact-section" style="background: white; padding: 4rem 0;">
+    <section class="contact-section" style="background: var(--white); padding: 4rem 0;">
         <div class="container">
             <form id="contactForm" class="animate-fade-in-up">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: #1e293b;">Start Your Transformation</h3>
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--navy-blue);">Start Your Transformation</h3>
                 
                 <div>
-                    <label for="name" class="block font-medium mb-2 text-gray-700">Your Name</label>
-                    <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="John Doe" required>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
                 </div>
                 
                 <div style="margin-top: 1.5rem;">
-                    <label for="email" class="block font-medium mb-2 text-gray-700">Email Address</label>
-                    <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="john@example.com" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
                 </div>
                 
                 <div style="margin-top: 1.5rem;">
-                    <label for="phone" class="block font-medium mb-2 text-gray-700">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="+27 12 345 6789">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+27 12 345 6789">
                 </div>
                 
                 <div style="margin-top: 1.5rem;">
-                    <label for="message" class="block font-medium mb-2 text-gray-700">Tell us about your biggest operational challenge</label>
-                    <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="What's the one thing that would make the biggest difference if it were automated or made visible?" required></textarea>
+                    <label for="message">Tell us about your biggest operational challenge</label>
+                    <textarea id="message" name="message" rows="4" placeholder="What's the one thing that would make the biggest difference if it were automated or made visible?" required></textarea>
                 </div>
                 
-                <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition duration-200" style="margin-top: 2rem;">
+                <button type="submit" style="margin-top: 2rem;">
                     <i class="fas fa-paper-plane"></i> Send Message & Request Free Session
                 </button>
                 
@@ -1415,7 +1308,7 @@
     </section>
         
     <!-- Global Footer -->
-    <footer>
+    <footer style="background-color: var(--navy-blue); color: var(--white);">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
@@ -1428,20 +1321,20 @@
                 <div class="footer-links">
                     <h3 class="footer-heading">Quick Links</h3>
                     <ul>
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="index.html#problems"><i class="fas fa-chevron-right"></i> Problems We Solve</a></li>
-                        <li><a href="index.html#solutions"><i class="fas fa-chevron-right"></i> Solutions</a></li>
-                        <li><a href="index.html#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#problems" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Problems We Solve</a></li>
+                        <li><a href="index.html#solutions" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Solutions</a></li>
+                        <li><a href="index.html#services" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="index.html#contact" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
                     <h3 class="footer-heading">Contact Info</h3>
                     <ul>
-                        <li><a href="tel:+27736775675"><i class="fas fa-phone"></i> +27 73 677 5675</a></li>
-                        <li><a href="mailto:skhumbuzo@primechainsolutions.co.za"><i class="fas fa-envelope"></i> info@primechainsolutions.co.za</a></li>
-                        <li><a href="https://wa.me/27736775675"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
+                        <li><a href="tel:+27736775675" style="color: var(--white);"><i class="fas fa-phone"></i> +27 73 677 5675</a></li>
+                        <li><a href="mailto:skhumbuzo@primechainsolutions.co.za" style="color: var(--white);"><i class="fas fa-envelope"></i> info@primechainsolutions.co.za</a></li>
+                        <li><a href="https://wa.me/27736775675" style="color: var(--white);"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -1449,9 +1342,9 @@
             <div class="footer-bottom">
                 <p class="copyright">© 2025 Prime Chain Solutions. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: var(--white);"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" style="color: var(--white);"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="color: var(--white);"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>
@@ -1539,7 +1432,7 @@
     </script>
     
     <!-- Back to Top Button -->
-    <div class="back-to-top" aria-label="Back to top">
+    <div class="back-to-top" aria-label="Back to top" style="background-color: var(--teal); color: var(--white);">
         <i class="fas fa-arrow-up"></i>
     </div>
 </body>
