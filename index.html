@@ -44,11 +44,12 @@
     
     <link rel="stylesheet" href="assets/styles.css">
     <style>
-    /* Hero Section */
+        /* Hero Section - STEP 3 Update */
         .hero {
             position: relative;
-            padding: 10rem 0 6rem;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: radial-gradient(circle at top, #111827, #020617);
+            color: white;
+            padding: clamp(7rem, 10vw, 10rem) 0 clamp(4rem, 6vw, 6rem);
             overflow: hidden;
         }
         
@@ -59,20 +60,27 @@
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
+            font-size: clamp(2.6rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
             margin-bottom: 1.5rem;
         }
         
         .hero-highlight {
-            color: #2563eb;
+            color: #6366f1;
         }
         
+        .hero p {
+            max-width: 640px;
+            margin: 1.75rem auto 0;
+            font-size: 1.125rem;
+            color: #d1d5db;
+        }
         
-        /* Sections */
+        /* STEP 4 — Section spacing */
         .section {
-            padding: 6rem 0;
+            padding: clamp(4.5rem, 9vw, 7rem) 0;
         }
         
         .section-alt {
@@ -82,7 +90,7 @@
         .section-title, .section-header {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto clamp(3rem, 5vw, 4rem);
         }
         
         .section-title h2, .section-header h2 {
@@ -96,7 +104,7 @@
             color: #6b7280;
         }
         
-        /* Problems Section */
+        /* Problems Section - STEP 6 Update */
         .problem-list {
             list-style: none;
             max-width: 800px;
@@ -109,13 +117,13 @@
             gap: 1rem;
             padding: 1.5rem;
             background: white;
-            border-radius: 12px;
+            border-radius: 18px;
             margin-bottom: 1rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
         }
         
         .problem-list i {
-            color: #2563eb;
+            color: #6366f1;
             font-size: 1.5rem;
             margin-top: 0.25rem;
         }
@@ -128,43 +136,46 @@
             font-style: italic;
             color: #6b7280;
             padding: 2rem;
-            border-left: 4px solid #2563eb;
+            border-left: 4px solid #6366f1;
             background: white;
-            border-radius: 0 12px 12px 0;
+            border-radius: 0 18px 18px 0;
         }
         
-        /* Solutions Section */
-        /* The parent grid container */
+        /* Solutions Section - STEP 6 Update */
         .solutions-container {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
           gap: 2rem;
-          justify-items: center; /* centers each card */
-          text-align: center; /* centers text inside each card */
+          justify-items: center;
+          text-align: center;
           margin-top: 3rem;
         }
         
-        /* Each card */
         .solution-pillar {
           background: #fff;
-          border-radius: 16px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-          padding: 2rem;
+          border-radius: 18px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+          padding: 2.5rem;
           max-width: 500px;
           width: 100%;
-          text-align: center; /* centers text in each card */
+          text-align: center;
           display: flex;
           flex-direction: column;
           align-items: center;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
         
-        /* Pillar features list */
+        .solution-pillar:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+        }
+        
         .pillar-features {
           list-style: none;
           padding: 0;
           margin: 1rem 0 0;
-          text-align: left; /* keeps bullet list readable */
-          display: inline-block; /* centers the list block inside */
+          text-align: left;
+          display: inline-block;
         }
         
         .pillar-features li {
@@ -172,9 +183,9 @@
           align-items: center;
           justify-content: flex-start;
           gap: 0.5rem;
+          margin-bottom: 0.5rem;
         }
         
-        /* Optional: Icon style */
         .pillar-features i {
           color: #00b67a;
         }
@@ -189,7 +200,7 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: #2563eb;
+            background: #6366f1;
             color: white;
             border-radius: 50%;
             font-weight: 700;
@@ -212,7 +223,7 @@
         
         .our-story-icon {
             font-size: 3rem;
-            color: #2563eb;
+            color: #6366f1;
             margin-bottom: 1.5rem;
         }
         
@@ -221,23 +232,22 @@
             margin: 0 auto;
         }
         
-        /* 🔹 Style the heading properly */
         .our-story-section h2 {
-            font-size: 2.25rem;      /* larger, visually distinct */
-            font-weight: 700;        /* bold to stand out */
+            font-size: 2.25rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: #1e293b;          /* dark slate tone for contrast */
+            color: #1e293b;
             letter-spacing: 0.5px;
         }
         
-        /* 🔹 Style the paragraph text */
         .our-story-content p {
             margin-bottom: 1.5rem;
             font-size: 1.125rem;
             line-height: 1.7;
-            color: #475569;          /* softer gray for readability */
+            color: #475569;
         }
-        /* Services Section */
+        
+        /* Services Section - STEP 5 Update */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -246,31 +256,32 @@
         
         .card {
             background: white;
-            border-radius: 12px;
-            padding: 2rem;
+            border-radius: 18px;
+            padding: 2.5rem;
             text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
         
         .card-icon {
             font-size: 2.5rem;
-            color: #2563eb;
+            color: #6366f1;
             margin-bottom: 1.5rem;
         }
         
-        .card h3 {
+        .card h3, .card h4 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
         
         .card p {
             color: #6b7280;
+            line-height: 1.7;
         }
         
         /* Approach Section */
@@ -283,6 +294,51 @@
         /* Contact Section */
         .contact-section {
             text-align: center;
+        }
+        
+        /* STEP 7 — Buttons update */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            text-decoration: none;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #d1d5db;
+            border: 1px solid #4b5563;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
         
         .btn-whatsapp {
@@ -361,137 +417,47 @@
             }
         }
         
-        /* Mobile Responsive Styles for Index-specific content */
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .hero {
-                padding: 8rem 0 4rem;
+                padding: clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 4vw, 4rem);
             }
             
             .hero h1 {
                 font-size: 2.5rem;
             }
             
-            .hero p {
-                font-size: 1.125rem;
-            }
-            
             .btn-group {
                 flex-direction: column;
                 align-items: center;
             }
             
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
             .section {
-                padding: 4rem 0;
+                padding: clamp(3rem, 6vw, 4rem) 0;
             }
             
             .section-title h2, .section-header h2 {
                 font-size: 2rem;
             }
             
-            /* Center all section content */
-            .section-title,
-            .section-header {
-                text-align: center;
-            }
-            
-            .section-title h2,
-            .section-header h2 {
-                text-align: center;
-            }
-            
-            .section-title p,
-            .section-header .subtitle {
-                text-align: center;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        
-            /* Center hero content */
-            .hero-content {
-                text-align: center;
-            }
-        
-            /* Center cards and their content */
-            .card {
-                text-align: center;
-                margin: 0 auto;
-            }
-        
-            .card h3,
-            .card h4,
-            .card p {
-                text-align: center;
-            }
-        
-            /* Center problem list */
-            .problem-list {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        
             .problem-list li {
                 flex-direction: column;
                 text-align: center;
                 gap: 15px;
                 padding: 24px 20px;
             }
-        
-            .problem-list span {
-                text-align: center;
-            }
-        
-            /* Center solutions */
+            
             .solutions-container {
-              display: grid;                    
-              grid-template-columns: 1fr;       
-              justify-items: center;             
-              text-align: center;                
-              gap: 2rem;                        
+                grid-template-columns: 1fr;
             }
-        
-            .solution-pillar {
-                text-align: center;
-                margin: 0 auto;
-            }
-        
-            .pillar-features {
-                text-align: center;
-            }
-        
-            .pillar-features li {
-                justify-content: center;
-                text-align: center;
-            }
-        
-            /* Center mission message */
-            .mission-message {
-                text-align: center;
-            }
-        
-            /* Center buttons */
-            .btn-group {
-                justify-content: center;
-                text-align: center;
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .btn {
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                max-width: 280px;
-            }
-        
-            /* Center contact section */
-            .contact-cta {
-                text-align: center;
-            }
-        
-            /* Center our story section */
-            .our-story-content {
-                text-align: center;
-                padding: 40px 24px;
+            
+            .solution-pillar, .card {
+                padding: 2rem;
             }
         }
         
@@ -504,37 +470,24 @@
                 font-size: 1.75rem;
             }
         }
-        .contact-form iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 800px;
-            border: none;
-            display: block;
-            margin: 0 auto;
-            border-radius: 12px;
-        }
-        iframe {
-          overflow: hidden;
-          display: block;
-        }
-        /* ✳️ Custom Contact Form Styling */
+        
+        /* Contact Form Styling */
         #contactForm {
           background: white;
           max-width: 600px;
           margin: 0 auto;
           padding: 2.5rem 2rem;
-          border-radius: 16px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+          border-radius: 18px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
           text-align: left;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         #contactForm:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
         
-        /* Labels */
         #contactForm label {
           display: block;
           font-weight: 600;
@@ -543,13 +496,12 @@
           font-size: 1rem;
         }
         
-        /* Inputs and Textareas */
         #contactForm input,
         #contactForm textarea {
           width: 100%;
           padding: 0.85rem 1rem;
           border: 1px solid #cbd5e1;
-          border-radius: 12px;
+          border-radius: 14px;
           font-size: 1rem;
           color: #1e293b;
           background: #f9fafb;
@@ -559,32 +511,30 @@
         
         #contactForm input:focus,
         #contactForm textarea:focus {
-          border-color: #2563eb;
-          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+          border-color: #6366f1;
+          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
           outline: none;
           background: white;
         }
         
-        /* Button */
         #contactForm button {
           width: 100%;
-          background-color: #2563eb;
+          background-color: #6366f1;
           color: white;
           font-size: 1.1rem;
           font-weight: 600;
           padding: 0.9rem 1.2rem;
           border: none;
-          border-radius: 12px;
+          border-radius: 14px;
           cursor: pointer;
           transition: background 0.3s ease, transform 0.2s ease;
         }
         
         #contactForm button:hover {
-          background-color: #1d4ed8;
+          background-color: #4f46e5;
           transform: translateY(-2px);
         }
         
-        /* Section alignment */
         .contact-section {
           background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
           padding: 6rem 1rem;
@@ -598,15 +548,6 @@
           text-align: center;
         }
         
-        /* Success Message */
-        .form-success {
-          text-align: center;
-          font-weight: 600;
-          color: #00b67a;
-          margin-top: 1rem;
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
           #contactForm {
             padding: 2rem 1.5rem;
@@ -644,37 +585,35 @@
     </header>
     
    <!-- Hero Section -->
-    <section class="hero relative overflow-hidden bg-[#0a0a0a] text-white" id="home">
-      <!-- Stars Background (from repo) -->
+    <section class="hero relative overflow-hidden" id="home">
+      <!-- Stars Background -->
       <div 
         class="absolute inset-0 bg-[url('/assets/stars.jpeg')] bg-cover bg-center opacity-30"
         aria-hidden="true">
       </div>
     
-      <!-- Overlay gradient to improve text contrast -->
-      <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/60 to-[#0a0a0a]/90"></div>
+      <!-- Overlay gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#020617]/70 via-[#020617]/60 to-[#020617]/90"></div>
     
       <div class="container relative z-10">
-        <div class="hero-content text-center py-24">
-          <div class="hero-badge animate-fade-in mb-4"></div>
-    
+        <div class="hero-content">
           <!-- Updated Hero Line -->
-          <h1 class="animate-fade-in delay-100 text-4xl md:text-5xl font-bold leading-tight">
+          <h1 class="animate-fade-in delay-100">
             Every data point tells a story.
-            <span class="hero-highlight text-indigo-400">We make it clear—and actionable.</span>
+            <span class="hero-highlight">We make it clear—and actionable.</span>
           </h1>
     
-          <p class="animate-fade-in delay-200 mt-6 max-w-2xl mx-auto text-gray-300">
+          <p class="animate-fade-in delay-200">
             We help businesses break free from disconnected systems and manual workflows. 
             Get powerful dashboards that show what matters, and automation that handles the rest—so you can focus on strategy, not spreadsheets.
           </p>
     
-          <div class="btn-group mt-10 flex flex-wrap justify-center gap-4">
-            <a href="#contact" class="btn btn-primary animate-fade-in delay-300 bg-indigo-500 hover:bg-indigo-600 text-white font-medium px-6 py-3 rounded-xl flex items-center gap-2 shadow-lg transition">
+          <div class="btn-group">
+            <a href="#contact" class="btn btn-primary animate-fade-in delay-300">
               <i class="fas fa-chart-line"></i>
               Get a Free Consultation
             </a>
-            <a href="#solutions" class="btn btn-secondary animate-fade-in delay-400 border border-gray-500 text-gray-200 hover:bg-gray-800 px-6 py-3 rounded-xl flex items-center gap-2 transition">
+            <a href="#solutions" class="btn btn-secondary animate-fade-in delay-400">
               <i class="fas fa-search"></i>
               Explore Solutions
             </a>
@@ -863,7 +802,7 @@
     
    <section class="section contact-section" id="contact">
       <div class="container">
-        <h2 class="text-3xl font-semibold mb-6 text-center">Get in Touch</h2>
+        <h2>Get in Touch</h2>
         
         <form id="contactForm" class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-4">
           <div>
