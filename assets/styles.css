@@ -1,3 +1,18 @@
+/* STEP 1 — Add global design system */
+:root {
+  --bg-dark: #020617;
+  --bg-light: #ffffff;
+  --text-dark: #020617;
+  --text-muted: #6b7280;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --card-bg: #ffffff;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --shadow-soft: 0 12px 30px rgba(0,0,0,0.06);
+  --shadow-hover: 0 20px 45px rgba(0,0,0,0.08);
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -12,8 +27,8 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #1f2937;
-    background-color: #ffffff;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
     overflow-x: hidden;
 }
 
@@ -24,14 +39,15 @@ body {
     padding: 0 1.5rem;
 }
 
-/* Header Styles */
+/* STEP 2 — Header (clean, premium, modern) */
 #header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     z-index: 1000;
     transition: all 0.3s ease;
 }
@@ -43,12 +59,8 @@ body {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 1.5rem;
-}
-
-/* Push nav to the center */
-nav {
-  margin: 0 auto;
 }
 
 .logo img {
@@ -64,13 +76,15 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #374151;
+    font-size: 0.95rem;
     font-weight: 500;
+    color: var(--text-dark);
+    letter-spacing: 0.02em;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #2563eb;
+    color: var(--primary);
 }
 
 .theme-toggle {
@@ -99,9 +113,9 @@ nav a:hover {
     padding: 0.5rem;
 }
 
-/* Footer Styles */
+/* STEP 8 — Footer (Plus94-style calm finish) */
 footer {
-    background: #1f2937;
+    background: #020617;
     color: white;
     padding: 4rem 0 2rem;
 }
@@ -119,7 +133,7 @@ footer {
 }
 
 .footer-about p {
-    color: #d1d5db;
+    color: #9ca3af;
     line-height: 1.7;
 }
 
@@ -137,7 +151,7 @@ footer {
 }
 
 .footer-links a {
-    color: #d1d5db;
+    color: #9ca3af;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -180,7 +194,7 @@ footer {
 }
 
 .social-links a:hover {
-    background: #2563eb;
+    background: var(--primary);
 }
 
 /* Scroll Progress */
@@ -189,7 +203,7 @@ footer {
     top: 0;
     left: 0;
     height: 4px;
-    background: #2563eb;
+    background: var(--primary);
     width: 0%;
     z-index: 1001;
     transition: width 0.1s;
@@ -202,7 +216,7 @@ footer {
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: #2563eb;
+    background: var(--primary);
     color: white;
     border: none;
     border-radius: 50%;
@@ -222,7 +236,7 @@ footer {
 }
 
 .back-to-top:hover {
-    background: #1d4ed8;
+    background: var(--primary-hover);
     transform: translateY(-2px);
 }
 
