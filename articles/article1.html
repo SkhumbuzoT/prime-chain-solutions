@@ -41,6 +41,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/article-template.css">
+    <style>
+        /* Additional inline styles specific to this article */
+        .article-content strong {
+            color: #1e293b;
+        }
+        
+        .article-content ul li {
+            padding-left: 8px;
+        }
+        
+        .article-content ul li:before {
+            content: "•";
+            color: #6366f1;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .share-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .share-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .share-linkedin {
+            background: rgba(0, 119, 181, 0.1);
+            color: #0077B5;
+            border: 1px solid rgba(0, 119, 181, 0.2);
+        }
+        
+        .share-linkedin:hover {
+            background: rgba(0, 119, 181, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .share-copy {
+            background: rgba(99, 102, 241, 0.1);
+            color: #6366f1;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        
+        .share-copy:hover {
+            background: rgba(99, 102, 241, 0.15);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -49,22 +108,18 @@
      <!-- Global Header -->
     <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo" aria-label="Prime Chain Solutions Home">
+            <a href="../index.html" class="logo" aria-label="Prime Chain Solutions Home">
                 <img src="/assets/Primary on Transparent.png" alt="Prime Chain Solutions logo" />
             </a>
             <nav aria-label="Primary">
                 <ul>
-                      <li><a href="../index.html">Home</a></li>
-                      <li><a href="../index.html#services">Services</a></li>
-                      <li><a href="../cost-calculator.html">Cost Calculator</a></li>
-                      <li><a href="../articles.html">Articles</a></li>
-                      <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../cost-calculator.html">Cost Calculator</a></li>
+                    <li><a href="../articles.html">Articles</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
-            
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
-           <i class="fas fa-moon"></i>
-    </button>
             
             <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -80,7 +135,7 @@
                 <div class="article-meta">
                     <span><i class="fas fa-calendar-alt"></i> Published: Oct 28, 2024</span>
                     <span><i class="fas fa-clock"></i> 8 min read</span>
-                    <span><i class="fas fa-share-alt"></i> <a href="#" onclick="shareOnLinkedIn()" style="color: #0077B5;">Share on LinkedIn</a></span>
+                    <span><i class="fas fa-share-alt"></i> <a href="#" onclick="shareOnLinkedIn()">Share on LinkedIn</a></span>
                 </div>
             </div>
             
@@ -276,7 +331,7 @@
 
                 <p>That's the real cost. Not just the time spent on manual work, but the opportunity cost of what could have been done instead.</p>
 
-                <blockquote style="border-left: 4px solid #0077B5; padding-left: 20px; margin: 30px 0; font-style: italic; color: #666;">
+                <blockquote>
                     <p>"The businesses that thrive in the next decade won't be the ones that work the hardest. They'll be the ones that work the smartest."</p>
                 </blockquote>
                 
@@ -306,17 +361,20 @@
                         <i class="fas fa-calculator"></i>
                         Calculate Your Manual Work Cost
                     </a>
-                    <div style="margin-top: 15px; font-size: 14px; color: #666;">
-                        <i class="fas fa-share-alt"></i> 
-                        <a href="#" onclick="shareOnLinkedIn()" style="color: #0077B5; text-decoration: none; margin-right: 15px;">Share on LinkedIn</a>
-                        <a href="#" onclick="copyLink()" style="color: #333; text-decoration: none;">Copy Link</a>
+                    <div class="share-links">
+                        <a href="#" onclick="shareOnLinkedIn()" class="share-linkedin">
+                            <i class="fab fa-linkedin"></i> Share on LinkedIn
+                        </a>
+                        <a href="#" onclick="copyLink()" class="share-copy">
+                            <i class="fas fa-link"></i> Copy Link
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-            <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
@@ -334,10 +392,10 @@
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../index.html#services">Services</a></li>
-                        <li><a href="../index.html#approach">Approach</a></li>
-                        <li><a href="../index.html#contact">Contact</a></li>
+                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="../index.html#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="../index.html#approach"><i class="fas fa-chevron-right"></i> Approach</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -386,7 +444,7 @@
         }
 
         // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const nav = document.querySelector('nav ul');
             const isOpen = nav.classList.contains('show');
             
@@ -400,7 +458,7 @@
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', () => {
                 const nav = document.querySelector('nav ul');
-                if (nav.classList.contains('show') {
+                if (nav.classList.contains('show')) {
                     nav.classList.remove('show');
                     document.querySelector('.mobile-menu-btn').innerHTML = '<i class="fas fa-bars"></i>';
                     document.body.style.overflow = '';
@@ -471,84 +529,6 @@
                 }
             });
         });
-
-        // Add ripple effect to buttons
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s linear;
-                    pointer-events: none;
-                `;
-                
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-
-        // Add CSS for ripple animation and LinkedIn-specific styles
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-            
-            .btn {
-                position: relative;
-                overflow: hidden;
-            }
-
-            .linkedin-hook {
-                background: linear-gradient(135deg, #0077B5 0%, #005885 100%);
-                color: white;
-                padding: 25px;
-                border-radius: 10px;
-                margin: 30px 0;
-                box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
-            }
-
-            .linkedin-hook p {
-                margin: 0;
-                font-size: 1.1em;
-                line-height: 1.6;
-            }
-
-            blockquote {
-                font-size: 1.1em;
-                line-height: 1.7;
-                position: relative;
-            }
-
-            blockquote::before {
-                content: '"';
-                font-size: 4em;
-                color: #0077B5;
-                position: absolute;
-                left: -20px;
-                top: -10px;
-                font-family: Georgia, serif;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
