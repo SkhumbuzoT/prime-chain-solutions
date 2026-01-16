@@ -34,8 +34,8 @@
     <style>
         /* Articles Specific Styles */
         .section {
-            padding: 120px 0 80px;
-            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+            padding: clamp(7rem, 10vw, 10rem) 0 clamp(4rem, 6vw, 6rem);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             min-height: 100vh;
         }
 
@@ -49,82 +49,115 @@
 
         .article-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
             cursor: pointer;
             border: 1px solid #e5e7eb;
+            transform: translateY(0);
         }
 
         .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
 
         .article-image {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            padding: 2rem;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            padding: 2.5rem;
             text-align: center;
             color: white;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .article-image i {
-            font-size: 3rem;
+            font-size: 3.5rem;
             opacity: 0.9;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
         }
 
         .article-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .article-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             font-size: 0.875rem;
         }
 
         .article-date {
             color: #6b7280;
             font-weight: 500;
+            background: #f8fafc;
+            padding: 0.4rem 0.8rem;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
         }
 
         .article-engagement {
             display: flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.5rem;
             color: #ef4444;
+            background: #fef2f2;
+            padding: 0.4rem 0.8rem;
+            border-radius: 14px;
+            border: 1px solid #fecaca;
+        }
+
+        .article-engagement i {
+            font-size: 0.9rem;
         }
 
         .article-title {
-            font-size: 1.25rem;
+            font-size: 1.375rem;
             font-weight: 600;
             color: #1f2937;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             line-height: 1.4;
+            min-height: 66px;
         }
 
         .article-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #2563eb;
+            color: #6366f1;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            padding: 0.75rem 1.25rem;
+            background: #f5f3ff;
+            border-radius: 14px;
+            border: 1px solid #e0e7ff;
         }
 
         .article-link:hover {
-            color: #1d4ed8;
+            color: #4f46e5;
             gap: 0.75rem;
+            background: #ede9fe;
+            transform: translateX(4px);
+        }
+
+        .article-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .article-link:hover i {
+            transform: translateX(4px);
         }
 
         .section-title {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto clamp(3rem, 5vw, 4rem);
         }
 
         .section-title h2 {
@@ -132,6 +165,7 @@
             font-weight: 700;
             margin-bottom: 1rem;
             color: #1f2937;
+            letter-spacing: -0.02em;
         }
 
         .section-title p {
@@ -140,16 +174,40 @@
             line-height: 1.6;
         }
 
+        /* Fade-in animation for articles */
+        .article-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .article-card:nth-child(1) { animation-delay: 0.1s; }
+        .article-card:nth-child(2) { animation-delay: 0.2s; }
+        .article-card:nth-child(3) { animation-delay: 0.3s; }
+        .article-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .section {
-                padding: 100px 0 60px;
+                padding: clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 4vw, 4rem);
             }
 
             .articles-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
                 padding: 0 1rem;
+                max-width: 500px;
             }
 
             .section-title h2 {
@@ -161,7 +219,26 @@
             }
 
             .article-card {
-                margin: 0 0.5rem;
+                margin: 0;
+            }
+
+            .article-image {
+                padding: 2rem;
+                height: 140px;
+            }
+
+            .article-image i {
+                font-size: 3rem;
+            }
+
+            .article-content {
+                padding: 1.5rem;
+            }
+
+            .article-title {
+                font-size: 1.25rem;
+                min-height: auto;
+                margin-bottom: 1.25rem;
             }
         }
 
@@ -176,6 +253,32 @@
 
             .article-title {
                 font-size: 1.125rem;
+            }
+
+            .article-image {
+                height: 120px;
+                padding: 1.5rem;
+            }
+
+            .article-image i {
+                font-size: 2.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .article-date, .article-engagement {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .article-link {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -350,19 +453,45 @@
                     if (e.target.tagName === 'A' || e.target.closest('a')) {
                         return;
                     }
-                    window.location.href = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    const onclickAttr = this.getAttribute('onclick');
+                    if (onclickAttr) {
+                        const urlMatch = onclickAttr.match(/'([^']+)'/);
+                        if (urlMatch && urlMatch[1]) {
+                            window.location.href = urlMatch[1];
+                        }
+                    }
                 });
             });
 
             // Add hover effects for article cards
             document.querySelectorAll('.article-card').forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
+                    this.style.transform = 'translateY(-8px)';
                 });
                 
                 card.addEventListener('mouseleave', function() {
                     this.style.transform = 'translateY(0)';
                 });
+            });
+
+            // Intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe article cards
+            document.querySelectorAll('.article-card').forEach(card => {
+                observer.observe(card);
             });
         });
     </script>
