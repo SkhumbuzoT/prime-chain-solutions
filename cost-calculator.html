@@ -45,8 +45,8 @@
     <style>
         /* Calculator Specific Styles */
         .cost-calculator-section {
-            padding: 120px 0 80px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: clamp(7rem, 10vw, 10rem) 0 clamp(4rem, 6vw, 6rem);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             min-height: 100vh;
         }
 
@@ -57,10 +57,16 @@
 
         .calculator-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 18px;
             padding: 3rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
             margin-bottom: 2rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .calculator-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
 
         .input-group {
@@ -81,103 +87,136 @@
             margin: 0 auto 4rem;
         }
 
+        .cost-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .cost-title p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
         .slider {
             width: 100%;
             height: 8px;
-            border-radius: 4px;
+            border-radius: 14px;
             background: #e5e7eb;
             outline: none;
             -webkit-appearance: none;
+            transition: background 0.3s ease;
+        }
+
+        .slider:hover {
+            background: #d1d5db;
         }
 
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
-            background: #2563eb;
+            background: #6366f1;
             cursor: pointer;
             border: 3px solid white;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
         }
 
         .slider::-moz-range-thumb {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
-            background: #2563eb;
+            background: #6366f1;
             cursor: pointer;
             border: 3px solid white;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .slider::-moz-range-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
         }
 
         .input-display {
             text-align: center;
             font-size: 1.25rem;
             font-weight: 600;
-            color: #2563eb;
+            color: #6366f1;
             margin-top: 1rem;
-            padding: 0.75rem;
-            background: #f0f9ff;
-            border-radius: 8px;
+            padding: 1rem;
+            background: #f5f3ff;
+            border-radius: 14px;
+            border: 1px solid #e0e7ff;
         }
 
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             margin: 3rem 0;
         }
 
         .result-card {
             background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 12px;
+            padding: 2rem;
+            border-radius: 14px;
             text-align: center;
-            border: 2px solid transparent;
+            border: 2px solid #e5e7eb;
             transition: all 0.3s ease;
         }
 
         .result-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
         .result-card.savings {
-            background: #dcfce7;
-            border-color: #22c55e;
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-color: #10b981;
         }
 
         .result-label {
             font-size: 0.9rem;
             color: #6b7280;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .result-value {
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 700;
             color: #1f2937;
             margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
         .result-card.savings .result-value {
-            color: #16a34a;
+            color: #059669;
         }
 
         .result-description {
             font-size: 0.875rem;
             color: #6b7280;
+            line-height: 1.5;
         }
 
         .impact-statement {
             background: #f0f9ff;
             padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #2563eb;
+            border-radius: 14px;
+            border-left: 4px solid #6366f1;
             margin: 2rem 0;
         }
 
@@ -185,22 +224,52 @@
             margin: 0;
             font-size: 1.1rem;
             color: #1f2937;
+            line-height: 1.6;
         }
 
         .impact-highlight {
             font-weight: 700;
-            color: #2563eb;
+            color: #6366f1;
         }
 
         .cta-section {
             text-align: center;
+            margin-top: 3rem;
         }
 
+        /* Updated button styles to match new design system */
         .btn-group {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            text-decoration: none;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
         }
 
         .btn-whatsapp {
@@ -210,22 +279,47 @@
 
         .btn-whatsapp:hover {
             background-color: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .cost-calculator-section {
-                padding: 100px 0 60px;
+                padding: clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 4vw, 4rem);
             }
 
             .calculator-card {
                 padding: 2rem 1.5rem;
                 margin: 0 1rem;
+                border-radius: 14px;
             }
 
             .results-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+            }
+
+            .result-card {
+                padding: 1.5rem;
             }
 
             .btn-group {
@@ -236,6 +330,29 @@
             .btn {
                 width: 100%;
                 max-width: 280px;
+            }
+
+            .cost-title h2 {
+                font-size: 2rem;
+            }
+
+            .cost-title p {
+                font-size: 1.125rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cost-title h2 {
+                font-size: 1.75rem;
+            }
+
+            .result-value {
+                font-size: 1.75rem;
+            }
+
+            .input-display {
+                font-size: 1.125rem;
+                padding: 0.75rem;
             }
         }
     </style>
@@ -269,10 +386,11 @@
 
     <!-- Calculator Section -->
     <section class="cost-calculator-section" id="cost" aria-labelledby="cost-title">
-    <div class="container">
-        <div class="section-header">
-            <h2 id="cost-title" class="cost-title">What's the Cost of Manual Work?</h2>
-        </div>            
+        <div class="container">
+            <div class="section-header cost-title">
+                <h2 id="cost-title">What's the Cost of Manual Work?</h2>
+                <p class="subtitle">Drag the sliders to see how much manual work is costing your business and discover potential savings with automation</p>
+            </div>            
             <div class="calculator-container">
                 <div class="calculator-card" aria-live="polite">
                     <div class="input-group">
@@ -303,6 +421,10 @@
                             <div class="result-value" id="potentialSavings">R0</div>
                             <div class="result-description">based on automating 80% of the work</div>
                         </div>
+                    </div>
+
+                    <div class="impact-statement fade-in">
+                        <p>By automating <span class="impact-highlight" id="hoursDisplay2">20</span> hours per week at R<span class="impact-highlight" id="rateDisplay2">80</span> per hour, you could save approximately <span class="impact-highlight" id="savingsAmount">R0</span> annually.</p>
                     </div>
                 </div>
                 
@@ -375,7 +497,9 @@
             const hoursSlider = document.getElementById('hoursSlider');
             const rateSlider = document.getElementById('rateSlider');
             const hoursDisplay = document.getElementById('hoursDisplay');
+            const hoursDisplay2 = document.getElementById('hoursDisplay2');
             const rateDisplay = document.getElementById('rateDisplay');
+            const rateDisplay2 = document.getElementById('rateDisplay2');
             const monthlyCost = document.getElementById('monthlyCost');
             const annualCost = document.getElementById('annualCost');
             const potentialSavings = document.getElementById('potentialSavings');
@@ -402,21 +526,25 @@
             
                 // Update displays
                 hoursDisplay.textContent = hours;
+                if (hoursDisplay2) hoursDisplay2.textContent = hours;
                 rateDisplay.textContent = rate.toLocaleString();
+                if (rateDisplay2) rateDisplay2.textContent = rate.toLocaleString();
             
                 // Calculate costs (hours per week * rate per hour * weeks)
                 const weeklyCost = hours * rate;
-                const monthly = weeklyCost * 4.33; // average weeks per month
+                const monthly = Math.round(weeklyCost * 4.33); // average weeks per month
                 const annual = weeklyCost * 52; // 52 weeks in a year
-                const savings = annual * 0.8; // 80% automation savings
+                const savings = Math.round(annual * 0.8); // 80% automation savings
             
                 // Update cost displays with animation
                 animateValue(monthlyCost, 0, monthly, 800, 'R');
                 animateValue(annualCost, 0, annual, 800, 'R');
                 animateValue(potentialSavings, 0, savings, 800, 'R');
-            
+                
                 // Update impact statement
-                savingsAmount.textContent = 'R' + Math.round(savings).toLocaleString();
+                if (savingsAmount) {
+                    savingsAmount.textContent = 'R' + savings.toLocaleString();
+                }
             }
             
             // Listen for slider input changes
@@ -426,6 +554,22 @@
             
                 // Initialize on page load
                 updateCalculations();
+
+                // Add visual feedback on slider interaction
+                [hoursSlider, rateSlider].forEach(slider => {
+                    slider.addEventListener('mousedown', function() {
+                        this.style.background = '#d1d5db';
+                    });
+                    slider.addEventListener('mouseup', function() {
+                        this.style.background = '#e5e7eb';
+                    });
+                    slider.addEventListener('touchstart', function() {
+                        this.style.background = '#d1d5db';
+                    });
+                    slider.addEventListener('touchend', function() {
+                        this.style.background = '#e5e7eb';
+                    });
+                });
             }
         });
     </script>
