@@ -161,9 +161,17 @@
 
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns on desktop */
             gap: 1.5rem;
             margin: 3rem 0;
+        }
+        
+        /* Mobile: Stack to 1 column */
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
 
         .result-card {
