@@ -4,7 +4,7 @@
   --bg-light: #ffffff;
   --text-dark: #020617;
   --text-muted: #6b7280;
-  --primary: #6366f1;
+  --primary: #008080;
   --primary-hover: #4f46e5;
   --card-bg: #ffffff;
   --radius-lg: 18px;
@@ -120,6 +120,7 @@ footer {
     padding: 4rem 0 2rem;
 }
 
+/* Footer layout */
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -127,6 +128,7 @@ footer {
     margin-bottom: 3rem;
 }
 
+/* Logo & About */
 .footer-logo img {
     height: 60px;
     margin-bottom: 1rem;
@@ -135,15 +137,21 @@ footer {
 .footer-about p {
     color: #9ca3af;
     line-height: 1.7;
+    font-size: 0.95rem;
 }
 
+/* Headings */
 .footer-heading {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
+/* Links */
 .footer-links ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-links li {
@@ -156,19 +164,96 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
     color: white;
 }
 
+/* Get in Touch CTA */
+.footer-cta {
+    max-width: 260px;
+}
+
+.footer-cta p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* CTA Buttons */
+.footer-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #6366f1;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.footer-btn:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
+
+.footer-btn.whatsapp {
+    background: #25d366;
+}
+
+.footer-btn.whatsapp:hover {
+    background: #128c7e;
+}
+
+/* Footer bottom */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
     border-top: 1px solid #374151;
+}
+
+.footer-bottom p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+/* Social links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #9ca3af;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer-cta {
+        max-width: 100%;
+    }
 }
 
 .copyright {
