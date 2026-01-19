@@ -113,8 +113,9 @@ nav a:hover {
     padding: 0.5rem;
 }
 
+css
 /* =============================================
-   STEP 8 — Footer (Plus94-style calm finish)
+   Updated Footer Styles (ASCM Style)
    ============================================= */
 
 /* Footer Container */
@@ -122,32 +123,23 @@ footer {
     background: #020617;
     color: white;
     padding: 4rem 0 2rem;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Footer Content Grid */
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
     margin-bottom: 3rem;
-}
-
-/* Footer Logo */
-.footer-logo img {
-    height: 60px;
-    margin-bottom: 1rem;
-}
-
-/* Footer About Section */
-.footer-about p {
-    color: #9ca3af;
-    line-height: 1.7;
 }
 
 /* Footer Headings */
 .footer-heading {
     font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 /* Footer Links */
@@ -168,13 +160,81 @@ footer {
     align-items: center;
     gap: 0.5rem;
     transition: color 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .footer-links a:hover {
     color: white;
 }
 
-/* Footer Bottom Bar */
+.footer-links a i {
+    font-size: 0.8rem;
+    width: 16px;
+}
+
+/* Newsletter Column */
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-about p {
+    color: #9ca3af;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.newsletter-form h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.newsletter-subscription .form-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-subscription input {
+    flex: 1;
+    padding: 0.85rem 1rem;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-subscription input:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+.newsletter-subscription input::placeholder {
+    color: #9ca3af;
+}
+
+.btn-subscribe {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-subscribe:hover {
+    background: #4f46e5;
+}
+
+/* Footer Bottom */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -182,62 +242,95 @@ footer {
     padding-top: 2rem;
     border-top: 1px solid #374151;
 }
-/* Contact Info List */
-.contact-info-list li {
+
+.footer-bottom-left {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    color: #cbd5e1;
 }
 
-.contact-info-list li i {
-    color: #6366f1;
-    font-size: 1rem;
-    width: 20px;
+.copyright {
+    color: #9ca3af;
+    font-size: 0.9rem;
 }
 
-/* Footer CTA */
-.footer-cta {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.footer-bottom-right {
+    display: flex;
+    align-items: center;
 }
 
-.footer-cta h3.footer-heading {
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #374151;
     color: white;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.3s ease;
 }
 
-.footer-cta-text {
-    color: #cbd5e1;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+.social-links a:hover {
+    background: #6366f1;
+    transform: translateY(-2px);
 }
 
-/* CTA Blocks */
-.footer-cta-blocks {
-    display: grid;
-    gap: 1rem;
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-newsletter {
+        grid-column: span 2;
+    }
 }
 
-.footer-cta-block {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-newsletter {
+        grid-column: span 1;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .newsletter-subscription .form-group {
+        flex-direction: column;
+    }
+    
+    .btn-subscribe {
+        width: 100%;
+    }
 }
 
-.footer-cta-block:hover {
-    background: rgba(99, 102, 241, 0.1);
-    border-color: rgba(99, 102, 241, 0.3);
-    transform: translateY(-3px);
+@media (max-width: 480px) {
+    footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+    
+    .footer-heading {
+        font-size: 1.1rem;
+    }
 }
 
 .cta-block-icon {
