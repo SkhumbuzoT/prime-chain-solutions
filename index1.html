@@ -6,7 +6,7 @@
     
     <!-- SEO Metadata -->
     <meta name="description" content="We help businesses gain visibility and automate workflows with simple, powerful dashboards and automation tools." />
-    <meta name="keywords" content="business process automation, supply chain visibility, workflow automation, operations dashboards, process improvement, data visibility, business intelligence, logistics" />
+    <meta name="keywords" content="business process automation, supply chain visibility, workflow automation, operations dashboards, process improvement, data visibility, business intelligence, logistics optimization" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -36,7 +36,7 @@
     </script>
     <!-- End Google tag -->
 
-    <title>Prime Chain Solutions - Turn Operational Chaos into Clear, Automated Control</title>
+    <title>Prime Chain Solutions - Visibility and Automation for Businesses</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -44,25 +44,13 @@
     
     <link rel="stylesheet" href="assets/styles.css">
     <style>
-        /* Brand Color Variables */
-        :root {
-            --jet-black: #000000;
-            --teal: #008080;
-            --gold: #D4AF37;
-            --navy-blue: #0A1F44;
-            --white: #FFFFFF;
-            --light-gray: #f8f9fa;
-            --medium-gray: #6b7280;
-            --dark-gray: #1e293b;
-        }
-    
-    /* Hero Section */
+        /* Hero Section - STEP 3 Update */
         .hero {
             position: relative;
-            padding: 10rem 0 6rem;
-            background: linear-gradient(135deg, var(--navy-blue) 0%, #152642 100%);
+            background: radial-gradient(circle at top, #111827, #020617);
+            color: white;
+            padding: clamp(7rem, 10vw, 10rem) 0 clamp(4rem, 6vw, 6rem);
             overflow: hidden;
-            color: var(--white);
         }
         
         .hero-content {
@@ -72,237 +60,27 @@
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
+            font-size: clamp(2.6rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
             margin-bottom: 1.5rem;
         }
         
         .hero-highlight {
-            color: var(--teal);
+            color: #6366f1;
         }
         
-        /* Trust Reassurance Section */
-        .trust-reassurance {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            max-width: 900px;
-            margin: 2rem auto;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+        .hero p {
+            max-width: 640px;
+            margin: 1.75rem auto 0;
+            font-size: 1.125rem;
+            color: #d1d5db;
         }
         
-        .trust-tagline {
-            font-size: 1.1rem;
-            color: var(--navy-blue);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-        
-        .trust-points {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        
-        .trust-point {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-            color: var(--navy-blue);
-        }
-        
-        .trust-point i {
-            color: var(--teal);
-        }
-        
-        /* Who This Is For Section */
-        .qualification-section {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-            border-radius: 16px;
-            padding: 3rem;
-            margin: 4rem auto;
-            max-width: 900px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        
-        .qualification-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .qualification-header h3 {
-            font-size: 1.75rem;
-            color: var(--navy-blue);
-            margin-bottom: 1rem;
-        }
-        
-        .qualification-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .qualification-point {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--white);
-            border-radius: 8px;
-            border-left: 3px solid var(--teal);
-        }
-        
-        .qualification-point i {
-            color: var(--teal);
-            margin-top: 0.25rem;
-        }
-        
-        .qualification-conclusion {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px dashed var(--gold);
-            font-size: 1.1rem;
-            color: var(--navy-blue);
-            font-weight: 600;
-        }
-        
-        /* Problem Section */
-        .problem-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-        }
-        
-        /* The Shift Section */
-        .shift-section {
-            background: linear-gradient(135deg, rgba(0, 128, 128, 0.1) 0%, rgba(0, 128, 128, 0.05) 100%);
-            border-radius: 16px;
-            padding: 4rem 2rem;
-            margin: 4rem 0;
-            border: 1px solid rgba(0, 128, 128, 0.15);
-        }
-        
-        .shift-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .shift-content h3 {
-            font-size: 2rem;
-            color: var(--navy-blue);
-            margin-bottom: 2rem;
-        }
-        
-        .shift-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .shift-point {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: left;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border: 1px solid rgba(10, 31, 68, 0.1);
-        }
-        
-        .shift-point i {
-            color: var(--teal);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* What This Looks Like Section */
-        .transformation-section {
-            background: linear-gradient(135deg, var(--navy-blue) 0%, #152642 100%);
-            color: var(--white);
-            border-radius: 16px;
-            padding: 4rem 2rem;
-            margin: 4rem 0;
-        }
-        
-        .transformation-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .transformation-header h2 {
-            color: var(--white);
-        }
-        
-        .transformation-comparison {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .before-after {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .before-after h4 {
-            font-size: 1.5rem;
-            color: #fca5a5;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid rgba(252, 165, 165, 0.3);
-        }
-        
-        .after h4 {
-            color: #86efac;
-            border-bottom: 2px solid rgba(134, 239, 172, 0.3);
-        }
-        
-        .comparison-point {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            color: #e2e8f0;
-        }
-        
-        .comparison-point i {
-            margin-top: 0.25rem;
-        }
-        
-        .before .comparison-point i {
-            color: #fca5a5;
-        }
-        
-        .after .comparison-point i {
-            color: #86efac;
-        }
-        
-        .transformation-footer {
-            text-align: center;
-            margin-top: 3rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gold);
-        }
-        
-        /* Sections */
+        /* STEP 4 — Section spacing */
         .section {
-            padding: 6rem 0;
+            padding: clamp(4.5rem, 9vw, 7rem) 0;
         }
         
         .section-alt {
@@ -312,22 +90,21 @@
         .section-title, .section-header {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto clamp(3rem, 5vw, 4rem);
         }
         
         .section-title h2, .section-header h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--navy-blue);
         }
         
         .section-title p, .section-header .subtitle {
             font-size: 1.25rem;
-            color: var(--medium-gray);
+            color: #6b7280;
         }
         
-        /* Problems Section */
+        /* Problems Section - STEP 6 Update */
         .problem-list {
             list-style: none;
             max-width: 800px;
@@ -339,15 +116,14 @@
             align-items: flex-start;
             gap: 1rem;
             padding: 1.5rem;
-            background: var(--white);
-            border-radius: 12px;
+            background: white;
+            border-radius: 18px;
             margin-bottom: 1rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid var(--teal);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
         }
         
         .problem-list i {
-            color: var(--teal);
+            color: #6366f1;
             font-size: 1.5rem;
             margin-top: 0.25rem;
         }
@@ -358,15 +134,14 @@
             text-align: center;
             font-size: 1.25rem;
             font-style: italic;
-            color: var(--medium-gray);
+            color: #6b7280;
             padding: 2rem;
-            border-left: 4px solid var(--gold);
-            background: var(--white);
-            border-radius: 0 12px 12px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 4px solid #6366f1;
+            background: white;
+            border-radius: 0 18px 18px 0;
         }
         
-        /* Solutions Section */
+        /* Solutions Section - STEP 6 Update */
         .solutions-container {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -377,17 +152,22 @@
         }
         
         .solution-pillar {
-          background: var(--white);
-          border-radius: 16px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-          padding: 2rem;
+          background: #fff;
+          border-radius: 18px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+          padding: 2.5rem;
           max-width: 500px;
           width: 100%;
           text-align: center;
           display: flex;
           flex-direction: column;
           align-items: center;
-          border: 1px solid rgba(10, 31, 68, 0.1);
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        
+        .solution-pillar:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
         
         .pillar-features {
@@ -407,7 +187,7 @@
         }
         
         .pillar-features i {
-          color: var(--teal);
+          color: #00b67a;
         }
                 
         .pillar-header {
@@ -420,8 +200,8 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: var(--teal);
-            color: var(--white);
+            background: #6366f1;
+            color: white;
             border-radius: 50%;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -430,22 +210,44 @@
         .pillar-header h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            color: var(--navy-blue);
         }
         
         .pillar-subtitle {
-            color: var(--medium-gray);
+            color: #6b7280;
         }
         
-        /* Services Section */
-        .services-subtitle {
+        /* Our Story Section */
+        .our-story-section {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            color: var(--medium-gray);
-            font-size: 1.1rem;
         }
         
+        .our-story-icon {
+            font-size: 3rem;
+            color: #6366f1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .our-story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .our-story-section h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+            letter-spacing: 0.5px;
+        }
+        
+        .our-story-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #475569;
+        }
+        
+        /* Services Section - STEP 5 Update */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -453,35 +255,33 @@
         }
         
         .card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2rem;
+            background: white;
+            border-radius: 18px;
+            padding: 2.5rem;
             text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(10, 31, 68, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-color: var(--teal);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
         
         .card-icon {
             font-size: 2.5rem;
-            color: var(--teal);
+            color: #6366f1;
             margin-bottom: 1.5rem;
         }
         
         .card h3, .card h4 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--navy-blue);
         }
         
         .card p {
-            color: var(--medium-gray);
+            color: #6b7280;
+            line-height: 1.7;
         }
         
         /* Approach Section */
@@ -491,131 +291,65 @@
             gap: 2rem;
         }
         
-        /* About Section */
-        .about-mission {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
-            border-radius: 16px;
-            padding: 3rem;
-            margin: 3rem auto;
-            max-width: 900px;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-        }
-        
-        .about-mission p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-            color: var(--navy-blue);
-        }
-        
-        .mission-highlight {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gold);
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--navy-blue) 0%, #152642 100%);
-            color: var(--white);
-            padding: 5rem 2rem;
-            text-align: center;
-            border-radius: 16px;
-            margin: 4rem 0;
-        }
-        
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-        
-        .cta-section p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: #cbd5e1;
-        }
-        
-        .cta-points {
-            max-width: 600px;
-            margin: 2rem auto 3rem;
-            text-align: left;
-        }
-        
-        .cta-point {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            color: #e2e8f0;
-        }
-        
-        .cta-point i {
-            color: var(--gold);
-            margin-top: 0.25rem;
-        }
-        
-        .cta-note {
-            font-size: 0.95rem;
-            color: #94a3b8;
-            margin-top: 2rem;
-            font-style: italic;
-        }
-        
         /* Contact Section */
         .contact-section {
             text-align: center;
         }
         
-        /* Buttons */
+        /* STEP 7 — Buttons update */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 0.9rem 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
             text-decoration: none;
+            border-radius: 14px;
             transition: all 0.3s ease;
-            border: none;
             cursor: pointer;
-            font-size: 1rem;
         }
         
         .btn-primary {
-            background-color: var(--gold);
-            color: var(--navy-blue);
+            background: #6366f1;
+            color: white;
+            border: none;
         }
         
         .btn-primary:hover {
-            background-color: #c19b2e;
+            background: #4f46e5;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
         }
         
         .btn-secondary {
-            background-color: transparent;
-            color: var(--navy-blue);
-            border: 2px solid var(--navy-blue);
+            background: transparent;
+            color: #d1d5db;
+            border: 1px solid #4b5563;
         }
         
         .btn-secondary:hover {
-            background-color: var(--navy-blue);
-            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-2px);
         }
         
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128c7e;
+            transform: translateY(-2px);
         }
         
         /* Animations */
@@ -674,42 +408,48 @@
             }
         }
        
+        @keyframes fall {
+            from {
+                transform: translateY(-100px) rotate(0deg);
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
         /* Contact Form Styling */
         #contactForm {
-          background: var(--white);
+          background: white;
           max-width: 600px;
           margin: 0 auto;
           padding: 2.5rem 2rem;
-          border-radius: 16px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+          border-radius: 18px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
           text-align: left;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
-          border: 1px solid rgba(10, 31, 68, 0.1);
         }
         
         #contactForm:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
         
-        /* Labels */
         #contactForm label {
           display: block;
           font-weight: 600;
-          color: var(--navy-blue);
+          color: #1e293b;
           margin-bottom: 0.5rem;
           font-size: 1rem;
         }
         
-        /* Inputs and Textareas */
         #contactForm input,
         #contactForm textarea {
           width: 100%;
           padding: 0.85rem 1rem;
-          border: 1px solid rgba(10, 31, 68, 0.2);
-          border-radius: 8px;
+          border: 1px solid #cbd5e1;
+          border-radius: 14px;
           font-size: 1rem;
-          color: var(--navy-blue);
+          color: #1e293b;
           background: #f9fafb;
           transition: border-color 0.2s, box-shadow 0.2s;
           font-family: inherit;
@@ -717,56 +457,51 @@
         
         #contactForm input:focus,
         #contactForm textarea:focus {
-          border-color: var(--teal);
-          box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+          border-color: #6366f1;
+          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
           outline: none;
-          background: var(--white);
+          background: white;
         }
         
-        /* Button */
         #contactForm button {
           width: 100%;
-          background-color: var(--teal);
-          color: var(--white);
+          background-color: #6366f1;
+          color: white;
           font-size: 1.1rem;
           font-weight: 600;
           padding: 0.9rem 1.2rem;
           border: none;
-          border-radius: 8px;
+          border-radius: 14px;
           cursor: pointer;
           transition: background 0.3s ease, transform 0.2s ease;
         }
         
         #contactForm button:hover {
-          background-color: #006666;
+          background-color: #4f46e5;
           transform: translateY(-2px);
         }
         
-        /* Form Success Message */
-        .form-success {
-            text-align: center;
-            font-weight: 600;
-            color: var(--teal);
-            margin-top: 1rem;
-            padding: 1rem;
-            background: rgba(0, 128, 128, 0.1);
-            border-radius: 8px;
-            display: none;
-            border: 1px solid rgba(0, 128, 128, 0.2);
+        .contact-section {
+          background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+          padding: 6rem 1rem;
+        }
+        
+        .contact-section h2 {
+          font-size: 2.25rem;
+          font-weight: 700;
+          color: #1e293b;
+          margin-bottom: 2rem;
+          text-align: center;
         }
         
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .hero {
-                padding: 8rem 0 4rem;
+                padding: clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 4vw, 4rem);
             }
             
             .hero h1 {
                 font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.125rem;
             }
             
             .btn-group {
@@ -774,48 +509,39 @@
                 align-items: center;
             }
             
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
             .section {
-                padding: 4rem 0;
+                padding: clamp(3rem, 6vw, 4rem) 0;
             }
             
             .section-title h2, .section-header h2 {
                 font-size: 2rem;
             }
             
-            .trust-points {
+            .problem-list li {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
+                gap: 15px;
+                padding: 24px 20px;
             }
             
-            .qualification-section {
+            .solutions-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .solution-pillar, .card {
                 padding: 2rem;
             }
             
-            .transformation-comparison {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .shift-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-section {
-                padding: 3rem 1rem;
-            }
-            
-            .cta-section h2 {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-            
             #contactForm {
-                padding: 2rem 1.5rem;
+              padding: 2rem 1.5rem;
+            }
+            .contact-section h2 {
+              font-size: 1.75rem;
             }
         }
         
@@ -827,10 +553,6 @@
             .section-title h2, .section-header h2 {
                 font-size: 1.75rem;
             }
-            
-            .qualification-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -839,7 +561,7 @@
     <div class="scroll-progress"></div>
     
     <!-- Global Header -->
-    <header id="header" style="background-color: var(--navy-blue);">
+    <header id="header">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="Prime Chain Solutions Home">
                 <img src="/assets/Primary on Transparent.png" alt="Prime Chain Solutions logo" />
@@ -861,163 +583,81 @@
     </header>
     
    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="animate-fade-in">
-                    Turn operational chaos into <span class="hero-highlight">clear, automated control.</span>
-                </h1>
-                <p class="animate-fade-in delay-100" style="font-size: 1.25rem; line-height: 1.6; max-width: 700px; margin: 0 auto 2rem;">
-                    We help growing businesses replace spreadsheets, manual reporting, and disconnected systems with real-time dashboards and automated workflows—so decisions are faster, mistakes are fewer, and teams stay focused on real work.
-                </p>
-                
-                <div class="btn-group animate-fade-in delay-200">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i>
-                        Book a Free Operations Clarity Session
-                    </a>
-                    <a href="#solutions" class="btn btn-secondary">
-                        <i class="fas fa-play-circle"></i>
-                        See How It Works
-                    </a>
-                </div>
-            </div>
+    <section class="hero relative overflow-hidden" id="home">
+      <!-- Stars Background -->
+      <div 
+        class="absolute inset-0 bg-[url('/assets/stars.jpeg')] bg-cover bg-center opacity-30"
+        aria-hidden="true">
+      </div>
+    
+      <!-- Overlay gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#020617]/70 via-[#020617]/60 to-[#020617]/90"></div>
+    
+      <div class="container relative z-10">
+        <div class="hero-content">
+          <!-- Updated Hero Line -->
+          <h1 class="animate-fade-in delay-100">
+            Every data point tells a story.
+            <span class="hero-highlight">We make it clear—and actionable.</span>
+          </h1>
+    
+          <p class="animate-fade-in delay-200">
+            We help businesses break free from disconnected systems and manual workflows. 
+            Get powerful dashboards that show what matters, and automation that handles the rest—so you can focus on strategy, not spreadsheets.
+          </p>
+    
+          <div class="btn-group">
+            <a href="#contact" class="btn btn-primary animate-fade-in delay-300">
+              <i class="fas fa-chart-line"></i>
+              Get a Free Consultation
+            </a>
+            <a href="#solutions" class="btn btn-secondary animate-fade-in delay-400">
+              <i class="fas fa-search"></i>
+              Explore Solutions
+            </a>
+          </div>
         </div>
+      </div>
     </section>
     
-    <!-- Trust Reassurance -->
-    <section class="section" style="padding: 2rem 0;">
-        <div class="container">
-            <div class="trust-reassurance animate-fade-in-up">
-                <p class="trust-tagline">Built for real businesses with real operational complexity — not theoretical workflows.</p>
-                <div class="trust-points">
-                    <div class="trust-point">
-                        <i class="fas fa-lock-open"></i>
-                        <span>No SaaS lock-in</span>
-                    </div>
-                    <div class="trust-point">
-                        <i class="fas fa-plug"></i>
-                        <span>Uses your existing systems</span>
-                    </div>
-                    <div class="trust-point">
-                        <i class="fas fa-users"></i>
-                        <span>Designed around how your team actually works</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Who This Is For Section -->
-    <section class="section" id="who">
-        <div class="container">
-            <div class="qualification-section animate-fade-in-up">
-                <div class="qualification-header">
-                    <h3>This Is For You If:</h3>
-                </div>
-                
-                <div class="qualification-grid">
-                    <div class="qualification-point">
-                        <i class="fas fa-truck"></i>
-                        <span>You manage operations, logistics, utilities, or service teams</span>
-                    </div>
-                    <div class="qualification-point">
-                        <i class="fas fa-file-excel"></i>
-                        <span>Your data lives in Excel, emails, WhatsApp, and multiple systems</span>
-                    </div>
-                    <div class="qualification-point">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Reporting takes days instead of minutes</span>
-                    </div>
-                    <div class="qualification-point">
-                        <i class="fas fa-clock"></i>
-                        <span>Your team spends too much time on manual admin</span>
-                    </div>
-                    <div class="qualification-point">
-                        <i class="fas fa-question-circle"></i>
-                        <span>You make decisions with incomplete or outdated information</span>
-                    </div>
-                </div>
-                
-                <p class="qualification-conclusion">
-                    If that sounds familiar, you're not broken — your systems are.
-                </p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- The Problem Section -->
+    <!-- Problems Section -->
     <section class="section section-alt" id="problems">
         <div class="container">
             <div class="section-header">
-                <h2>Why Most Businesses Feel Disorganized (Even When They're Growing)</h2>
-                <p class="subtitle">
-                    As businesses scale, systems don't keep up.
-                </p>
-            </div>
+                <h2>Common Challenges</h2>
+                <p class="subtitle">Is your business running on duct tape and good intentions?
+                    You're not alone. Most growing businesses face the same operational friction that slows everything down:</p>
+                </div>
             
             <ul class="problem-list">
                 <li class="animate-fade-in-up delay-100">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <span><strong>Information gets scattered</strong> across tools and people</span>
+                    <i class="fas fa-chart-pie"></i>
+                    <span><strong>Scattered intelligence</strong> - Your data lives in spreadsheets, emails, software silos, and people's heads. Finding the truth means hunting across five different places.</span>
                 </li>
                 <li class="animate-fade-in-up delay-200">
-                    <i class="fas fa-hand-paper"></i>
-                    <span><strong>Critical updates rely on manual follow-ups</strong></span>
+                    <i class="fas fa-tasks"></i>
+                    <span><strong>The repetitive task trap</strong> - Your talented team spends hours copying data, chasing updates, and doing manual work that a system should handle automatically.</span>
                 </li>
                 <li class="animate-fade-in-up delay-300">
-                    <i class="fas fa-history"></i>
-                    <span><strong>Reporting is backward-looking</strong> instead of real-time</span>
+                    <i class="fas fa-eye-slash"></i>
+                    <span><strong>Flying blind</strong> - You can't see what's actually happening right now. By the time you get reports, they're already outdated. You're making decisions with yesterday's information.</span>
                 </li>
                 <li class="animate-fade-in-up delay-400">
-                    <i class="fas fa-brain"></i>
-                    <span><strong>Knowledge lives in individuals</strong> instead of systems</span>
+                    <i class="fas fa-clock"></i>
+                    <span><strong>Decision delays </strong> - Questions that should take minutes to answer take days. Opportunities slip by while you're still gathering information.</span>
                 </li>
                 <li class="animate-fade-in-up delay-500">
-                    <i class="fas fa-hourglass-half"></i>
-                    <span><strong>Decisions are delayed</strong> because visibility comes too late</span>
+                    <i class="fas fa-sync-alt"></i>
+                    <span><strong>Inconsistent execution</strong> - Without automated systems, quality depends on who's working that day and how much they remember. Standards vary. Mistakes happen.</span>
+                </li>
+                <li class="animate-fade-in-up delay-600">
+                    <i class="fas fa-user-graduate"></i>
+                    <span><strong>Bottleneck people</strong> - Critical knowledge lives in specific team members' heads. When they're out, progress stops. When they leave, that knowledge walks out the door.</span>
                 </li>
             </ul>
             
-            <div class="mission-message animate-fade-in delay-600">
-                <p><strong>The result?</strong> More effort, more stress, and less control.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- The Shift Section -->
-    <section class="shift-section" id="shift">
-        <div class="container">
-            <div class="shift-content animate-fade-in-up">
-                <h3>What Changes When You Have Real Visibility</h3>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">When your data is connected and your workflows are automated:</p>
-                
-                <div class="shift-grid">
-                    <div class="shift-point">
-                        <i class="fas fa-eye"></i>
-                        <p><strong>You see issues as they happen</strong> — not after damage is done</p>
-                    </div>
-                    <div class="shift-point">
-                        <i class="fas fa-sync-alt"></i>
-                        <p><strong>Reports are always current</strong>, without manual work</p>
-                    </div>
-                    <div class="shift-point">
-                        <i class="fas fa-stream"></i>
-                        <p><strong>Processes run consistently</strong>, regardless of who's on shift</p>
-                    </div>
-                    <div class="shift-point">
-                        <i class="fas fa-user-clock"></i>
-                        <p><strong>Teams spend time executing</strong>, not chasing information</p>
-                    </div>
-                    <div class="shift-point">
-                        <i class="fas fa-chess-king"></i>
-                        <p><strong>Leaders focus on strategy</strong> instead of firefighting</p>
-                    </div>
-                </div>
-                
-                <p style="margin-top: 2rem; font-size: 1.2rem; font-weight: 600; color: var(--navy-blue);">
-                    That's the difference between reacting to problems and running your operation deliberately.
-                </p>
+            <div class="mission-message animate-fade-in delay-700">
+                <p>Your operations should give you energy, not drain it. When you have real visibility and the right automation in place, something shifts. Instead of fighting your systems, you're empowered by them. That's what we build: clarity and control that lets you focus on the strategic work only you can do.</p>
             </div>
         </div>
     </section>
@@ -1026,100 +666,54 @@
     <section class="section" id="solutions">
         <div class="container">
             <div class="section-title">
-                <h2>How We Help You Get There</h2>
-                <p>Outcome-led solutions, not feature lists</p>
+                <h2>How We Solve This:</h2>
+                <p>We create custom solutions that connect your data, automate workflows, and provide actionable insights</p>
             </div>
             
             <div class="solutions-container">
                 <div class="solution-pillar animate-fade-in-up delay-100">
                     <div class="pillar-header">
                         <div class="pillar-number">1</div>
-                        <h3>Centralized Operational Dashboards</h3>
-                        <p class="pillar-subtitle">One clear source of truth for your business</p>
+                        <h3>Centralized Dashboards</h3>
+                        <p class="pillar-subtitle">One place to see everything that matters</p>
                     </div>
                     <ul class="pillar-features">
-                        <li><i class="fas fa-check-circle"></i> Live operational metrics in one place</li>
-                        <li><i class="fas fa-check-circle"></i> Customized to your KPIs and decision points</li>
-                        <li><i class="fas fa-check-circle"></i> Drill-down views for managers and teams</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time operational visibility</li>
+                        <li><i class="fas fa-check-circle"></i> Customized to your key metrics</li>
                         <li><i class="fas fa-check-circle"></i> Accessible from anywhere</li>
+                        <li><i class="fas fa-check-circle"></i> Drill-down into details</li>
                     </ul>
-                    <p style="margin-top: 1rem; font-style: italic; color: var(--medium-gray);">
-                        No more guessing. No more outdated reports.
-                    </p>
                 </div>
                 
                 <div class="solution-pillar animate-fade-in-up delay-200">
                     <div class="pillar-header">
                         <div class="pillar-number">2</div>
-                        <h3>Workflow & Process Automation</h3>
-                        <p class="pillar-subtitle">Manual work handled automatically</p>
+                        <h3>Process Automation</h3>
+                        <p class="pillar-subtitle">Eliminate manual, repetitive work</p>
                     </div>
                     <ul class="pillar-features">
-                        <li><i class="fas fa-check-circle"></i> Automated data capture from your systems</li>
-                        <li><i class="fas fa-check-circle"></i> Job cards, reports, and documents generated automatically</li>
-                        <li><i class="fas fa-check-circle"></i> Alerts and notifications triggered by real events</li>
-                        <li><i class="fas fa-check-circle"></i> Reduced dependency on individuals</li>
+                        <li><i class="fas fa-check-circle"></i> Automated data collection</li>
+                        <li><i class="fas fa-check-circle"></i> Workflow automation</li>
+                        <li><i class="fas fa-check-circle"></i> Notification systems</li>
+                        <li><i class="fas fa-check-circle"></i> Document generation</li>
                     </ul>
-                    <p style="margin-top: 1rem; font-style: italic; color: var(--medium-gray);">
-                        Your operation runs the same way every day — even when people change.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- What This Looks Like Section -->
-    <section class="transformation-section" id="transformation">
+    <!-- Our Story Section -->
+    <section class="section our-story-section" id="our-story">
         <div class="container">
-            <div class="transformation-header animate-fade-in-up">
-                <h2>A Typical Transformation</h2>
-            </div>
-            
-            <div class="transformation-comparison">
-                <div class="before-after before animate-fade-in-up delay-100">
-                    <h4>Before</h4>
-                    <div class="comparison-point">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span>Managers chase updates across WhatsApp and Excel</span>
-                    </div>
-                    <div class="comparison-point">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span>Reports are compiled days after events happen</span>
-                    </div>
-                    <div class="comparison-point">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span>Errors slip through because checks are manual</span>
-                    </div>
-                    <div class="comparison-point">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span>Key staff become bottlenecks</span>
-                    </div>
+            <div class="our-story-content">
+                <div class="our-story-icon">
+                    <i class="fas fa-lightbulb"></i>
                 </div>
-                
-                <div class="before-after after animate-fade-in-up delay-200">
-                    <h4>After</h4>
-                    <div class="comparison-point">
-                        <i class="fas fa-check-circle"></i>
-                        <span>A live dashboard shows current performance</span>
-                    </div>
-                    <div class="comparison-point">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Exceptions trigger automatic alerts</span>
-                    </div>
-                    <div class="comparison-point">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Reports generate themselves</span>
-                    </div>
-                    <div class="comparison-point">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Teams execute with confidence</span>
-                    </div>
-                </div>
+                <h2>Our Story</h2>
+                <p>Every supply chain tells a story of connection—connecting suppliers to customers, insights to action, teams to outcomes. Prime Chain Solutions started when we saw a pattern: smart businesses struggling with disconnected systems and manual processes.</p>
+                <p>We saw teams working harder, not smarter. Talented people trapped doing repetitive tasks. Leaders making critical decisions with incomplete information. Growth limited not by market potential, but by operational friction.</p>
+                <p>We knew there was a better way. Our mission is simple: give businesses the tools to see clearly and act decisively. We build solutions that transform operational chaos into strategic advantage—so you can focus on what matters most: growing your business.</p>
             </div>
-            
-            <p class="transformation-footer animate-fade-in-up delay-300">
-                Same business.<br>Very different control.
-            </p>
         </div>
     </section>
     
@@ -1128,9 +722,6 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p class="services-subtitle">
-                    No unnecessary platforms. No over-engineering.<br>Only what actually adds value.
-                </p>
             </div>
             
             <div class="services-grid">
@@ -1139,7 +730,7 @@
                         <i class="fas fa-desktop"></i>
                     </div>
                     <h4>Custom Dashboards</h4>
-                    <p>Turn operational data into clear, decision-ready visibility tailored to how you manage your business.</p>
+                    <p>Transform your data into visual intelligence. See trends, spot issues, and track what matters—all in real-time, all in one place. Built around your specific KPIs and designed for clarity.</p>
                 </div>
                 
                 <div class="card animate-fade-in-up delay-200">
@@ -1147,7 +738,7 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h4>Process Automation</h4>
-                    <p>Remove repetitive admin and manual hand-offs with smart, reliable automation.</p>
+                    <p>Eliminate the manual tasks that consume your team's time. From data entry to document generation, from notifications to approvals—automate the repetitive so your people can focus on the creative.</p>
                 </div>
                 
                 <div class="card animate-fade-in-up delay-300">
@@ -1155,18 +746,18 @@
                         <i class="fas fa-plug"></i>
                     </div>
                     <h4>System Integration</h4>
-                    <p>Connect your existing tools into one seamless operational ecosystem.</p>
+                    <p>Your tools should talk to each other. We connect your existing systems—CRM, inventory, accounting, operations—into one seamless ecosystem where information flows effortlessly.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- How We Work Section -->
+    <!-- Approach Section -->
     <section class="section" id="approach">
         <div class="container">
             <div class="section-title">
                 <h2>Our Approach</h2>
-                <p>Reduces risk and ensures alignment with your reality</p>
+                <p>A collaborative process that ensures we deliver exactly what you need</p>
             </div>
             
             <div class="approach-grid">
@@ -1175,7 +766,7 @@
                         <i class="fas fa-comments"></i>
                     </div>
                     <h4>1. Understand</h4>
-                    <p>We map how your operation truly works — systems, data, people, and pain points.</p>
+                    <p>Through in-depth consultations, we learn how your business really works—not just what the org chart says, but how information flows, where friction exists, and what success looks like to you.</p>
                 </div>
                 
                 <div class="card animate-fade-in-up delay-200">
@@ -1183,7 +774,7 @@
                         <i class="fas fa-pencil-alt"></i>
                     </div>
                     <h4>2. Design</h4>
-                    <p>We design a solution around your reality, not assumptions.</p>
+                    <p>We create a solution blueprint tailored to your specific needs. You're involved throughout, ensuring we're solving the right problems in the right way. No surprises, just clarity.</p>
                 </div>
                 
                 <div class="card animate-fade-in-up delay-300">
@@ -1191,7 +782,7 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <h4>3. Build</h4>
-                    <p>We develop iteratively, with visibility and feedback throughout.</p>
+                    <p>We develop your solution using modern, proven technologies. You get regular updates and early previews. We welcome feedback and adapt as we learn together.</p>
                 </div>
                 
                 <div class="card animate-fade-in-up delay-400">
@@ -1199,160 +790,150 @@
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h4>4. Implement</h4>
-                    <p>We train your team and ensure adoption, not shelf-ware.</p>
+                    <p>Launch is just the beginning. We provide comprehensive training, detailed documentation, and hands-on support to ensure your team is confident and capable from day one.</p>
                 </div>
-            </div>
-            
-            <p style="text-align: center; margin-top: 3rem; font-style: italic; color: var(--medium-gray);">
-                You stay involved.<br>Nothing is built in isolation.
-            </p>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section class="section section-alt" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Prime Chain Solutions</h2>
-            </div>
-            
-            <div class="about-mission animate-fade-in-up">
-                <p>We started Prime Chain Solutions after seeing the same pattern repeatedly:
-                <strong>Smart teams, good intentions, and hard work — undermined by poor visibility and manual processes.</strong></p>
-                
-                <p><strong>Growth wasn't the problem.<br>Systems were.</strong></p>
-                
-                <p>Our mission is simple:<br>
-                Give businesses clarity, consistency, and control through practical automation and data visibility.</p>
-                
-                <p class="mission-highlight">We're problem solvers, not tech consultants.</p>
             </div>
         </div>
     </section>
     
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <h2 class="animate-fade-in-up">Book a Free Operations Clarity Session</h2>
-            <p class="animate-fade-in-up delay-100">
-                In a 30-minute session, we will:
-            </p>
-            
-            <div class="cta-points animate-fade-in-up delay-200">
-                <div class="cta-point">
-                    <i class="fas fa-search"></i>
-                    <span>Identify where visibility breaks down</span>
-                </div>
-                <div class="cta-point">
-                    <i class="fas fa-bolt"></i>
-                    <span>Highlight automation opportunities</span>
-                </div>
-                <div class="cta-point">
-                    <i class="fas fa-map-signs"></i>
-                    <span>Outline a realistic improvement path</span>
-                </div>
-            </div>
-            
-            <p class="animate-fade-in-up delay-300" style="font-size: 1.1rem; font-weight: 600;">
-                No obligation. No sales pressure. Just clarity.
-            </p>
-            
-            <div class="btn-group animate-fade-in-up delay-400" style="margin-top: 3rem;">
-                <a href="#contactForm" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.2rem;">
-                    <i class="fas fa-calendar-alt"></i>
-                    Book Your Free Session
-                </a>
-            </div>
-            
-            <p class="cta-note animate-fade-in-up delay-500">
-                We respond personally within 24 hours.
-            </p>
-        </div>
-    </section>
+   <section class="section contact-section" id="contact">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        
+        <form id="contactForm" class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-4">
+          <div>
+            <label for="name" class="block font-medium mb-2 text-gray-700">Your Name</label>
+            <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="John Doe" required>
+          </div>
     
-    <!-- Contact Form Section -->
-    <section class="contact-section" style="background: var(--white); padding: 4rem 0;">
-        <div class="container">
-            <form id="contactForm" class="animate-fade-in-up">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--navy-blue);">Start Your Transformation</h3>
-                
-                <div>
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
-                </div>
-                
-                <div style="margin-top: 1.5rem;">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                </div>
-                
-                <div style="margin-top: 1.5rem;">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+27 12 345 6789">
-                </div>
-                
-                <div style="margin-top: 1.5rem;">
-                    <label for="message">Tell us about your biggest operational challenge</label>
-                    <textarea id="message" name="message" rows="4" placeholder="What's the one thing that would make the biggest difference if it were automated or made visible?" required></textarea>
-                </div>
-                
-                <button type="submit" style="margin-top: 2rem;">
-                    <i class="fas fa-paper-plane"></i> Send Message & Request Free Session
-                </button>
-                
-                <div id="formSuccess" class="form-success">
-                    <i class="fas fa-check-circle"></i> Thank you! We'll be in touch within 24 hours to schedule your free session.
-                </div>
-            </form>
-        </div>
+          <div>
+            <label for="email" class="block font-medium mb-2 text-gray-700">Email Address</label>
+            <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="john@example.com" required>
+          </div>
+    
+          <div>
+            <label for="message" class="block font-medium mb-2 text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="5" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Your message..." required></textarea>
+          </div>
+    
+          <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition duration-200">Send Message</button>
+        </form>
+      </div>
     </section>
         
-    <!-- Global Footer -->
-    <footer style="background-color: var(--navy-blue); color: var(--white);">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="/assets/White on Transparent.png" alt="Prime Chain Solutions logo" />
-                    </div>
-                    <p>We help businesses gain visibility and automate workflows with simple, powerful dashboards and automation tools.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="index.html#problems" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Problems We Solve</a></li>
-                        <li><a href="index.html#solutions" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Solutions</a></li>
-                        <li><a href="index.html#services" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="index.html#contact" style="color: var(--white);"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3 class="footer-heading">Contact Info</h3>
-                    <ul>
-                        <li><a href="tel:+27736775675" style="color: var(--white);"><i class="fas fa-phone"></i> +27 73 677 5675</a></li>
-                        <li><a href="mailto:skhumbuzo@primechainsolutions.co.za" style="color: var(--white);"><i class="fas fa-envelope"></i> info@primechainsolutions.co.za</a></li>
-                        <li><a href="https://wa.me/27736775675" style="color: var(--white);"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
-                    </ul>
-                </div>
+   <!-- ================= MODERN FOOTER ================= -->
+    <footer class="ps-footer" role="contentinfo" aria-label="Site footer">
+      <div class="container">
+        <!-- Main Footer Content -->
+        <div class="ps-footer-main">
+          <!-- Brand Column -->
+          <div class="ps-footer-brand">
+            <div class="footer-logo">
+              <img src="/assets/Primary on Transparent.png" alt="Prime Chain Solutions" height="70">
             </div>
+            <p class="footer-tagline">
+              We help businesses gain visibility and automate workflows through modern dashboards and smart automation.
+            </p>
+            <div class="footer-socials">
+              <a href="#" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="ps-footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html"><i class="fas fa-home fa-fw"></i> Home</a></li>
+              <li><a href="index.html#services"><i class="fas fa-cogs fa-fw"></i> Services</a></li>
+              <li><a href="cost-calculator.html"><i class="fas fa-calculator fa-fw"></i> Cost Calculator</a></li>
+              <li><a href="articles.html"><i class="fas fa-newspaper fa-fw"></i> Articles</a></li>
+              <li><a href="index.html#contact"><i class="fas fa-envelope fa-fw"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="ps-footer-col">
+            <h4 class="footer-heading">Services</h4>
+            <ul class="footer-links">
+              <li><a href="#"><i class="fas fa-desktop fa-fw"></i> Custom Dashboards</a></li>
+              <li><a href="#"><i class="fas fa-robot fa-fw"></i> Process Automation</a></li>
+              <li><a href="#"><i class="fas fa-plug fa-fw"></i> System Integration</a></li>
+              <li><a href="#"><i class="fas fa-chart-line fa-fw"></i> Analytics & Insights</a></li>
+              <li><a href="#"><i class="fas fa-headset fa-fw"></i> Consultation</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter & Contact -->
+          <div class="ps-footer-col">
+            <h4 class="footer-heading">Stay Updated</h4>
+            <p class="footer-text">Subscribe to our newsletter for insights on automation and business intelligence.</p>
             
-            <div class="footer-bottom">
-                <p class="copyright">© 2025 Prime Chain Solutions. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" style="color: var(--white);"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" style="color: var(--white);"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" style="color: var(--white);"><i class="fab fa-twitter"></i></a>
-                </div>
+            <form class="ps-newsletter-form" aria-label="Subscribe to newsletter">
+              <div class="input-group">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
             </div>
+          </div>
         </div>
+
+        <!-- Bottom Bar -->
+        <div class="ps-footer-bottom">
+          <div class="footer-bottom-content">
+            <p class="copyright">© 2025 <span class="highlight">Prime Chain Solutions</span>. All rights reserved.</p>
+            <div class="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+          <div class="footer-back-to-top">
+            <button class="back-to-top-btn" aria-label="Back to top">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </footer>
     
     <script src="assets/script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // --- Falling Docs Animation ---
+        function createFallingDocs() {
+          const container = document.getElementById('falling-docs');
+          if (!container) return;
+
+          const docTypes = ['doc', 'spreadsheet'];
+          for (let i = 0; i < 15; i++) {
+            const doc = document.createElement('div');
+            const type = docTypes[Math.floor(Math.random() * docTypes.length)];
+            doc.classList.add(type);
+
+            // Random positioning and animation timing
+            doc.style.left = Math.random() * 100 + '%';
+            doc.style.animationDuration = (5 + Math.random() * 10) + 's';
+            doc.style.animationDelay = (Math.random() * 5) + 's';
+            doc.style.opacity = Math.random() * 0.5 + 0.3;
+            doc.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+
+            container.appendChild(doc);
+          }
+        }
+
+        createFallingDocs();
+
         // --- Intersection Animations ---
         const observer = new IntersectionObserver((entries, obs) => {
           entries.forEach(entry => {
@@ -1362,77 +943,89 @@
             }
           });
         }, { threshold: 0.1 });
-    
-        document.querySelectorAll('.card, .solution-pillar, .problem-list li, .trust-reassurance, .qualification-section, .shift-point, .before-after, .about-mission, .cta-point, .btn-group')
+
+        document.querySelectorAll('.card, .solution-pillar, .problem-list li')
           .forEach(el => observer.observe(el));
-    
+
         // --- Contact Form Submit ---
         const form = document.getElementById("contactForm");
         if (form) {
           form.addEventListener("submit", async (e) => {
             e.preventDefault();
             const formData = Object.fromEntries(new FormData(e.target));
-            
-            // Show loading state
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-    
+
             try {
               const response = await fetch("https://script.google.com/macros/s/AKfycbwmMyfQaQ_wM8GYkozs4eD8xJ9rQLlGnvjYR2HZctY9bJSsI0I67KTTECrS6yV3HSp-/exec", {
                 method: "POST",
                 body: JSON.stringify(formData),
               });
-    
+
               if (!response.ok) throw new Error("Network response was not ok");
-    
-              // Show success message
-              document.getElementById('formSuccess').style.display = 'block';
-              form.reset();
-              
-              // Scroll to success message
-              document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
-              
-              // Hide success message after 10 seconds
-              setTimeout(() => {
-                document.getElementById('formSuccess').style.display = 'none';
-              }, 10000);
-              
+
+              alert("Message sent successfully!");
+              e.target.reset();
             } catch (error) {
               console.error(error);
-              alert("There was an issue sending your message. Please try again or contact us directly at info@primechainsolutions.co.za");
-            } finally {
-              // Reset button state
-              submitBtn.innerHTML = originalText;
-              submitBtn.disabled = false;
+              alert("There was an issue sending your message. Please try again.");
             }
           });
         } else {
           console.error("Form with id 'contactForm' not found.");
         }
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
+
+        // Footer newsletter submission (basic client-side behavior)
+        const newsletterForm = document.querySelector('.ps-newsletter-form');
+        if (newsletterForm) {
+          newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
+            const emailInput = this.querySelector('input[type="email"]');
+            const submitBtn = this.querySelector('.newsletter-btn');
             
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-              window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-              });
+            if (!emailInput.value || !emailInput.value.includes('@')) {
+              // Show error state
+              emailInput.style.borderColor = '#ef4444';
+              emailInput.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+              return;
             }
+            
+            // Success state
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-check"></i>';
+            submitBtn.style.background = '#10b981';
+            emailInput.value = '';
+            
+            // Visual feedback
+            this.style.transform = 'translateY(-2px)';
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+              submitBtn.innerHTML = originalHTML;
+              submitBtn.style.background = '';
+              this.style.transform = '';
+              emailInput.style.borderColor = '';
+              emailInput.style.boxShadow = '';
+            }, 3000);
+            
+            // Here you would typically send to your backend
+            console.log('Newsletter subscription:', emailInput.value);
           });
-        });
+        }
+
+        // Footer back-to-top button
+        const footerBackToTop = document.querySelector('.back-to-top-btn');
+        if (footerBackToTop) {
+          footerBackToTop.addEventListener('click', () => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          });
+        }
       });
     </script>
     
     <!-- Back to Top Button -->
-    <div class="back-to-top" aria-label="Back to top" style="background-color: var(--teal); color: var(--white);">
+    <div class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </div>
 </body>
