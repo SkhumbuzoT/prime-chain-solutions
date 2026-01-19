@@ -6,7 +6,7 @@
     
     <!-- SEO Metadata -->
     <meta name="description" content="We help businesses gain visibility and automate workflows with simple, powerful dashboards and automation tools." />
-    <meta name="keywords" content="business process automation, supply chain visibility, workflow automation, operations dashboards, process improvement, data visibility, business intelligence, logistics" />
+    <meta name="keywords" content="business process automation, supply chain visibility, workflow automation, operations dashboards, process improvement, data visibility, business intelligence, logist[...]
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -556,6 +556,163 @@
             font-size: 1.75rem;
           }
         }
+
+        /* ================= FOOTER - responsive, accessible ================= */
+        .ascm-footer {
+          background: #0b1220; /* dark background */
+          color: #cbd5e1;
+          padding: 3.5rem 1rem;
+          font-family: inherit;
+        }
+
+        .ascm-footer .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        .ascm-footer-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.5rem 2.5rem;
+          align-items: start;
+        }
+
+        .ascm-footer .footer-col h4 {
+          margin: 0 0 0.75rem 0;
+          font-size: 1.05rem;
+          color: #ffffff;
+        }
+
+        .ascm-footer .footer-col ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .ascm-footer .footer-col li {
+          margin-bottom: 0.5rem;
+        }
+
+        .ascm-footer a {
+          color: #cbd5e1;
+          text-decoration: none;
+          transition: color 0.15s ease;
+        }
+
+        .ascm-footer a:hover,
+        .ascm-footer a:focus {
+          color: #ffffff;
+          text-decoration: underline;
+        }
+
+        .footer-contact p {
+          color: #94a3b8;
+          margin-bottom: 0.75rem;
+          line-height: 1.5;
+        }
+
+        .footer-newsletter {
+          display: flex;
+          gap: 0.5rem;
+          margin-top: 0.75rem;
+          align-items: center;
+        }
+
+        .footer-newsletter input[type="email"] {
+          flex: 1;
+          padding: 0.6rem 0.75rem;
+          border-radius: 10px;
+          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,0.02);
+          color: #e6eef8;
+        }
+
+        .footer-newsletter input::placeholder {
+          color: #9aa7bf;
+        }
+
+        .footer-newsletter button {
+          background: #6366f1;
+          color: white;
+          border: none;
+          padding: 0.6rem 0.9rem;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+
+        .footer-newsletter button:hover {
+          background: #4f46e5;
+        }
+
+        .ascm-footer-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+          border-top: 1px solid rgba(255,255,255,0.04);
+          padding-top: 1.25rem;
+          margin-top: 1.5rem;
+          flex-wrap: wrap;
+        }
+
+        .ascm-footer-bottom p {
+          margin: 0;
+          color: #94a3b8;
+          font-size: 0.95rem;
+        }
+
+        .footer-socials {
+          display: flex;
+          gap: 0.75rem;
+          align-items: center;
+        }
+
+        .footer-socials a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 8px;
+          background: rgba(255,255,255,0.02);
+          color: #cbd5e1;
+          text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+          background: rgba(255,255,255,0.04);
+          color: #ffffff;
+        }
+
+        /* Responsive footer breakpoints */
+        @media (max-width: 1000px) {
+          .ascm-footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 600px) {
+          .ascm-footer-grid {
+            grid-template-columns: 1fr;
+          }
+          .footer-newsletter {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .footer-newsletter input[type="email"] {
+            width: 100%;
+          }
+          .footer-newsletter button {
+            width: 100%;
+          }
+          .ascm-footer-bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+          }
+        }
+
     </style>
 </head>
 <body>
@@ -634,15 +791,15 @@
             <ul class="problem-list">
                 <li class="animate-fade-in-up delay-100">
                     <i class="fas fa-chart-pie"></i>
-                    <span><strong>Scattered intelligence</strong> - Your data lives in spreadsheets, emails, software silos, and people's heads. Finding the truth means hunting across five different places.</span>
+                    <span><strong>Scattered intelligence</strong> - Your data lives in spreadsheets, emails, software silos, and people's heads. Finding the truth means hunting across five different p[...]
                 </li>
                 <li class="animate-fade-in-up delay-200">
                     <i class="fas fa-tasks"></i>
-                    <span><strong>The repetitive task trap</strong> - Your talented team spends hours copying data, chasing updates, and doing manual work that a system should handle automatically.</span>
+                    <span><strong>The repetitive task trap</strong> - Your talented team spends hours copying data, chasing updates, and doing manual work that a system should handle automatically.</s[...]
                 </li>
                 <li class="animate-fade-in-up delay-300">
                     <i class="fas fa-eye-slash"></i>
-                    <span><strong>Flying blind</strong> - You can't see what's actually happening right now. By the time you get reports, they're already outdated. You're making decisions with yesterday's information.</span>
+                    <span><strong>Flying blind</strong> - You can't see what's actually happening right now. By the time you get reports, they're already outdated. You're making decisions with yesterd[...]
                 </li>
                 <li class="animate-fade-in-up delay-400">
                     <i class="fas fa-clock"></i>
@@ -650,16 +807,16 @@
                 </li>
                 <li class="animate-fade-in-up delay-500">
                     <i class="fas fa-sync-alt"></i>
-                    <span><strong>Inconsistent execution</strong> - Without automated systems, quality depends on who's working that day and how much they remember. Standards vary. Mistakes happen.</span>
+                    <span><strong>Inconsistent execution</strong> - Without automated systems, quality depends on who's working that day and how much they remember. Standards vary. Mistakes happen.</s[...]
                 </li>
                 <li class="animate-fade-in-up delay-600">
                     <i class="fas fa-user-graduate"></i>
-                    <span><strong>Bottleneck people</strong> - Critical knowledge lives in specific team members' heads. When they're out, progress stops. When they leave, that knowledge walks out the door.</span>
+                    <span><strong>Bottleneck people</strong> - Critical knowledge lives in specific team members' heads. When they're out, progress stops. When they leave, that knowledge walks out the[...]
                 </li>
             </ul>
             
             <div class="mission-message animate-fade-in delay-700">
-                <p>Your operations should give you energy, not drain it. When you have real visibility and the right automation in place, something shifts. Instead of fighting your systems, you're empowered by them. Instead of drowning in details, you see patterns. Instead of reacting to chaos, you're anticipating and planning.
+                <p>Your operations should give you energy, not drain it. When you have real visibility and the right automation in place, something shifts. Instead of fighting your systems, you're emp[...]
                    That's what we build: clarity and control that lets you focus on the strategic work only you can do.</p>
             </div>
         </div>
@@ -713,10 +870,10 @@
                     <i class="fas fa-lightbulb"></i>
                 </div>
                 <h2>Our Story</h2>
-                <p>Every supply chain tells a story of connection—connecting suppliers to customers, insights to action, teams to outcomes. Prime Chain Solutions started when we saw a pattern: smart businesses, drowning in data, but lacking the visibility to use it.</p>
-                <p>We saw teams working harder, not smarter. Talented people trapped doing repetitive tasks. Leaders making critical decisions with incomplete information. Growth limited not by market opportunity, but by operational friction.</p>
+                <p>Every supply chain tells a story of connection—connecting suppliers to customers, insights to action, teams to outcomes. Prime Chain Solutions started when we saw a pattern: smart[...]
+                <p>We saw teams working harder, not smarter. Talented people trapped doing repetitive tasks. Leaders making critical decisions with incomplete information. Growth limited not by market[...]
                 <p>We knew there was a better way.
-                   Our mission is simple: give businesses the tools to see clearly and act decisively. We build solutions that transform operational chaos into strategic advantage—so you can focus on growth, not just keeping up.</p>
+                   Our mission is simple: give businesses the tools to see clearly and act decisively. We build solutions that transform operational chaos into strategic advantage—so you can focus o[...]
             </div>
         </div>
     </section>
@@ -734,7 +891,7 @@
                         <i class="fas fa-desktop"></i>
                     </div>
                     <h4>Custom Dashboards</h4>
-                    <p>Transform your data into visual intelligence. See trends, spot issues, and track what matters—all in real-time, all in one place. Built around your specific KPIs and designed for how you actually work.</p>
+                    <p>Transform your data into visual intelligence. See trends, spot issues, and track what matters—all in real-time, all in one place. Built around your specific KPIs and designed [...]
                 </div>
                 
                 <div class="card animate-fade-in-up delay-200">
@@ -742,7 +899,7 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h4>Process Automation</h4>
-                    <p>Eliminate the manual tasks that consume your team's time. From data entry to document generation, from notifications to approvals—automate the repetitive so your people can focus on the valuable.</p>
+                    <p>Eliminate the manual tasks that consume your team's time. From data entry to document generation, from notifications to approvals—automate the repetitive so your people can fo[...]
                 </div>
                 
                 <div class="card animate-fade-in-up delay-300">
@@ -750,7 +907,7 @@
                         <i class="fas fa-plug"></i>
                     </div>
                     <h4>System Integration</h4>
-                    <p>Your tools should talk to each other. We connect your existing systems—CRM, inventory, accounting, operations—into one seamless ecosystem where information flows effortlessly.</p>
+                    <p>Your tools should talk to each other. We connect your existing systems—CRM, inventory, accounting, operations—into one seamless ecosystem where information flows effortlessl[...]
                 </div>
             </div>
         </div>
@@ -770,7 +927,7 @@
                         <i class="fas fa-comments"></i>
                     </div>
                     <h4>1. Understand</h4>
-                    <p>Through in-depth consultations, we learn how your business really works—not just what the org chart says, but how information flows, where friction exists, and what success looks like to you.</p>
+                    <p>Through in-depth consultations, we learn how your business really works—not just what the org chart says, but how information flows, where friction exists, and what success lo[...]
                 </div>
                 
                 <div class="card animate-fade-in-up delay-200">
@@ -778,7 +935,7 @@
                         <i class="fas fa-pencil-alt"></i>
                     </div>
                     <h4>2. Design</h4>
-                    <p>We create a solution blueprint tailored to your specific needs. You're involved throughout, ensuring we're solving the right problems in the right way. No surprises, just clarity.</p>
+                    <p>We create a solution blueprint tailored to your specific needs. You're involved throughout, ensuring we're solving the right problems in the right way. No surprises, just clarit[...]
                 </div>
                 
                 <div class="card animate-fade-in-up delay-300">
@@ -817,7 +974,7 @@
     
           <div>
             <label for="message" class="block font-medium mb-2 text-gray-700">Message</label>
-            <textarea id="message" name="message" rows="5" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Your message..." required></textarea>
+            <textarea id="message" name="message" rows="5" class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Your message..." required><[...]
           </div>
     
           <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition duration-200">Send Message</button>
@@ -826,7 +983,7 @@
     </section>
         
    <!-- ================= ASCM-STYLE FOOTER (DROP-IN) ================= -->
-    <footer class="ascm-footer">
+    <footer class="ascm-footer" role="contentinfo" aria-label="Site footer">
       <div class="container">
         <div class="ascm-footer-grid">
     
@@ -877,8 +1034,9 @@
             </p>
     
     
-            <form class="footer-newsletter">
-              <input type="email" placeholder="Email address" required>
+            <form class="footer-newsletter" aria-label="Subscribe to newsletter">
+              <label for="footer-email" class="sr-only" style="position:absolute;left:-9999px">Email address</label>
+              <input id="footer-email" type="email" placeholder="Email address" required>
               <button type="submit">Subscribe</button>
             </form>
           </div>
@@ -890,7 +1048,7 @@
           <p>© 2025 Prime Chain Solutions. All rights reserved.</p>
     
     
-          <div class="footer-socials">
+          <div class="footer-socials" aria-label="Social media links">
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -963,6 +1121,22 @@
           });
         } else {
           console.error("Form with id 'contactForm' not found.");
+        }
+
+        // Footer newsletter submission (basic client-side behavior)
+        const newsletterForm = document.querySelector('.footer-newsletter');
+        if (newsletterForm) {
+          newsletterForm.addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            // You can wire this to your newsletter system or API.
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            if (!email) {
+              alert('Please enter a valid email address.');
+              return;
+            }
+            alert('Thanks — we\'ll be in touch!');
+            newsletterForm.reset();
+          });
         }
       });
     </script>
