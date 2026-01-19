@@ -113,47 +113,50 @@ nav a:hover {
     padding: 0.5rem;
 }
 
-css
-/* =============================================
-   Updated Footer Styles (ASCM Style)
+  ASCM-style Footer (keeping your content)
    ============================================= */
 
-/* Footer Container */
-footer {
-    background: #020617;
-    color: white;
-    padding: 4rem 0 2rem;
-    font-family: 'Inter', sans-serif;
-}
-
-/* Footer Content Grid */
+/* Footer Content Grid - 4 columns like ASCM */
 .footer-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
+    gap: 2.5rem;
     margin-bottom: 3rem;
 }
 
-/* Footer Headings */
-.footer-heading {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: white;
+/* About Column */
+.footer-about-col {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Footer Links */
-.footer-links ul {
+.footer-about-col .footer-logo {
+    margin-bottom: 1.5rem;
+}
+
+.footer-about-col .footer-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.footer-description {
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-about-links {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer-links li {
+.footer-about-links li {
     margin-bottom: 0.75rem;
 }
 
-.footer-links a {
+.footer-about-links a {
     color: #9ca3af;
     text-decoration: none;
     display: flex;
@@ -163,42 +166,94 @@ footer {
     font-size: 0.95rem;
 }
 
-.footer-links a:hover {
+.footer-about-links a:hover {
     color: white;
 }
 
-.footer-links a i {
+/* Links Columns */
+.footer-links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-col li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links-col a {
+    color: #9ca3af;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links-col a:hover {
+    color: white;
+}
+
+.footer-links-col a i {
     font-size: 0.8rem;
     width: 16px;
 }
 
-/* Newsletter Column */
-.footer-newsletter {
+/* Contact Column */
+.footer-contact-col {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
 }
 
-.footer-about p {
+.contact-description {
     color: #9ca3af;
-    line-height: 1.7;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
     font-size: 0.95rem;
-    margin-top: 0.5rem;
 }
 
-.newsletter-form h4 {
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    color: #9ca3af;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.contact-item:hover {
+    color: white;
+}
+
+.contact-item i {
+    color: #6366f1;
+    font-size: 1rem;
+    width: 20px;
+}
+
+/* Newsletter Section */
+.newsletter-section h4 {
+    color: white;
     font-size: 1rem;
     font-weight: 500;
-    color: white;
     margin-bottom: 1rem;
 }
 
-.newsletter-subscription .form-group {
+.newsletter-form {
     display: flex;
     gap: 0.5rem;
 }
 
-.newsletter-subscription input {
+.newsletter-form input {
     flex: 1;
     padding: 0.85rem 1rem;
     border: 1px solid #374151;
@@ -209,12 +264,12 @@ footer {
     transition: border-color 0.3s ease;
 }
 
-.newsletter-subscription input:focus {
+.newsletter-form input:focus {
     outline: none;
     border-color: #6366f1;
 }
 
-.newsletter-subscription input::placeholder {
+.newsletter-form input::placeholder {
     color: #9ca3af;
 }
 
@@ -234,52 +289,14 @@ footer {
     background: #4f46e5;
 }
 
-/* Footer Bottom */
+/* Keep your existing footer-bottom styles */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
-    border-top: 1px solid #374151;
-}
-
-.footer-bottom-left {
-    display: flex;
-    align-items: center;
-}
-
-.copyright {
-    color: #9ca3af;
-    font-size: 0.9rem;
-}
-
-.footer-bottom-right {
-    display: flex;
-    align-items: center;
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #374151;
-    color: white;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.social-links a:hover {
-    background: #6366f1;
-    transform: translateY(-2px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
 }
 
 /* Responsive Styles */
@@ -289,7 +306,7 @@ footer {
         gap: 2rem;
     }
     
-    .footer-newsletter {
+    .footer-contact-col {
         grid-column: span 2;
     }
 }
@@ -297,10 +314,10 @@ footer {
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
     }
     
-    .footer-newsletter {
+    .footer-contact-col {
         grid-column: span 1;
     }
     
@@ -310,7 +327,7 @@ footer {
         text-align: center;
     }
     
-    .newsletter-subscription .form-group {
+    .newsletter-form {
         flex-direction: column;
     }
     
@@ -320,16 +337,20 @@ footer {
 }
 
 @media (max-width: 480px) {
-    footer {
-        padding: 3rem 0 1.5rem;
-    }
-    
-    .footer-links a {
-        font-size: 0.9rem;
+    .footer-content {
+        gap: 2rem;
     }
     
     .footer-heading {
         font-size: 1.1rem;
+    }
+    
+    .contact-item {
+        font-size: 0.9rem;
+    }
+    
+    .newsletter-form input {
+        padding: 0.75rem 1rem;
     }
 }
 
