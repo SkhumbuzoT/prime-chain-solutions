@@ -624,40 +624,67 @@
         .approach-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-        
-        /* Optional: Responsive behavior */
-        @media (max-width: 1024px) {
-            .approach-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .approach-grid {
-                grid-template-columns: 1fr;
-            }
+            gap: 1.5rem; /* Reduced from 2rem */
         }
         
         .approach-step {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem; /* Reduced from 2rem */
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .approach-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
         
         .approach-step .step-number {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: var(--primary-teal);
-            color: var(--text-light);
+            width: 50px; /* Reduced from 60px */
+            height: 50px; /* Reduced from 60px */
+            background: var(--primary);
+            color: white;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.25rem; /* Reduced from 1.5rem */
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem; /* Reduced from 1.5rem */
             box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+        }
+        
+        .approach-step h3 {
+            font-size: 1.1rem; /* Ensure heading isn't too large */
+            margin-bottom: 0.75rem;
+        }
+        
+        .approach-step p {
+            font-size: 0.9rem; /* Smaller text */
+            line-height: 1.5;
+        }
+        
+        /* Responsive behavior */
+        @media (max-width: 1200px) {
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .approach-step {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .approach-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                max-width: 500px;
+                margin: 0 auto;
+            }
         }
         
         /* ===== CONTACT SECTION ===== */
