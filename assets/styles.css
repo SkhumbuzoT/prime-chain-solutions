@@ -113,10 +113,10 @@ nav a:hover {
     padding: 0.5rem;
 }
 
-/* ================= MODERN FOOTER STYLES - UPDATED TO BRAND COLORS ================= */
+/* ================= MODERN FOOTER STYLES ================= */
 
 .ps-footer {
-  background: linear-gradient(135deg, #0A1F44 0%, #1E293B 100%); /* Updated to brand navy */
+  background: linear-gradient(135deg, #0b1220 0%, #1e293b 100%);
   color: #cbd5e1;
   padding: 4rem 0 1.5rem;
   position: relative;
@@ -130,7 +130,7 @@ nav a:hover {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #008080, #D4AF37, #008080); /* Teal and Gold gradient */
+  background: linear-gradient(90deg, #6366f1, #3b82f6, #6366f1);
   background-size: 200% 100%;
   animation: gradientShift 3s ease infinite;
 }
@@ -197,10 +197,10 @@ nav a:hover {
 }
 
 .social-icon:hover {
-  background: #008080; /* Brand teal */
+  background: #6366f1;
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.3);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
 }
 
 /* Footer Columns */
@@ -225,7 +225,7 @@ nav a:hover {
   left: 0;
   width: 40px;
   height: 2px;
-  background: #008080; /* Brand teal */
+  background: #6366f1;
   border-radius: 2px;
 }
 
@@ -259,7 +259,7 @@ nav a:hover {
 .footer-links a i {
   width: 20px;
   font-size: 0.9rem;
-  color: #008080; /* Brand teal */
+  color: #6366f1;
 }
 
 /* Newsletter Form */
@@ -286,14 +286,14 @@ nav a:hover {
 
 .ps-newsletter-form input:focus {
   outline: none;
-  border-color: #008080; /* Brand teal */
-  background: rgba(0, 128, 128, 0.05);
-  box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .newsletter-btn {
   width: 50px;
-  background: #008080; /* Brand teal */
+  background: #6366f1;
   color: white;
   border: none;
   border-radius: 12px;
@@ -305,7 +305,7 @@ nav a:hover {
 }
 
 .newsletter-btn:hover {
-  background: #006666; /* Darker teal */
+  background: #4f46e5;
   transform: translateY(-2px);
 }
 
@@ -332,7 +332,7 @@ nav a:hover {
 }
 
 .footer-contact i {
-  color: #008080; /* Brand teal */
+  color: #6366f1;
   width: 16px;
 }
 
@@ -358,7 +358,7 @@ nav a:hover {
 }
 
 .copyright .highlight {
-  color: #008080; /* Brand teal */
+  color: #6366f1;
   font-weight: 600;
 }
 
@@ -375,13 +375,13 @@ nav a:hover {
 }
 
 .footer-legal a:hover {
-  color: #008080; /* Brand teal on hover */
+  color: white;
 }
 
 .back-to-top-btn {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #008080, #D4AF37); /* Teal to Gold */
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
   color: white;
   border: none;
   border-radius: 12px;
@@ -395,7 +395,7 @@ nav a:hover {
 
 .back-to-top-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.4);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
 }
 
 /* ================= RESPONSIVE FOOTER ================= */
@@ -484,16 +484,16 @@ nav a:hover {
   }
 }
 
-/* CTA / misc helpers updated to brand colors */
+/* CTA / misc helpers retained from previous file */
 .cta-block-icon {
-    background: rgba(0, 128, 128, 0.2); /* Teal with opacity */
+    background: rgba(99, 102, 241, 0.2);
     width: 45px;
     height: 45px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #008080; /* Brand teal */
+    color: #6366f1;
     font-size: 1.2rem;
 }
 
@@ -515,7 +515,7 @@ nav a:hover {
 
 .cta-block-btn {
     display: inline-block;
-    background: #008080; /* Brand teal */
+    background: #6366f1;
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 8px;
@@ -528,7 +528,7 @@ nav a:hover {
 }
 
 .cta-block-btn:hover {
-    background: #006666; /* Darker teal */
+    background: #4f46e5;
     transform: translateY(-2px);
 }
 
@@ -540,26 +540,26 @@ nav a:hover {
     background: #128c7e;
 }
 
-/* Scroll Progress - Updated to brand teal */
+/* Scroll Progress */
 .scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
     height: 4px;
-    background: #008080; /* Brand teal */
+    background: var(--primary);
     width: 0%;
     z-index: 1001;
     transition: width 0.1s;
 }
 
-/* Back to Top Button - Updated to brand teal */
+/* Back to Top Button */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: #008080; /* Brand teal */
+    background: var(--primary);
     color: white;
     border: none;
     border-radius: 50%;
@@ -579,9 +579,60 @@ nav a:hover {
 }
 
 .back-to-top:hover {
-    background: #006666; /* Darker teal */
+    background: var(--primary-hover);
     transform: translateY(-2px);
 }
-    .copyright .highlight {
-        color: #008080 !important;
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
     }
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: #ffffff;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        padding: 80px 20px 20px;
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+    nav ul.show {
+        right: 0;
+    }
+    nav ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+    nav ul li a {
+        display: block;
+        padding: 12px 15px;
+        width: 100%;
+        border-radius: 6px;
+        transition: background-color 0.2s;
+    }
+    nav ul li a:hover {
+        background-color: rgba(0,0,0,0.05);
+    }
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .header-container {
+        padding: 1rem;
+    }
+}
