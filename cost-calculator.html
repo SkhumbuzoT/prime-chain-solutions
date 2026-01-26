@@ -39,48 +39,107 @@
     <title>Cost Calculator - Prime Chain Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/styles.css">
     <style>
-        /* Calculator Specific Styles */
+        /* ===== CSS VARIABLES - Updated to match brand ===== */
+        :root {
+            /* Brand Colors */
+            --primary-teal: #008080;
+            --primary-teal-dark: #006666;
+            --primary-gold: #D4AF37;
+            --primary-navy: #0A1F44;
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            
+            /* Functional Colors */
+            --text-dark: #0A1F44;
+            --text-light: #FFFFFF;
+            --text-muted: #64748B;
+            --text-muted-light: #94A3B8;
+            
+            /* Backgrounds */
+            --bg-dark: #0A1F44;
+            --bg-light: #FFFFFF;
+            --bg-section-alt: #F8FAFC;
+            --bg-gradient-dark: linear-gradient(135deg, #0A1F44 0%, #1E293B 100%);
+            --bg-gradient-teal: linear-gradient(135deg, #008080 0%, #00A3A3 100%);
+            
+            /* Effects */
+            --shadow-sm: 0 2px 8px rgba(10, 31, 68, 0.08);
+            --shadow-md: 0 8px 24px rgba(10, 31, 68, 0.12);
+            --shadow-lg: 0 16px 48px rgba(10, 31, 68, 0.16);
+            --shadow-hover: 0 20px 40px rgba(10, 31, 68, 0.2);
+            
+            /* Spacing */
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* ===== CALCULATOR SPECIFIC STYLES ===== */
         .cost-calculator-section {
-            padding: clamp(7rem, 10vw, 10rem) 0 clamp(4rem, 6vw, 6rem);
+            padding: clamp(7rem, 12vw, 10rem) 0 clamp(5rem, 8vw, 7rem);
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cost-calculator-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 128, 128, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
         }
 
         .calculator-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .calculator-card {
-            background: white;
-            border-radius: 18px;
-            padding: 3rem;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-            margin-bottom: 2rem;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            background: var(--bg-light);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2.5rem;
+            transition: all var(--transition-base);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-teal);
         }
 
         .calculator-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-teal);
         }
 
-        .input-group {
-            margin-bottom: 2.5rem;
-        }
-
-        .input-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1f2937;
-            font-size: 1.1rem;
-        }
-        
         .cost-title {
             text-align: center;
             max-width: 800px;
@@ -88,26 +147,56 @@
         }
 
         .cost-title h2 {
-            font-size: 2.5rem;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            color: #1f2937;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
         }
 
         .cost-title p {
             font-size: 1.25rem;
-            color: #6b7280;
+            color: var(--text-muted);
             line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .input-group {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .input-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .slider-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
         }
 
         .slider {
             width: 100%;
-            height: 8px;
-            border-radius: 14px;
+            height: 10px;
+            border-radius: var(--radius-md);
             background: #e5e7eb;
             outline: none;
             -webkit-appearance: none;
-            transition: background 0.3s ease;
+            transition: background var(--transition-fast);
+            cursor: pointer;
         }
 
         .slider:hover {
@@ -116,98 +205,125 @@
 
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: #6366f1;
+            background: var(--primary-teal);
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 4px solid var(--bg-light);
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+            transition: all var(--transition-base);
         }
 
         .slider::-webkit-slider-thumb:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+            transform: scale(1.15);
+            box-shadow: 0 6px 18px rgba(0, 128, 128, 0.4);
+            background: var(--primary-teal-dark);
         }
 
         .slider::-moz-range-thumb {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: #6366f1;
+            background: var(--primary-teal);
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 4px solid var(--bg-light);
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+            transition: all var(--transition-base);
         }
 
         .slider::-moz-range-thumb:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+            transform: scale(1.15);
+            box-shadow: 0 6px 18px rgba(0, 128, 128, 0.4);
+            background: var(--primary-teal-dark);
         }
 
         .input-display {
             text-align: center;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #6366f1;
-            margin-top: 1rem;
-            padding: 1rem;
-            background: #f5f3ff;
-            border-radius: 14px;
-            border: 1px solid #e0e7ff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(0, 128, 128, 0.05);
+            border-radius: var(--radius-lg);
+            border: 2px solid rgba(0, 128, 128, 0.1);
+            font-family: 'Poppins', sans-serif;
+            transition: all var(--transition-base);
+        }
+
+        .input-display:hover {
+            background: rgba(0, 128, 128, 0.08);
+            transform: translateY(-2px);
         }
 
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns on desktop */
-            gap: 1.5rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
         }
-        
-        /* Mobile: Stack to 1 column */
+
         @media (max-width: 768px) {
             .results-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 1.5rem;
             }
         }
 
         .result-card {
-            background: #f8fafc;
-            padding: 2rem;
-            border-radius: 14px;
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
             text-align: center;
             border: 2px solid #e5e7eb;
-            transition: all 0.3s ease;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #e5e7eb;
+            transition: background var(--transition-base);
         }
 
         .result-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
         }
 
         .result-card.savings {
-            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-            border-color: #10b981;
+            background: linear-gradient(135deg, rgba(209, 250, 229, 0.2) 0%, rgba(167, 243, 208, 0.2) 100%);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .result-card.savings::before {
+            background: #10b981;
         }
 
         .result-label {
             font-size: 0.9rem;
-            color: #6b7280;
+            color: var(--text-muted);
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-family: 'Inter', sans-serif;
         }
 
         .result-value {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
             line-height: 1.2;
+            font-family: 'Poppins', sans-serif;
         }
 
         .result-card.savings .result-value {
@@ -215,40 +331,57 @@
         }
 
         .result-description {
-            font-size: 0.875rem;
-            color: #6b7280;
+            font-size: 0.95rem;
+            color: var(--text-muted);
             line-height: 1.5;
+            font-family: 'Inter', sans-serif;
         }
 
         .impact-statement {
-            background: #f0f9ff;
-            padding: 1.5rem;
-            border-radius: 14px;
-            border-left: 4px solid #6366f1;
-            margin: 2rem 0;
+            background: linear-gradient(135deg, rgba(0, 128, 128, 0.05) 0%, rgba(0, 128, 128, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary-teal);
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-statement::before {
+            content: '💡';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.1;
         }
 
         .impact-statement p {
             margin: 0;
-            font-size: 1.1rem;
-            color: #1f2937;
+            font-size: 1.25rem;
+            color: var(--text-dark);
             line-height: 1.6;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
         }
 
         .impact-highlight {
             font-weight: 700;
-            color: #6366f1;
+            color: var(--primary-teal);
+            background: rgba(0, 128, 128, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
         }
 
         .cta-section {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         /* Updated button styles to match new design system */
         .btn-group {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -257,42 +390,60 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            padding: 0.9rem 1.8rem;
-            font-weight: 500;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
             letter-spacing: 0.01em;
             text-decoration: none;
-            border-radius: 14px;
-            transition: all 0.3s ease;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
             cursor: pointer;
-            border: none;
-            font-size: 1rem;
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .btn-primary {
-            background: #6366f1;
-            color: white;
+            background: var(--primary-teal);
+            color: var(--text-light);
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
         }
 
         .btn-primary:hover {
-            background: #4f46e5;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+            background: var(--primary-teal-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 128, 128, 0.4);
+            border-color: var(--primary-teal-dark);
         }
 
         .btn-whatsapp {
             background-color: #25d366;
-            color: white;
+            color: var(--text-light);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
         .btn-whatsapp:hover {
             background-color: #128c7e;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            border-color: #128c7e;
+        }
+
+        .btn-gold {
+            background: var(--primary-gold);
+            color: var(--text-dark);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            background: #C19A2B;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+            border-color: #C19A2B;
         }
 
         /* Fade in animation */
-        .fade-in {
+        .animate-fade-in {
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards;
@@ -309,6 +460,71 @@
             }
         }
 
+        /* Animation delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        /* Header styles for consistency */
+        #header {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border-bottom: 1px solid rgba(10, 31, 68, 0.08) !important;
+        }
+
+        #header.scrolled {
+            box-shadow: var(--shadow-md) !important;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-teal);
+            color: var(--text-light);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-teal-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 128, 128, 0.4);
+        }
+
+        /* Scroll progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--primary-teal);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .cost-calculator-section {
@@ -318,16 +534,16 @@
             .calculator-card {
                 padding: 2rem 1.5rem;
                 margin: 0 1rem;
-                border-radius: 14px;
+                border-radius: var(--radius-lg);
             }
 
             .results-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 1.5rem;
             }
 
             .result-card {
-                padding: 1.5rem;
+                padding: 2rem;
             }
 
             .btn-group {
@@ -337,7 +553,7 @@
 
             .btn {
                 width: 100%;
-                max-width: 280px;
+                max-width: 300px;
             }
 
             .cost-title h2 {
@@ -346,6 +562,30 @@
 
             .cost-title p {
                 font-size: 1.125rem;
+            }
+
+            .input-display {
+                font-size: 1.25rem;
+                padding: 1.25rem;
+            }
+
+            .result-value {
+                font-size: 2rem;
+            }
+
+            .impact-statement {
+                padding: 1.75rem;
+            }
+
+            .impact-statement p {
+                font-size: 1.125rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
             }
         }
 
@@ -360,7 +600,12 @@
 
             .input-display {
                 font-size: 1.125rem;
-                padding: 0.75rem;
+                padding: 1rem;
+            }
+
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -385,63 +630,75 @@
                 </ul>
             </nav>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
-    
 
     <!-- Calculator Section -->
     <section class="cost-calculator-section" id="cost" aria-labelledby="cost-title">
         <div class="container">
-            <div class="section-header cost-title">
+            <div class="cost-title">
                 <h2 id="cost-title">What's the Cost of Manual Work?</h2>
-                <p class="subtitle">Drag the sliders to see how much manual work is costing your business and discover potential savings with automation</p>
+                <p class="subtitle animate-fade-in delay-100">Drag the sliders to see how much manual work is costing your business and discover potential savings with automation</p>
             </div>            
+            
             <div class="calculator-container">
-                <div class="calculator-card" aria-live="polite">
+                <div class="calculator-card animate-fade-in delay-200" aria-live="polite">
                     <div class="input-group">
                         <label class="input-label" for="hoursSlider">Hours spent on manual work per week</label>
-                        <input class="slider" id="hoursSlider" type="range" min="5" max="50" step="1" value="20" />
+                        <div class="slider-container">
+                            <input class="slider" id="hoursSlider" type="range" min="5" max="50" step="1" value="20" aria-label="Hours per week slider" />
+                            <div class="slider-labels">
+                                <span>5 hrs</span>
+                                <span>50 hrs</span>
+                            </div>
+                        </div>
                         <div class="input-display"><span id="hoursDisplay">20</span> hours</div>
                     </div>
                     
                     <div class="input-group">
                         <label class="input-label" for="rateSlider">Average hourly cost (incl. benefits)</label>
-                        <input class="slider" id="rateSlider" type="range" min="20" max="120" step="10" value="80" />
+                        <div class="slider-container">
+                            <input class="slider" id="rateSlider" type="range" min="20" max="120" step="10" value="80" aria-label="Hourly rate slider" />
+                            <div class="slider-labels">
+                                <span>R20</span>
+                                <span>R120</span>
+                            </div>
+                        </div>
                         <div class="input-display">R<span id="rateDisplay">80</span> per hour</div>
                     </div>
                     
                     <div class="results-grid">
-                        <div class="result-card">
+                        <div class="result-card animate-fade-in delay-300">
                             <div class="result-label">Monthly Cost</div>
                             <div class="result-value" id="monthlyCost">R0</div>
                             <div class="result-description">Current manual work spend</div>
                         </div>
-                        <div class="result-card">
+                        <div class="result-card animate-fade-in delay-400">
                             <div class="result-label">Annual Cost</div>
                             <div class="result-value" id="annualCost">R0</div>
                             <div class="result-description">12 months of manual work</div>
                         </div>
-                        <div class="result-card savings">
+                        <div class="result-card savings animate-fade-in delay-500">
                             <div class="result-label">Potential Savings</div>
                             <div class="result-value" id="potentialSavings">R0</div>
                             <div class="result-description">based on automating 80% of the work</div>
                         </div>
                     </div>
 
-                    <div class="impact-statement fade-in">
+                    <div class="impact-statement animate-fade-in delay-600">
                         <p>By automating <span class="impact-highlight" id="hoursDisplay2">20</span> hours per week at R<span class="impact-highlight" id="rateDisplay2">80</span> per hour, you could save approximately <span class="impact-highlight" id="savingsAmount">R0</span> annually.</p>
                     </div>
                 </div>
                 
-                <div class="cta-section fade-in">
+                <div class="cta-section animate-fade-in delay-700">
                     <div class="btn-group">
                         <a href="mailto:skhumbuzo@primechainsolutions.co.za" class="btn btn-primary">
                             <i class="fas fa-calendar"></i>Schedule a Free Consultation
                         </a>
-                        <a href="https://wa.me/27846503832?text=Hi,%20I'm%20interested%20in%20your%20automation%20solutions" class="btn btn-whatsapp" target="_blank">
+                        <a href="https://wa.me/27846503832?text=Hi,%20I'm%20interested%20in%20your%20automation%20solutions" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i>Chat on WhatsApp
                         </a>
                     </div>
@@ -450,90 +707,89 @@
         </div>
     </section>
 
-    <!-- ================= MODERN FOOTER ================= -->
+    <!-- Footer -->
     <footer class="ps-footer" role="contentinfo" aria-label="Site footer">
-      <div class="container">
-        <!-- Main Footer Content -->
-        <div class="ps-footer-main">
-          <!-- Brand Column -->
-          <div class="ps-footer-brand">
-            <div class="footer-logo">
-              <img src="/assets/Primary on Transparent.png" alt="Prime Chain Solutions" height="70">
-            </div>
-            <p class="footer-tagline">
-              We help businesses gain visibility and automate workflows through modern dashboards and smart automation.
-            </p>
-            <div class="footer-socials">
-              <a href="#" class="social-icon" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="social-icon" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </div>
-          </div>
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="ps-footer-main">
+                <!-- Brand Column -->
+                <div class="ps-footer-brand">
+                    <div class="footer-logo">
+                        <img src="/assets/Primary on Transparent.png" alt="Prime Chain Solutions" height="70">
+                    </div>
+                    <p class="footer-tagline">
+                        We help businesses gain visibility and automate workflows through modern dashboards and smart automation.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
 
-          <!-- Quick Links -->
-          <div class="ps-footer-col">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="index.html"><i class="fas fa-home fa-fw"></i> Home</a></li>
-              <li><a href="index.html#services"><i class="fas fa-cogs fa-fw"></i> Services</a></li>
-              <li><a href="cost-calculator.html"><i class="fas fa-calculator fa-fw"></i> Cost Calculator</a></li>
-              <li><a href="articles.html"><i class="fas fa-newspaper fa-fw"></i> Articles</a></li>
-              <li><a href="index.html#contact"><i class="fas fa-envelope fa-fw"></i> Contact</a></li>
-            </ul>
-          </div>
+                <!-- Quick Links -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home fa-fw"></i> Home</a></li>
+                        <li><a href="index.html#services"><i class="fas fa-cogs fa-fw"></i> Services</a></li>
+                        <li><a href="cost-calculator.html"><i class="fas fa-calculator fa-fw"></i> Cost Calculator</a></li>
+                        <li><a href="articles.html"><i class="fas fa-newspaper fa-fw"></i> Articles</a></li>
+                        <li><a href="index.html#contact"><i class="fas fa-envelope fa-fw"></i> Contact</a></li>
+                    </ul>
+                </div>
 
-          <!-- Services -->
-          <div class="ps-footer-col">
-            <h4 class="footer-heading">Services</h4>
-            <ul class="footer-links">
-              <li><a href="#"><i class="fas fa-desktop fa-fw"></i> Custom Dashboards</a></li>
-              <li><a href="#"><i class="fas fa-robot fa-fw"></i> Process Automation</a></li>
-              <li><a href="#"><i class="fas fa-plug fa-fw"></i> System Integration</a></li>
-              <li><a href="#"><i class="fas fa-chart-line fa-fw"></i> Analytics & Insights</a></li>
-              <li><a href="#"><i class="fas fa-headset fa-fw"></i> Consultation</a></li>
-            </ul>
-          </div>
+                <!-- Services -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-desktop fa-fw"></i> Custom Dashboards</a></li>
+                        <li><a href="#"><i class="fas fa-robot fa-fw"></i> Process Automation</a></li>
+                        <li><a href="#"><i class="fas fa-plug fa-fw"></i> System Integration</a></li>
+                        <li><a href="#"><i class="fas fa-chart-line fa-fw"></i> Analytics & Insights</a></li>
+                        <li><a href="#"><i class="fas fa-headset fa-fw"></i> Consultation</a></li>
+                    </ul>
+                </div>
 
-          <!-- Newsletter & Contact -->
-          <div class="ps-footer-col">
-            <h4 class="footer-heading">Stay Updated</h4>
-            <p class="footer-text">Subscribe to our newsletter for insights on automation and business intelligence.</p>
-            
-            <form class="ps-newsletter-form" aria-label="Subscribe to newsletter">
-              <div class="input-group">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit" class="newsletter-btn">
-                  <i class="fas fa-paper-plane"></i>
-                </button>
-              </div>
-            </form>
+                <!-- Newsletter & Contact -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Stay Updated</h4>
+                    <p class="footer-text">Subscribe to our newsletter for insights on automation and business intelligence.</p>
+                    
+                    <form class="ps-newsletter-form" aria-label="Subscribe to newsletter">
+                        <div class="input-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
+
+            <!-- Bottom Bar -->
+            <div class="ps-footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2025 <span class="highlight">Prime Chain Solutions</span>. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="footer-back-to-top">
+                    <button class="back-to-top-btn" aria-label="Back to top">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <!-- Bottom Bar -->
-        <div class="ps-footer-bottom">
-          <div class="footer-bottom-content">
-            <p class="copyright">© 2025 <span class="highlight">Prime Chain Solutions</span>. All rights reserved.</p>
-            <div class="footer-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
-            </div>
-          </div>
-          <div class="footer-back-to-top">
-            <button class="back-to-top-btn" aria-label="Back to top">
-              <i class="fas fa-arrow-up"></i>
-            </button>
-          </div>
-        </div>
-      </div>
     </footer>
 
     <!-- Back to Top Button -->
@@ -543,7 +799,7 @@
 
     <script src="assets/script.js"></script>
     <script>
-        // Calculator Specific JavaScript
+        // Enhanced Calculator JavaScript
         document.addEventListener('DOMContentLoaded', function() {
             const hoursSlider = document.getElementById('hoursSlider');
             const rateSlider = document.getElementById('rateSlider');
@@ -556,16 +812,31 @@
             const potentialSavings = document.getElementById('potentialSavings');
             const savingsAmount = document.getElementById('savingsAmount');
             
-            // Animation function for smooth value transitions
+            // Sound effect for slider interaction (optional)
+            const sliderSound = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEAQB8AAEAfAAABAAgAZGF0YQ');
+            
+            // Animation function with easing
             function animateValue(element, start, end, duration, prefix = 'R') {
                 let startTimestamp = null;
+                const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+                
                 const step = (timestamp) => {
                     if (!startTimestamp) startTimestamp = timestamp;
                     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    const value = Math.floor(progress * (end - start) + start);
+                    const easedProgress = easeOutQuart(progress);
+                    const value = Math.floor(easedProgress * (end - start) + start);
+                    
+                    // Format number with commas
                     element.textContent = prefix + value.toLocaleString();
+                    
                     if (progress < 1) {
                         window.requestAnimationFrame(step);
+                    } else {
+                        // Add subtle animation to the result card
+                        element.parentElement.style.transform = 'scale(1.05)';
+                        setTimeout(() => {
+                            element.parentElement.style.transform = 'scale(1)';
+                        }, 150);
                     }
                 };
                 window.requestAnimationFrame(step);
@@ -575,22 +846,26 @@
                 const hours = parseInt(hoursSlider.value);
                 const rate = parseInt(rateSlider.value);
             
-                // Update displays
+                // Update displays with smooth transitions
                 hoursDisplay.textContent = hours;
                 if (hoursDisplay2) hoursDisplay2.textContent = hours;
                 rateDisplay.textContent = rate.toLocaleString();
                 if (rateDisplay2) rateDisplay2.textContent = rate.toLocaleString();
             
-                // Calculate costs (hours per week * rate per hour * weeks)
+                // Calculate costs
                 const weeklyCost = hours * rate;
                 const monthly = Math.round(weeklyCost * 4.33); // average weeks per month
-                const annual = weeklyCost * 52; // 52 weeks in a year
+                const annual = Math.round(weeklyCost * 52); // 52 weeks in a year
                 const savings = Math.round(annual * 0.8); // 80% automation savings
             
                 // Update cost displays with animation
-                animateValue(monthlyCost, 0, monthly, 800, 'R');
-                animateValue(annualCost, 0, annual, 800, 'R');
-                animateValue(potentialSavings, 0, savings, 800, 'R');
+                const currentMonthly = parseInt(monthlyCost.textContent.replace(/[^0-9]/g, '') || 0);
+                const currentAnnual = parseInt(annualCost.textContent.replace(/[^0-9]/g, '') || 0);
+                const currentSavings = parseInt(potentialSavings.textContent.replace(/[^0-9]/g, '') || 0);
+                
+                animateValue(monthlyCost, currentMonthly, monthly, 600, 'R');
+                animateValue(annualCost, currentAnnual, annual, 600, 'R');
+                animateValue(potentialSavings, currentSavings, savings, 600, 'R');
                 
                 // Update impact statement
                 if (savingsAmount) {
@@ -598,30 +873,113 @@
                 }
             }
             
-            // Listen for slider input changes
+            // Initialize sliders
             if (hoursSlider && rateSlider) {
-                hoursSlider.addEventListener('input', updateCalculations);
-                rateSlider.addEventListener('input', updateCalculations);
+                // Add event listeners with improved feedback
+                [hoursSlider, rateSlider].forEach(slider => {
+                    slider.addEventListener('input', function() {
+                        // Play subtle sound effect (optional)
+                        // sliderSound.currentTime = 0;
+                        // sliderSound.play().catch(e => console.log("Audio error:", e));
+                        
+                        // Visual feedback
+                        this.style.background = 'linear-gradient(90deg, #008080 ' + this.value + '%, #e5e7eb ' + this.value + '%)';
+                        updateCalculations();
+                    });
+                    
+                    slider.addEventListener('mousedown', function() {
+                        this.style.boxShadow = '0 0 0 3px rgba(0, 128, 128, 0.2)';
+                    });
+                    
+                    slider.addEventListener('mouseup', function() {
+                        this.style.boxShadow = '';
+                    });
+                    
+                    slider.addEventListener('touchstart', function() {
+                        this.style.boxShadow = '0 0 0 3px rgba(0, 128, 128, 0.2)';
+                    });
+                    
+                    slider.addEventListener('touchend', function() {
+                        this.style.boxShadow = '';
+                    });
+                });
             
                 // Initialize on page load
                 updateCalculations();
-
-                // Add visual feedback on slider interaction
-                [hoursSlider, rateSlider].forEach(slider => {
-                    slider.addEventListener('mousedown', function() {
-                        this.style.background = '#d1d5db';
-                    });
-                    slider.addEventListener('mouseup', function() {
-                        this.style.background = '#e5e7eb';
-                    });
-                    slider.addEventListener('touchstart', function() {
-                        this.style.background = '#d1d5db';
-                    });
-                    slider.addEventListener('touchend', function() {
-                        this.style.background = '#e5e7eb';
+                
+                // Set initial gradient
+                hoursSlider.style.background = 'linear-gradient(90deg, #008080 ' + hoursSlider.value + '%, #e5e7eb ' + hoursSlider.value + '%)';
+                rateSlider.style.background = 'linear-gradient(90deg, #008080 ' + rateSlider.value + '%, #e5e7eb ' + rateSlider.value + '%)';
+            }
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                // Header effect
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Scroll progress
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                if (scrollProgress) {
+                    scrollProgress.style.width = scrolled + "%";
+                }
+                
+                // Back to top button
+                if (backToTop) {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                }
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            
+            if (mobileMenuBtn && nav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    nav.classList.toggle('show');
+                    mobileMenuBtn.innerHTML = nav.classList.contains('show') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+            }
+            
+            // Back to top functionality
+            if (backToTop) {
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
                     });
                 });
             }
+            
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            // Observe elements for animation
+            document.querySelectorAll('.animate-fade-in').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
