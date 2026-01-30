@@ -629,6 +629,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
+            margin: 0 -0.5rem; /* Negative margin to compensate for padding */
         }
         
         .approach-step {
@@ -638,8 +639,6 @@
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            max-width: 280px; /* Add this line */
-            margin: 0 auto; /* Center the blocks */
         }
        
         .approach-step:hover {
