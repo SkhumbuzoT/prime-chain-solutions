@@ -625,7 +625,7 @@
         }
         
         /* ===== APPROACH SECTION ===== */
-        .approach-grid {
+       .approach-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
@@ -634,12 +634,14 @@
         .approach-step {
             text-align: center;
             padding: 1.5rem;
-            background: var(--bg-light);
+            background: var(--card-bg);
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-soft);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 280px; /* Add this line */
+            margin: 0 auto; /* Center the blocks */
         }
-        
+       
         .approach-step:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
