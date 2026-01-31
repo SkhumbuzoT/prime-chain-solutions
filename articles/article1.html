@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Metadata -->
-    <meta name="description" content="Discover how manual work in logistics is costing your business thousands monthly in hidden costs, errors, and lost opportunities. Learn practical automation solutions." />
-    <meta name="keywords" content="manual work cost, logistics automation, supply chain efficiency, trucking business, process improvement, operational efficiency" />
+    <meta name="description" content="Discover how to build effective business dashboards without technical expertise. Learn practical steps for creating dashboards that drive decisions." />
+    <meta name="keywords" content="business dashboards, data visualization, KPI tracking, business intelligence, operations dashboards, data-driven decisions" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.primechainsolutions.co.za/articles/real-cost-manual-work.html">
-    <meta property="og:title" content="🧩 Manual Work Is Costing You More Than You Think | Prime Chain Solutions">
-    <meta property="og:description" content="Discover how manual work in logistics is costing your business thousands monthly in hidden costs, errors, and lost opportunities.">
+    <meta property="og:url" content="https://www.primechainsolutions.co.za/articles/article2.html">
+    <meta property="og:title" content="📊 How to Build a Business Dashboard Without Being a Data Nerd | Prime Chain Solutions">
+    <meta property="og:description" content="Learn practical steps for creating effective business dashboards that drive decisions, no technical expertise required.">
     <meta property="og:image" content="https://www.primechainsolutions.co.za/assets/og-image-articles.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.primechainsolutions.co.za/articles/real-cost-manual-work.html">
-    <meta property="twitter:title" content="🧩 Manual Work Is Costing You More Than You Think | Prime Chain Solutions">
-    <meta property="twitter:description" content="Discover how manual work in logistics is costing your business thousands monthly in hidden costs, errors, and lost opportunities.">
+    <meta property="twitter:url" content="https://www.primechainsolutions.co.za/articles/article2.html">
+    <meta property="twitter:title" content="📊 How to Build a Business Dashboard Without Being a Data Nerd | Prime Chain Solutions">
+    <meta property="twitter:description" content="Learn practical steps for creating effective business dashboards that drive decisions, no technical expertise required.">
     <meta property="twitter:image" content="https://www.primechainsolutions.co.za/assets/twitter-image-articles.jpg">
 
     <!-- Favicon -->
@@ -35,7 +35,7 @@
     </script>
     <!-- End Google tag -->
     
-    <title>Manual Work Is Costing You More Than You Think | Prime Chain Solutions</title>
+    <title>How to Build a Business Dashboard Without Being a Data Nerd | Prime Chain Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -99,13 +99,101 @@
             background: rgba(99, 102, 241, 0.15);
             transform: translateY(-2px);
         }
+        
+        /* Article Navigation Styles */
+        .article-navigation {
+            margin: 4rem 0 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(10, 31, 68, 0.1);
+            border-bottom: 1px solid rgba(10, 31, 68, 0.1);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-back-to-articles {
+            background: rgba(10, 31, 68, 0.05);
+            color: #0A1F44;
+            border-color: rgba(10, 31, 68, 0.1);
+        }
+
+        .btn-back-to-articles:hover {
+            background: rgba(10, 31, 68, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(10, 31, 68, 0.12);
+        }
+
+        .btn-next-article {
+            background: #008080;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+        }
+
+        .btn-next-article:hover {
+            background: #006666;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 128, 128, 0.4);
+            color: white;
+        }
+
+        /* For mobile */
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .btn-back-to-articles {
+                order: 2;
+            }
+            
+            .btn-next-article {
+                order: 1;
+            }
+        }
+        
+        /* Add CSS Variables for consistency */
+        :root {
+            --primary-teal: #008080;
+            --primary-teal-dark: #006666;
+            --primary-gold: #D4AF37;
+            --primary-navy: #0A1F44;
+            --text-dark: #0A1F44;
+            --text-light: #FFFFFF;
+            --text-muted: #64748B;
+            --shadow-md: 0 8px 24px rgba(10, 31, 68, 0.12);
+            --shadow-hover: 0 20px 40px rgba(10, 31, 68, 0.2);
+        }
     </style>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress"></div>
     
-     <!-- Global Header -->
+    <!-- Global Header -->
     <header id="header">
         <div class="container header-container">
             <a href="../index.html" class="logo" aria-label="Prime Chain Solutions Home">
@@ -116,7 +204,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../index.html#services">Services</a></li>
                     <li><a href="../cost-calculator.html">Cost Calculator</a></li>
-                    <li><a href="../articles.html">Articles</a></li>
+                    <li><a href="../articles.html" class="active">Articles</a></li>
                     <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -131,235 +219,312 @@
     <section class="article-section">
         <div class="container article-container">
             <div class="article-header">
-                <h1>🧩 Manual Work Is Costing You More Than You Think</h1>
+                <h1>📊 How to Build a Business Dashboard Without Being a Data Nerd</h1>
                 <div class="article-meta">
-                    <span><i class="fas fa-calendar-alt"></i> Published: Oct 28, 2024</span>
-                    <span><i class="fas fa-clock"></i> 8 min read</span>
+                    <span><i class="fas fa-calendar-alt"></i> Published: Nov 05, 2024</span>
+                    <span><i class="fas fa-clock"></i> 10 min read</span>
                     <span><i class="fas fa-share-alt"></i> <a href="#" onclick="shareOnLinkedIn()">Share on LinkedIn</a></span>
                 </div>
             </div>
             
             <div class="article-content">
                 <div class="linkedin-hook">
-                    <p><strong>You know that feeling when you're buried in admin work — updating spreadsheets, chasing emails, manually capturing trip data, matching invoices to delivery notes — and you think, "it's just part of the job"?</strong></p>
-                    <p><strong>Everyone does this stuff, right? It's just how business works.</strong></p>
+                    <p><strong>You've heard everyone talking about dashboards. You know you need one. But every time you try to build one, you get stuck in technical jargon, complex tools, and overwhelming options.</strong></p>
+                    <p><strong>What if you could create a dashboard that actually helps you run your business—without needing a degree in data science?</strong></p>
                 </div>
 
-                <p>Someone has to enter the numbers. Someone has to check the totals. Someone has to chase down missing documents and fix the errors.</p>
+                <p>The truth is, most business owners think about dashboards backwards. They start with tools and technology instead of starting with the questions they need answered.</p>
 
-                <p>Well, what if that "part of the job" is quietly costing your business thousands every month — not just in wages, but in lost time, compounding errors, delayed decisions, and missed opportunities?</p>
-
-                <p>What if the work that feels most productive — because you're busy, because you're doing something tangible — is actually the work that's holding your business back?</p>
+                <p>You don't need fancy software or technical expertise to build a useful dashboard. You need clarity on what matters to your business.</p>
                 
-                <h2>The Hidden Costs We Don't See</h2>
+                <h2>The Dashboard Mindset Shift</h2>
                 
-                <p>Here's what makes manual work so dangerous: the costs are invisible.</p>
+                <p>A dashboard isn't a piece of software. It's a tool for answering questions.</p>
 
-                <p>When you hire someone, you see their salary. When you buy a truck, you see the price tag. When you rent a warehouse, you see the monthly invoice. These costs are obvious, quantifiable, and show up clearly in your accounting.</p>
+                <p>Think about your morning routine. You check your phone for notifications, maybe glance at the weather, check your calendar. These are all mini-dashboards giving you the information you need to make decisions about your day.</p>
 
-                <p>But manual work? Its costs are hidden in dozens of small inefficiencies that never appear on a single line item.</p>
+                <p>Your business dashboard should do the same thing—give you the information you need to make decisions about your business. At a glance, without digging through spreadsheets or asking multiple people.</p>
 
-                <p><strong>The cost of time.</strong> Your operations manager spends six hours every week manually consolidating delivery data from five different sources. That's 24 hours per month, 288 hours per year — more than seven full working weeks. What's that time worth? What else could that person be doing if they weren't trapped in data entry?</p>
+                <p><strong>The golden rule:</strong> If you have to ask someone for the number, it should be on your dashboard.</p>
 
-                <p><strong>The cost of errors.</strong> Manual data entry has an error rate. Studies consistently show humans make mistakes in about 1% of manual data entries. Sounds small, right? But if you're processing 1,000 records per month, that's 10 errors. Each error requires time to find, investigate, and fix. Some errors cause customer disputes. Some delay payments. Some create inventory discrepancies that take weeks to untangle.</p>
+                <p>How much revenue did we make this month? Dashboard.<br>
+                How many deliveries were on time? Dashboard.<br>
+                What's our current cash position? Dashboard.<br>
+                Which routes are most profitable? Dashboard.</p>
 
-                <p><strong>The cost of delays.</strong> When information needs to flow through multiple manual steps before it becomes useful, decisions get made on old data. By the time you realize a route is unprofitable or a truck is underperforming, you've already lost money for weeks or months.</p>
-
-                <p><strong>The cost of stress.</strong> Manual work creates constant low-level anxiety. Did someone remember to capture yesterday's diesel slips? Did the delivery notes get filed correctly? Is the spreadsheet up to date? This stress is exhausting and takes mental energy away from strategic thinking.</p>
-
-                <p>None of these costs show up clearly in your books. But they're real, and they're expensive.</p>
+                <p>Every time you find yourself asking the same question repeatedly, that's a signal something should be on your dashboard.</p>
 
                 
-                <h2>The Real Problem: Time and Attention Drain</h2>
-                <p>Manual work feels productive because you're doing something. Your fingers are moving. The spreadsheet is filling up. Things are getting checked off lists.</p>
-                
-                <p>But in supply chains — where information flows through orders, invoices, delivery notes, fuel slips, customs documents, loading confirmations, and payment records — every manual step adds friction.</p>
+                <h2>Step 1: Start With Questions, Not Data</h2>
+                <p>This is where most people go wrong. They start collecting every piece of data they can find, then try to make sense of it.</p>
 
-                <p>Think of information flow like water moving through pipes. When the pipes are clear and smooth, water flows easily. But every manual step is like adding a bend or a valve that has to be opened by hand. The water still gets through, but slower, and with more effort.</p>
+                <p><strong>Instead, start with the questions you ask every day, every week, every month.</strong></p>
 
-                <p>Here's what typically happens in manual processes:</p>
+                <p>Grab a notebook or open a document and write down:</p>
 
-                <p>Someone writes something down on paper. Someone else takes a photo of that paper and sends it via WhatsApp. Someone receives that photo and manually types the information into a spreadsheet. Someone else copies that information into another system. Someone reconciles it against other records at month-end. Someone fixes the inevitable mismatches and errors.</p>
+                <p><strong>Daily questions:</strong><br>
+                • How many orders came in yesterday?<br>
+                • How many deliveries were completed?<br>
+                • What's our bank balance?<br>
+                • Are there any urgent customer issues?</p>
 
-                <p>People copy, paste, file, retype, reconcile, verify, chase, and fix — and suddenly, 40% of your week is spent managing information instead of using it to make decisions.</p>
+                <p><strong>Weekly questions:</strong><br>
+                • How does this week compare to last week?<br>
+                • What were our top 5 expenses?<br>
+                • Which customers generated the most revenue?<br>
+                • Are we on track for monthly targets?</p>
 
-                <p>Let's be honest — you didn't start your business to be a data clerk. You started it to move goods, serve customers, solve problems, and make a profit. But somehow, the thing that was supposed to support your business — capturing and organizing information — has become a job in itself.</p>
+                <p><strong>Monthly questions:</strong><br>
+                • What was our profit this month?<br>
+                • What were our biggest cost categories?<br>
+                • How did different routes perform?<br>
+                • What's our customer retention rate?</p>
 
-                
-                <h2>The Ripple Effect of Manual Work</h2>
-                <p>Here's where it gets really painful. Manual work doesn't just waste time in isolation. It creates cascading problems that multiply across your organization.</p>
+                <p>These questions become the foundation of your dashboard. Each question becomes a metric. Each metric becomes a chart or number on your dashboard.</p>
 
-                <h3>Errors Multiply</h3>
-                <p>One small typo in a delivery note — transposing two digits in a tonnage figure — becomes a billing dispute with a customer. That dispute requires emails, phone calls, investigating records, apologizing, issuing credits. What started as a two-second error consumed hours of multiple people's time and damaged a customer relationship.</p>
-
-                <p>And here's the thing: everyone involved did their job correctly except for one moment of human error. That's not a people problem — it's a process problem. We're asking humans to do work that humans are naturally bad at: repetitive, detail-oriented data entry where every character matters.</p>
-
-                <h3>Delays Stack</h3>
-                <p>When Sarah needs to wait for Mike to finish consolidating data before she can run the weekly report, and Mike is waiting for drivers to submit their slips, and drivers are busy driving, suddenly your weekly report is three days late.</p>
-
-                <p>By the time you see that fuel costs spiked, it was actually ten days ago. By the time you realize a route is losing money, you've already run it unprofitably for another two weeks. The delays in your information flow create delays in your decision-making, which create delays in improvements.</p>
-
-                <p>Time is money in ways we don't always see. That three-day delay in your weekly report might cost you three weeks of optimization opportunities. That's the real cost — not the time to create the report, but the time lost before you could act on its insights.</p>
-
-                <h3>Visibility Fades</h3>
-                <p>When information is scattered across WhatsApp conversations, email threads, physical files, and various spreadsheets maintained by different people, nobody has a complete picture.</p>
-
-                <p>Your operations manager knows about the delivery delays. Your finance person knows about the payment delays. Your dispatcher knows about the vehicle issues. But nobody sees how these problems connect and compound.</p>
-
-                <p>Decisions get made in silos, based on incomplete information. "We need another truck," someone says — but do you really? Or do you need better route planning? Without visibility across all your data, you can't answer that question confidently.</p>
-
-                <h3>Morale Drops</h3>
-                <p>Here's something business owners often miss: manual work is soul-crushing for talented people.</p>
-
-                <p>Your operations manager didn't get into logistics because they love data entry. They got into it because they like solving puzzles, optimizing routes, making operations flow smoothly. But if 50% of their time is spent copying data from one place to another, they're not doing the work they're good at and enjoy.</p>
-
-                <p>Teams spend more time fixing problems than improving processes. More time reacting than planning. More time on busywork than meaningful work. That kills motivation, drives away good people, and leaves everyone exhausted without feeling accomplished.</p>
-
-                <p>It's not about replacing people — it's about freeing them from repetitive work so they can focus on what actually matters.</p>
+                <p><strong>Pro tip:</strong> Limit yourself to 5-7 key metrics per dashboard. More than that and you're creating noise, not clarity.</p>
 
                 
-                <h2>Real-World Example: The Hidden 10-Hour Leak</h2>
-                <p>Let me paint you a picture. This is based on a real client we worked with.</p>
+                <h2>Step 2: Find Where Your Data Lives</h2>
+                <p>Now that you know what questions you want to answer, figure out where the answers currently live.</p>
 
-                <p>Imagine a trucking company with 12 trucks running daily deliveries. They're capturing fuel slips manually. Here's how it works:</p>
+                <p><strong>Common data sources for businesses:</strong></p>
 
-                <p>Drivers fill up and get a slip. They take a photo and WhatsApp it to the office — sometimes immediately, sometimes days later when they remember. Someone in the office (let's call her Linda) receives these photos throughout the day and week. Linda manually opens each photo, reads the handwriting (which isn't always clear), and types the information into an Excel spreadsheet: date, truck registration, driver, location, liters, price per liter, total cost, odometer reading.</p>
+                <p><strong>Spreadsheets:</strong> Excel, Google Sheets. Most businesses start here.<br>
+                <strong>Accounting software:</strong> QuickBooks, Xero, Sage.<br>
+                <strong>CRM systems:</strong> Salesforce, HubSpot, or even just a shared spreadsheet.<br>
+                <strong>Operations tools:</strong> Delivery management, inventory systems, project management.<br>
+                <strong>Communication tools:</strong> WhatsApp groups, email threads (yes, really).</p>
 
-                <p>Then, at month-end, Linda has to reconcile these entries against the fuel card statements and invoices from different fuel suppliers. The formats don't match. Some slips are missing. Some have unclear odometer readings. She has to chase drivers for clarification on slips from three weeks ago that nobody remembers clearly.</p>
+                <p>Don't worry if your data is messy or scattered. That's normal. The goal isn't perfect data—it's usable information.</p>
 
-                <p>It sounds simple in theory — until you realize that Linda spends 10 hours every single week just processing fuel slips. That's 40 hours a month — literally an entire week's worth of productivity — lost to something that could be automated in minutes.</p>
+                <p><strong>The 80/20 rule applies here:</strong> 80% of your insights will come from 20% of your data. Start with the most important metrics that are easiest to track.</p>
 
-                <p>Let's do the math on what this actually costs:</p>
-
-                <p>Linda's time: 40 hours per month at even a modest R150 per hour = R6,000 per month just in direct labor cost. That's R72,000 per year.</p>
-
-                <p>But wait, there's more. Because Linda is spending 10 hours per week on fuel slips, she's not spending that time on other work. She's not optimizing routes. She's not analyzing which trips are most profitable. She's not calling clients to secure more business. The opportunity cost is easily double or triple the direct cost.</p>
-
-                <p>And the errors? Because this is manual, mistakes happen. A transposed number here, a misread odometer there. These errors cause fuel costs to appear lower or higher than they actually are, which means decisions about route profitability and vehicle performance are based on flawed data.</p>
-
-                <p>Now imagine this same pattern repeating across other manual processes: delivery note capture, invoice matching, maintenance record keeping, customer payment tracking. Suddenly you're not talking about 10 hours per week — you're talking about 20 or 30 hours per week consumed by manual work across your team.</p>
-
-                <p>That's not a minor inefficiency. That's one full-time employee's worth of capacity just evaporating into manual data handling.</p>
+                <p>For example:<br>
+                • Revenue and expenses from your accounting software<br>
+                • Delivery counts from your operations spreadsheet<br>
+                • Customer satisfaction from support emails or feedback forms</p>
 
                 
-                <h2>The Opportunity: Shift from Manual to Smart</h2>
-                <p>Here's the exciting part — and yes, I mean genuinely exciting — automation doesn't have to mean expensive enterprise software or hiring a data team. It doesn't require a six-month implementation project or a massive upfront investment.</p>
+                <h2>Step 3: Choose the Right Tool (Hint: Start Simple)</h2>
+                <p>You don't need expensive Business Intelligence software to start. In fact, starting simple is better because it forces you to focus on what matters.</p>
 
-                <p>It can start with simple steps that immediately reduce manual work and give you time back.</p>
+                <h3>Option 1: Google Sheets (Free & Powerful)</h3>
+                <p>Google Sheets is surprisingly powerful for dashboards. Here's why:</p>
 
-                <h3>Start With What You Already Use</h3>
-                <p><strong>Auto-importing data from Google Sheets or WhatsApp.</strong> If your drivers are already sending photos via WhatsApp, use tools that can automatically save those images to a folder. If you're already using Google Sheets, use built-in functions like IMPORTRANGE to pull data automatically from multiple sheets into one master view. No coding required.</p>
+                <p><strong>Built-in charts:</strong> Create pie charts, line graphs, bar charts with a few clicks.<br>
+                <strong>Data connections:</strong> Import data from other sheets, websites, or APIs.<br>
+                <strong>Sharing:</strong> Easy to share with your team.<br>
+                <strong>Mobile access:</strong> View on your phone or tablet.</p>
 
-                <p><strong>Using Google Forms for structured data capture.</strong> Instead of free-form WhatsApp messages that need interpretation, create a simple form: truck registration (dropdown), fuel amount (number), cost (number), location (text). Drivers fill it out on their phones in 30 seconds, and the data flows directly into a structured spreadsheet. Instantly cleaner data with zero manual transcription.</p>
+                <p>Create a "Dashboard" tab in your main operations spreadsheet. Use simple formulas to pull key numbers from other tabs. Add charts that update automatically.</p>
 
-                <h3>Let Your Dashboard Do the Thinking</h3>
-                <p><strong>Using dashboards to highlight anomalies automatically.</strong> Instead of manually scanning hundreds of entries looking for problems, set up your dashboard to flag them. If diesel consumption on a trip is 30% higher than the route average, highlight it in red. If an invoice has been outstanding for more than 30 days, show it at the top of the list.</p>
+                <h3>Option 2: Google Data Studio (Now Looker Studio) - Free</h3>
+                <p>If you want something that looks more polished, Google Data Studio connects to Google Sheets, Google Analytics, and many other sources.</p>
 
-                <p>This is where automation moves from saving time to adding intelligence. You're not just avoiding manual work — you're catching problems faster than a human manually reviewing data ever could.</p>
+                <p><strong>Benefits:</strong><br>
+                • Professional-looking dashboards<br>
+                • Real-time updates<br>
+                • Easy to customize<br>
+                • Completely free</p>
 
-                <p><strong>Setting alerts for exceptions.</strong> Missing a proof of delivery? Get a notification. Diesel slip not submitted within 24 hours of a trip? Alert the driver and the manager. Invoice approaching 45 days without payment? Automatic reminder.</p>
+                <h3>Option 3: Microsoft Power BI (Free for Basic Use)</h3>
+                <p>If you're in the Microsoft ecosystem, Power BI is excellent and has a free version that's more than enough for most businesses.</p>
 
-                <p>These alerts prevent small problems from becoming big ones, and they prevent the need for someone to manually check whether everything is there every single day.</p>
-
-                <h3>Automate the Repetitive Calculations</h3>
-                <p>Instead of manually calculating profit per trip (revenue minus fuel minus driver cost minus overhead allocation), create a formula that does it automatically when new data is entered. Instead of manually comparing this week's performance to last week's, let the dashboard calculate the variance.</p>
-
-                <p>The pattern is simple: Identify work where a human is doing the same thing over and over, following the same logic every time, and let a system do it instead.</p>
-
-                <p>Once you start automating, you'll see where your team's real value lies — in decision-making, interpretation, customer relationships, creative problem-solving. Not in data entry, not in reconciliation, not in manual calculations.</p>
-
-                
-                <h2>The Mindset Shift: Work Smarter, Not Harder</h2>
-                <p>Here's a truth that makes some people uncomfortable: manual work is not a badge of dedication.</p>
-
-                <p>We have this cultural myth that being busy means being productive. That working late means you care more. That doing everything yourself means you're hands-on and committed.</p>
-
-                <p>But in reality, manual work is often a symptom of inefficiency. It's a sign that your processes haven't evolved. That you're still doing things the way you did them when you had three trucks, even though now you have twelve.</p>
-
-                <p>The real goal isn't to work harder — it's to create systems that think with you, not tasks that weigh you down.</p>
-
-                <p>Think about the most successful businesses you know. Are they successful because their people work the hardest? Or because they've built systems and processes that multiply their efforts?</p>
-
-                <p>Amazon didn't become Amazon by having the most dedicated warehouse workers manually tracking every package. They built systems that automate tracking, routing, inventory management, so humans can focus on exceptions and improvements.</p>
-
-                <p>You don't need Amazon's resources, but you can adopt the same mindset at your scale.</p>
-
-                <p>Ask yourself: "What processes in my business rely on people doing what a computer could do faster — and more accurately?"</p>
-
-                <p>That's where your next big gain is hiding.</p>
-
-                <p>Maybe it's:</p>
-                <ul>
-                    <li>Manually copying diesel slips into spreadsheets (automate with forms or OCR)</li>
-                    <li>Chasing missing delivery notes (automate with alerts when documents aren't submitted)</li>
-                    <li>Calculating trip profitability by hand (automate with formulas)</li>
-                    <li>Manually checking which invoices are overdue (automate with aging reports)</li>
-                    <li>Typing the same client information into multiple systems (integrate systems or use a single source of truth)</li>
-                </ul>
-
-                <p>Every "yes, we do that manually" is an opportunity to buy back hours every week.</p>
+                <p><strong>My recommendation:</strong> Start with Google Sheets. It's the simplest, most accessible option. You can always upgrade to fancier tools later.</p>
 
                 
-                <h2>The Fear: "But Automation Is Complicated and Expensive"</h2>
-                <p>Let's address the elephant in the room. When people hear "automation," they often think:</p>
+                <h2>Step 4: Build Your First Dashboard in 1 Hour</h2>
+                <p>Here's a practical exercise. Set aside one hour and build your first dashboard.</p>
 
-                <p>"That's for big companies with IT departments and millions to spend."<br>
-                "I'd need to hire programmers and buy expensive software."<br>
-                "It'll take months to set up and probably won't work for my specific business anyway."</p>
+                <h3>Hour 1: The Financial Health Dashboard</h3>
+                <p><strong>1. Create a new Google Sheet</strong> (10 minutes)<br>
+                Name it "[Your Business] Dashboard"</p>
 
-                <p>None of that is true anymore.</p>
+                <p><strong>2. Set up your data sources</strong> (20 minutes)<br>
+                • Create a tab called "Revenue" - list your monthly revenue<br>
+                • Create a tab called "Expenses" - list your main expense categories<br>
+                • Create a tab called "Cash" - track your bank balance daily</p>
 
-                <p>The tools available today are dramatically easier and more affordable than even five years ago. Google Sheets has built-in automation through Apps Script (simple JavaScript anyone can learn). Zapier and Make connect different apps without coding. Power Automate handles Microsoft ecosystem automation. Even WhatsApp has business APIs for structured data collection.</p>
+                <p><strong>3. Build the dashboard</strong> (30 minutes)<br>
+                Create a tab called "Dashboard" and add:<br>
+                • Today's date (automatic)<br>
+                • Current month's revenue (pull from Revenue tab)<br>
+                • Current month's expenses (pull from Expenses tab)<br>
+                • Profit (revenue minus expenses)<br>
+                • Current bank balance<br>
+                • A simple bar chart showing revenue by month</p>
 
-                <p>And you don't need to automate everything at once. Start with one process. The most painful one. The one that takes the most time or causes the most errors.</p>
+                <p><strong>4. Make it visible</strong><br>
+                Bookmark it on your computer. Make it your homepage. Look at it every morning.</p>
 
-                <p>Automate just that. See the results. Feel the relief of getting those hours back. Then move to the next process.</p>
-
-                <p>Small wins compound. Automate one 5-hour weekly task, and you've bought back 20 hours per month. Do that three times, and you've essentially added a part-time employee's worth of capacity without hiring anyone.</p>
+                <p>Congratulations! You now have a functional business dashboard.</p>
 
                 
-                <h2>Closing Thought: You're Paying for Manual Work — One Way or Another</h2>
-                <p>Whether it's through salaries spent on data entry instead of analysis, through errors that cost you customer relationships, through delays that cause you to miss opportunities, or through insights you never gain because the data never gets organized — manual work has a cost.</p>
+                <h2>Step 5: Evolve Your Dashboard</h2>
+                <p>Your first dashboard will be basic. That's okay. The goal is to start, not to be perfect.</p>
 
-                <p>You're already paying it. The question is whether you're aware of it.</p>
+                <p><strong>Week 1-2:</strong> Use your basic dashboard daily. Notice what questions you still have to ask people.</p>
 
-                <p>But the moment you decide to automate and visualize, you start buying back your team's time, energy, and focus. You start shifting resources from managing information to using information. From reacting to problems to preventing them.</p>
+                <p><strong>Week 3-4:</strong> Add 2-3 new metrics based on the questions you're still asking. Maybe add delivery performance or customer count.</p>
 
-                <p>Because the truth is: Every minute spent on manual work is a minute not spent growing your business.</p>
+                <p><strong>Month 2:</strong> Review what metrics you actually look at. Remove anything you haven't looked at in two weeks.</p>
 
-                <p>Every hour Linda spends copying diesel slips is an hour she's not optimizing routes or analyzing which clients are most profitable. Every hour your operations manager spends reconciling delivery notes is an hour they're not improving processes or coaching drivers.</p>
+                <p><strong>Month 3:</strong> Consider splitting into multiple dashboards:<br>
+                • Executive dashboard (high-level metrics)<br>
+                • Operations dashboard (daily activities)<br>
+                • Financial dashboard (detailed numbers)</p>
 
-                <p>That's the real cost. Not just the time spent on manual work, but the opportunity cost of what could have been done instead.</p>
+                <p>The evolution should be driven by your needs, not by what the tool can do.</p>
+
+                
+                <h2>Common Dashboard Mistakes to Avoid</h2>
+                
+                <h3>Mistake 1: Too Many Metrics</h3>
+                <p>Clutter kills clarity. If your dashboard has 20 different numbers, you'll look at none of them. Stick to 5-7 key metrics per view.</p>
+
+                <h3>Mistake 2: Focusing on Vanity Metrics</h3>
+                <p>Vanity metrics make you feel good but don't help you make decisions. "Total website visits" is a vanity metric. "Website visits from target customers that convert to leads" is an actionable metric.</p>
+
+                <h3>Mistake 3: No Context</h3>
+                <p>A number alone is meaningless. $50,000 in revenue—is that good or bad? Always show comparisons:<br>
+                • vs. last month<br>
+                • vs. same month last year<br>
+                • vs. target<br>
+                • vs. budget</p>
+
+                <h3>Mistake 4: Building Once, Never Updating</h3>
+                <p>Your business evolves. Your dashboard should too. Schedule a 30-minute review every month to ask: "Is this still showing me what I need to know?"</p>
+
+                <h3>Mistake 5: Perfect Data Paralysis</h3>
+                <p>Don't wait for perfect data. Start with 80% accurate data that's available now. You'll learn more from an imperfect dashboard used daily than a perfect dashboard that never gets built.</p>
+
+                
+                <h2>Real-World Example: The Trucking Company Dashboard</h2>
+                <p>Let me show you what this looks like in practice with a real client example.</p>
+
+                <p>A trucking company with 15 vehicles was drowning in spreadsheets. The owner spent hours every week trying to understand:<br>
+                • Which routes were profitable<br>
+                • Which trucks needed maintenance<br>
+                • Which drivers were performing best<br>
+                • What their cash position was</p>
+
+                <p>We built a simple dashboard in Google Sheets that connected to:</p>
+
+                <p><strong>1. Their accounting software</strong> (via monthly export)<br>
+                Showed: Monthly revenue, fuel costs, maintenance costs, profit</p>
+
+                <p><strong>2. Their operations spreadsheet</strong><br>
+                Showed: Deliveries completed, on-time percentage, route efficiency</p>
+
+                <p><strong>3. Their maintenance log</strong><br>
+                Showed: Trucks due for service, maintenance costs by vehicle</p>
+
+                <p>The dashboard had one page with 6 key metrics:</p>
+
+                <p>1. This Month's Profit (vs. last month)<br>
+                2. On-Time Delivery % (vs. target of 95%)<br>
+                3. Fuel Cost per Kilometer (vs. industry average)<br>
+                4. Maintenance Cost by Truck (highlighting problem vehicles)<br>
+                5. Top 5 Most Profitable Routes<br>
+                6. Cash Position (30-day forecast)</p>
+
+                <p><strong>The result?</strong> The owner went from spending 4 hours every Monday analyzing last week's performance to spending 10 minutes each morning knowing exactly where the business stood.</p>
+
+                <p>Decisions became faster:<br>
+                • When fuel costs spiked on a particular route, they could adjust pricing immediately<br>
+                • When a truck showed rising maintenance costs, they could investigate before it broke down<br>
+                • When a driver's on-time percentage dropped, they could provide coaching</p>
+
+                <p>The dashboard didn't just save time—it made the business more profitable by enabling faster, better decisions.</p>
+
+                
+                <h2>Advanced Tip: Automate Your Data Collection</h2>
+                <p>Once you have a basic dashboard working, you can start automating the data collection.</p>
+
+                <p><strong>Simple automations you can set up in an afternoon:</strong></p>
+
+                <p><strong>1. Email reports to Google Sheets</strong><br>
+                If you receive regular reports via email (like bank statements or supplier invoices), use tools like Zapier or Google Apps Script to automatically extract the data into your spreadsheet.</p>
+
+                <p><strong>2. Connect your accounting software</strong><br>
+                Most accounting software (QuickBooks, Xero) can export data automatically to Google Sheets or connect directly to dashboard tools.</p>
+
+                <p><strong>3. Use Google Forms for manual inputs</strong><br>
+                If your team is entering data manually (like delivery completion or fuel purchases), create a Google Form. The data goes directly into your spreadsheet, ready for your dashboard.</p>
+
+                <p><strong>Start with one automation.</strong> Pick the most time-consuming data entry task and automate it. Then move to the next.</p>
+
+                
+                <h2>When to Upgrade to Professional Tools</h2>
+                <p>How do you know when you've outgrown Google Sheets?</p>
+
+                <p><strong>Signs it's time to upgrade:</strong><br>
+                1. You're spending more time managing the spreadsheet than using the insights<br>
+                2. You need real-time data from multiple systems<br>
+                3. Multiple people need to access and interact with the dashboard<br>
+                4. You need advanced analytics or forecasting<br>
+                5. The business has grown to the point where manual updates are a bottleneck</p>
+
+                <p><strong>Good next-step tools:</strong><br>
+                • Microsoft Power BI (if you're in the Microsoft ecosystem)<br>
+                • Tableau (for advanced analytics)<br>
+                • Klipfolio (for business users)<br>
+                • Geckoboard (simple, focused dashboards)</p>
+
+                <p>But remember: The tool matters less than the thinking. A well-designed Google Sheets dashboard is more valuable than a poorly designed Tableau dashboard.</p>
+
+                
+                <h2>Your Action Plan</h2>
+                <p>Ready to build your first dashboard? Here's your 7-day plan:</p>
+
+                <p><strong>Day 1:</strong> List your top 10 business questions<br>
+                <strong>Day 2:</strong> Identify where the answers currently live<br>
+                <strong>Day 3:</strong> Create a Google Sheet with your key data<br>
+                <strong>Day 4:</strong> Build your first dashboard with 5 key metrics<br>
+                <strong>Day 5:</strong> Make it your homepage for a day<br>
+                <strong>Day 6:</strong> Note what questions you still have to ask<br>
+                <strong>Day 7:</strong> Add one new metric based on Day 6</p>
+
+                <p>One week from now, you'll have a functional dashboard. One month from now, you'll wonder how you ever ran your business without it.</p>
 
                 <blockquote>
-                    <p>"The businesses that thrive in the next decade won't be the ones that work the hardest. They'll be the ones that work the smartest."</p>
+                    <p>"You can't manage what you can't measure. But you also can't measure everything—so measure what matters."</p>
                 </blockquote>
                 
-                <h2>The Path Forward</h2>
-                <p>You don't need to transform everything overnight. You don't need to become a technology company. You just need to start asking:</p>
+                <h2>The Bottom Line</h2>
+                <p>A dashboard isn't about technology. It's about clarity.</p>
 
-                <p>"Where are we doing manually what could be done automatically?"</p>
+                <p>It's about transforming raw data into actionable information. It's about replacing guesswork with evidence. It's about spending less time gathering information and more time making decisions.</p>
 
-                <p>Pick one answer. Fix it. Move to the next.</p>
+                <p>You don't need to be a data scientist. You don't need expensive software. You need to start with the questions that keep you up at night, find where the answers live, and put them in one place you can see every day.</p>
 
-                <p>Each small automation buys you back time, reduces errors, speeds decisions, and frees your people to do work that actually matters.</p>
+                <p>The most successful businesses aren't the ones with the fanciest dashboards. They're the ones that actually use their dashboards to make better decisions, faster.</p>
 
-                <p>Your business isn't running on trucks and warehouses alone — it's running on information flow. The faster and cleaner that information flows, the better decisions you make, the more responsive you become, and the more you can scale.</p>
+                <p>Your dashboard won't be perfect at first. That's okay. The goal isn't perfection—it's progress. Start simple. Use it daily. Evolve it based on what you actually need.</p>
 
-                <p>Manual work is the dam blocking that flow. Automation is how you remove the blockage and let your business breathe.</p>
+                <p>Because somewhere, your competitor is looking at their dashboard right now, seeing an opportunity you haven't spotted yet, and making a move while you're still digging through spreadsheets.</p>
 
-                <p>The technology exists. The tools are accessible. The only question is: when will you stop paying the hidden cost of manual work and start investing in systems that multiply your team's effectiveness?</p>
-
-                <p>Because somewhere, right now, a competitor is automating what you're still doing manually. And they're moving faster, deciding smarter, and scaling easier.</p>
-
-                <p>Time to decide which one you want to be.</p>
+                <p>Time to decide: Will you keep asking questions, or start getting answers?</p>
+                
+                <!-- Article Navigation -->
+                <div class="article-navigation">
+                    <div class="nav-buttons">
+                        <a href="../articles.html" class="nav-btn btn-back-to-articles">
+                            <i class="fas fa-arrow-left"></i> Back to All Articles
+                        </a>
+                        <a href="article3.html" class="nav-btn btn-next-article">
+                            Next Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
                 
                 <div class="article-cta">
-                    <h3>Ready to Stop Bleeding Money on Manual Work?</h3>
-                    <p>We help logistics and trucking businesses eliminate time-wasting manual processes with simple, practical automation that delivers measurable ROI. No complex implementations, no massive overhauls—just smart connections that save hours every day and eliminate costly errors.</p>
-                    <a href="../cost-calculator.html" class="btn btn-primary">
-                        <i class="fas fa-calculator"></i>
-                        Calculate Your Manual Work Cost
+                    <h3>Ready to Build Your Business Dashboard?</h3>
+                    <p>We help businesses create simple, powerful dashboards that provide real-time visibility into operations, finances, and performance. No complex implementations—just clear insights that drive decisions.</p>
+                    <a href="../index.html#contact" class="btn btn-primary">
+                        <i class="fas fa-chart-line"></i>
+                        Get Dashboard Consultation
                     </a>
                     <div class="share-links">
                         <a href="#" onclick="shareOnLinkedIn()" class="share-linkedin">
@@ -375,43 +540,85 @@
     </section>
 
     <!-- Global Footer -->
-    <footer>
+    <footer class="ps-footer" role="contentinfo" aria-label="Site footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
+            <!-- Main Footer Content -->
+            <div class="ps-footer-main">
+                <!-- Brand Column -->
+                <div class="ps-footer-brand">
                     <div class="footer-logo">
-                        <img src="/assets/White on Transparent.png" alt="Prime Chain Solutions logo" />
+                        <img src="/assets/Primary on Transparent.png" alt="Prime Chain Solutions" height="70">
                     </div>
-                    <p>We help businesses gain visibility and automate workflows with simple, powerful dashboards and automation tools.</p>
+                    <p class="footer-tagline">
+                        We help businesses gain visibility and automate workflows through modern dashboards and smart automation.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="footer-links">
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="../index.html#problems"><i class="fas fa-chevron-right"></i> Problems We Solve</a></li>
-                        <li><a href="../index.html#solutions"><i class="fas fa-chevron-right"></i> Solutions</a></li>
-                        <li><a href="../index.html#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="../index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+
+                <!-- Quick Links -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home fa-fw"></i> Home</a></li>
+                        <li><a href="../index.html#services"><i class="fas fa-cogs fa-fw"></i> Services</a></li>
+                        <li><a href="../cost-calculator.html"><i class="fas fa-calculator fa-fw"></i> Cost Calculator</a></li>
+                        <li><a href="../articles.html"><i class="fas fa-newspaper fa-fw"></i> Articles</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope fa-fw"></i> Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-links">
-                    <h3 class="footer-heading">Contact Info</h3>
-                    <ul>
-                        <li><a href="tel:+27736775675"><i class="fas fa-phone"></i> +27 73 677 5675</a></li>
-                        <li><a href="mailto:skhumbuzo@primechainsolutions.co.za"><i class="fas fa-envelope"></i> info@primechainsolutions.co.za</a></li>
-                        <li><a href="https://wa.me/27736775675"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
+
+                <!-- Services -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-desktop fa-fw"></i> Custom Dashboards</a></li>
+                        <li><a href="#"><i class="fas fa-robot fa-fw"></i> Process Automation</a></li>
+                        <li><a href="#"><i class="fas fa-plug fa-fw"></i> System Integration</a></li>
+                        <li><a href="#"><i class="fas fa-chart-line fa-fw"></i> Analytics & Insights</a></li>
+                        <li><a href="#"><i class="fas fa-headset fa-fw"></i> Consultation</a></li>
                     </ul>
+                </div>
+
+                <!-- Newsletter & Contact -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Stay Updated</h4>
+                    <p class="footer-text">Subscribe to our newsletter for insights on automation and business intelligence.</p>
+                    
+                    <form class="ps-newsletter-form" aria-label="Subscribe to newsletter">
+                        <div class="input-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p class="copyright">© 2025 Prime Chain Solutions. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+
+            <!-- Bottom Bar -->
+            <div class="ps-footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2025 <span class="highlight">Prime Chain Solutions</span>. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="footer-back-to-top">
+                    <button class="back-to-top-btn" aria-label="Back to top">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -426,8 +633,8 @@
         // LinkedIn sharing functionality
         function shareOnLinkedIn() {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent("🧩 Manual Work Is Costing You More Than You Think");
-            const summary = encodeURIComponent("Discover how manual work in logistics is costing your business thousands monthly in hidden costs, errors, and lost opportunities. Learn practical automation solutions.");
+            const title = encodeURIComponent("📊 How to Build a Business Dashboard Without Being a Data Nerd");
+            const summary = encodeURIComponent("Learn practical steps for creating effective business dashboards that drive decisions, no technical expertise required.");
             
             window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}&summary=${summary}`, 
                        '_blank', 
@@ -442,15 +649,18 @@
         }
 
         // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const nav = document.querySelector('nav ul');
-            const isOpen = nav.classList.contains('show');
-            
-            nav.classList.toggle('show');
-            this.innerHTML = isOpen ? 
-                '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
-            document.body.style.overflow = isOpen ? '' : 'hidden';
-        });
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.querySelector('nav ul');
+        
+        if (mobileMenuBtn && nav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('show');
+                this.innerHTML = nav.classList.contains('show') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = nav.classList.contains('show') ? 'hidden' : '';
+            });
+        }
         
         // Close mobile menu when clicking a link
         document.querySelectorAll('nav ul li a').forEach(link => {
@@ -489,7 +699,9 @@
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
-            scrollProgress.style.width = scrolled + "%";
+            if (scrollProgress) {
+                scrollProgress.style.width = scrolled + "%";
+            }
         });
         
         // Back to top functionality
@@ -527,6 +739,194 @@
                 }
             });
         });
+        
+        // Add CSS for header scroll effect if not already in your styles
+        const style = document.createElement('style');
+        style.textContent = `
+            #header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border-bottom: 1px solid rgba(10, 31, 68, 0.08);
+                z-index: 1000;
+                transition: all 0.3s ease;
+            }
+            
+            #header.scrolled {
+                box-shadow: 0 8px 24px rgba(10, 31, 68, 0.12);
+                background: rgba(255, 255, 255, 0.98);
+            }
+            
+            .header-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem 1.5rem;
+                height: 80px;
+            }
+            
+            .logo img {
+                height: 50px;
+                width: auto;
+                transition: transform 0.3s ease;
+            }
+            
+            .logo:hover img {
+                transform: scale(1.05);
+            }
+            
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 2.5rem;
+                align-items: center;
+            }
+            
+            nav a {
+                text-decoration: none;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #0A1F44;
+                letter-spacing: 0.01em;
+                position: relative;
+                padding: 0.5rem 0;
+                transition: color 0.2s ease;
+            }
+            
+            nav a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #008080;
+                transition: width 0.3s ease;
+            }
+            
+            nav a:hover,
+            nav a.active {
+                color: #008080;
+            }
+            
+            nav a:hover::after,
+            nav a.active::after {
+                width: 100%;
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: #0A1F44;
+                cursor: pointer;
+                z-index: 1001;
+                padding: 0.5rem;
+                border-radius: 8px;
+                transition: background-color 0.2s ease;
+            }
+            
+            .mobile-menu-btn:hover {
+                background-color: rgba(10, 31, 68, 0.05);
+            }
+            
+            .scroll-progress {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 4px;
+                background: #008080;
+                width: 0%;
+                z-index: 1001;
+                transition: width 0.1s;
+            }
+            
+            .back-to-top {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                width: 50px;
+                height: 50px;
+                background: #008080;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+            }
+            
+            .back-to-top.visible {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .back-to-top:hover {
+                background: #006666;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(0, 128, 128, 0.4);
+            }
+            
+            @media (max-width: 768px) {
+                .header-container {
+                    padding: 1rem;
+                    height: 70px;
+                }
+                
+                nav ul {
+                    position: fixed;
+                    top: 70px;
+                    right: -100%;
+                    width: 280px;
+                    height: calc(100vh - 70px);
+                    background: white;
+                    box-shadow: -5px 0 15px rgba(10, 31, 68, 0.1);
+                    transition: right 0.3s ease;
+                    z-index: 1000;
+                    padding: 2rem 1.5rem;
+                    overflow-y: auto;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0;
+                }
+                
+                nav ul.show {
+                    right: 0;
+                }
+                
+                nav ul li {
+                    width: 100%;
+                    margin: 0;
+                }
+                
+                nav ul li a {
+                    display: block;
+                    padding: 1rem;
+                    width: 100%;
+                    border-radius: 8px;
+                }
+                
+                nav ul li a:hover {
+                    background-color: rgba(0, 128, 128, 0.1);
+                }
+                
+                .mobile-menu-btn {
+                    display: block;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
