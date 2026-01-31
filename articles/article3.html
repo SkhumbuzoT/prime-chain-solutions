@@ -42,18 +42,251 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/article-template.css">
     <style>
-        /* Additional inline styles specific to this article */
+        /* CSS VARIABLES - MUST BE ADDED FIRST */
+        :root {
+            /* Brand Colors */
+            --primary-teal: #008080;
+            --primary-teal-dark: #006666;
+            --primary-gold: #D4AF37;
+            --primary-navy: #0A1F44;
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            
+            /* Functional Colors */
+            --text-dark: #0A1F44;
+            --text-light: #FFFFFF;
+            --text-muted: #64748B;
+            --text-muted-light: #94A3B8;
+            
+            /* Backgrounds */
+            --bg-dark: #0A1F44;
+            --bg-light: #FFFFFF;
+            --bg-section-alt: #F8FAFC;
+            --bg-gradient-dark: linear-gradient(135deg, #0A1F44 0%, #1E293B 100%);
+            --bg-gradient-teal: linear-gradient(135deg, #008080 0%, #00A3A3 100%);
+            
+            /* Effects */
+            --shadow-sm: 0 2px 8px rgba(10, 31, 68, 0.08);
+            --shadow-md: 0 8px 24px rgba(10, 31, 68, 0.12);
+            --shadow-lg: 0 16px 48px rgba(10, 31, 68, 0.16);
+            --shadow-hover: 0 20px 40px rgba(10, 31, 68, 0.2);
+            
+            /* Spacing */
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* HEADER AND GLOBAL STYLES */
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(10, 31, 68, 0.08);
+            z-index: 1000;
+            transition: all var(--transition-base);
+        }
+        
+        #header.scrolled {
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.98);
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            height: 80px;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: transform var(--transition-base);
+        }
+        
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            letter-spacing: 0.01em;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color var(--transition-fast);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-teal);
+            transition: width var(--transition-base);
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-teal);
+        }
+        
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+            transition: background-color var(--transition-fast);
+        }
+        
+        .mobile-menu-btn:hover {
+            background-color: rgba(10, 31, 68, 0.05);
+        }
+        
+        /* SCROLL PROGRESS */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--primary-teal);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s;
+        }
+        
+        /* BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-teal);
+            color: var(--text-light);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-teal-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 128, 128, 0.4);
+        }
+        
+        /* Article Navigation Styles */
+        .article-navigation {
+            margin: 4rem 0 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(10, 31, 68, 0.1);
+            border-bottom: 1px solid rgba(10, 31, 68, 0.1);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-base);
+            border: 2px solid transparent;
+        }
+        
+        .btn-back-to-articles {
+            background: rgba(10, 31, 68, 0.05);
+            color: var(--text-dark);
+            border-color: rgba(10, 31, 68, 0.1);
+        }
+        
+        .btn-back-to-articles:hover {
+            background: rgba(10, 31, 68, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-next-article {
+            background: var(--primary-teal);
+            color: var(--text-light);
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+        }
+        
+        .btn-next-article:hover {
+            background: var(--primary-teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 128, 128, 0.4);
+            color: var(--text-light);
+        }
+        
+        /* Article content styles */
         .article-content strong {
-            color: #1e293b;
+            color: var(--text-dark);
         }
         
         .article-content ul li {
             padding-left: 8px;
+            margin-bottom: 0.5rem;
         }
         
         .article-content ul li:before {
             content: "•";
-            color: #6366f1;
+            color: var(--primary-teal);
             font-weight: bold;
             display: inline-block; 
             width: 1em;
@@ -72,10 +305,10 @@
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            border-radius: 12px;
+            border-radius: var(--radius-md);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all var(--transition-base);
         }
         
         .share-linkedin {
@@ -100,7 +333,254 @@
             transform: translateY(-2px);
         }
         
-        /* Custom LinkedIn hook styling for this article */
+        /* FOOTER STYLES */
+        .ps-footer {
+            background: var(--bg-gradient-dark);
+            color: var(--text-light);
+            padding: 5rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ps-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--primary-gold), var(--primary-teal));
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .ps-footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .ps-footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-tagline {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-muted-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: auto;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all var(--transition-base);
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-icon:hover {
+            background: var(--primary-teal);
+            color: var(--text-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 128, 128, 0.3);
+        }
+        
+        .ps-footer-col {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-teal);
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted-light);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--text-light);
+            transform: translateX(5px);
+        }
+        
+        .footer-links i {
+            font-size: 0.9rem;
+            width: 20px;
+        }
+        
+        .footer-text {
+            color: var(--text-muted-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ps-newsletter-form {
+            margin-top: 1rem;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 0;
+        }
+        
+        .ps-newsletter-form input {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            border-radius: var(--radius-md) 0 0 var(--radius-md);
+            font-size: 0.95rem;
+            transition: all var(--transition-fast);
+        }
+        
+        .ps-newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .ps-newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .newsletter-btn {
+            background: var(--primary-teal);
+            color: var(--text-light);
+            border: 2px solid var(--primary-teal);
+            border-left: none;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 0 1.25rem;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        
+        .newsletter-btn:hover {
+            background: var(--primary-teal-dark);
+            border-color: var(--primary-teal-dark);
+        }
+        
+        .ps-footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .copyright {
+            color: var(--text-muted-light);
+            font-size: 0.9rem;
+        }
+        
+        .copyright .highlight {
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .footer-legal a {
+            color: var(--text-muted-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-legal a:hover {
+            color: var(--text-light);
+        }
+        
+        .back-to-top-btn {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--primary-gold));
+            color: var(--text-light);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-base);
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+        }
+        
+        .back-to-top-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 128, 128, 0.4);
+        }
+        
+        /* Additional inline styles specific to this article */
         .linkedin-hook {
             background: linear-gradient(135deg, #0077B5 0%, #005885 100%);
             color: white;
@@ -135,13 +615,180 @@
             top: -10px;
             font-family: Georgia, serif;
         }
+        
+        /* RESPONSIVE STYLES */
+        @media (max-width: 1024px) {
+            .ps-footer-main {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+            
+            .ps-footer-brand {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Mobile Navigation */
+            .header-container {
+                padding: 1rem;
+                height: 70px;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - 70px);
+                background: var(--bg-light);
+                box-shadow: -5px 0 15px rgba(10, 31, 68, 0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+                padding: 2rem 1.5rem;
+                overflow-y: auto;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+            }
+            
+            nav ul.show {
+                right: 0;
+            }
+            
+            nav ul li {
+                width: 100%;
+                margin: 0;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                width: 100%;
+                border-radius: var(--radius-sm);
+                transition: background-color var(--transition-fast);
+            }
+            
+            nav ul li a:hover {
+                background-color: rgba(0, 128, 128, 0.1);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            /* Article Navigation */
+            .nav-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .btn-back-to-articles {
+                order: 2;
+            }
+            
+            .btn-next-article {
+                order: 1;
+            }
+            
+            /* Footer Mobile */
+            .ps-footer {
+                text-align: center;
+            }
+            
+            .ps-footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .ps-footer-brand {
+                grid-column: span 1;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-heading::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-links a {
+                justify-content: center;
+            }
+            
+            .ps-newsletter-form {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .ps-footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-legal {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0.75rem;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .nav-btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .share-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-links a {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress"></div>
     
-     <!-- Global Header -->
+    <!-- Global Header -->
     <header id="header">
         <div class="container header-container">
             <a href="../index.html" class="logo" aria-label="Prime Chain Solutions Home">
@@ -152,12 +799,12 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../index.html#services">Services</a></li>
                     <li><a href="../cost-calculator.html">Cost Calculator</a></li>
-                    <li><a href="../articles.html">Articles</a></li>
+                    <li><a href="../articles.html" class="active">Articles</a></li>
                     <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -323,6 +970,18 @@
 
                 <p>Because in business, the invisible often matters more than the visible. And your supply chain — that quiet engine running in the background — might just be the most powerful tool you're not yet fully using.</p>
                 
+                <!-- Article Navigation -->
+                <div class="article-navigation">
+                    <div class="nav-buttons">
+                        <a href="../articles.html" class="nav-btn btn-back-to-articles">
+                            <i class="fas fa-arrow-left"></i> Back to All Articles
+                        </a>
+                        <a href="article4.html" class="nav-btn btn-next-article">
+                            Next Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="article-cta">
                     <h3>Ready to Unlock Your Supply Chain's Hidden Intelligence?</h3>
                     <p>We help businesses transform their supply chain from a cost center into a competitive advantage. Through simple dashboards, practical automation, and clear visibility, we help you see what your supply chain is trying to tell you.</p>
@@ -344,49 +1003,91 @@
         </div>
     </section>
 
-    <!-- Global Footer -->
-    <footer>
+    <!-- Footer -->
+    <footer class="ps-footer" role="contentinfo" aria-label="Site footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
+            <!-- Main Footer Content -->
+            <div class="ps-footer-main">
+                <!-- Brand Column -->
+                <div class="ps-footer-brand">
                     <div class="footer-logo">
-                        <img src="/assets/White on Transparent.png" alt="Prime Chain Solutions logo" />
+                        <img src="/assets/Primary on Transparent.png" alt="Prime Chain Solutions" height="70">
                     </div>
-                    <p>We help businesses gain visibility and automate workflows with simple, powerful dashboards and automation tools.</p>
+                    <p class="footer-tagline">
+                        We help businesses gain visibility and automate workflows through modern dashboards and smart automation.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="footer-links">
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="../index.html#problems"><i class="fas fa-chevron-right"></i> Problems We Solve</a></li>
-                        <li><a href="../index.html#solutions"><i class="fas fa-chevron-right"></i> Solutions</a></li>
-                        <li><a href="../index.html#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="../index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+    
+                <!-- Quick Links -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-home fa-fw"></i> Home</a></li>
+                        <li><a href="../index.html#services"><i class="fas fa-cogs fa-fw"></i> Services</a></li>
+                        <li><a href="../cost-calculator.html"><i class="fas fa-calculator fa-fw"></i> Cost Calculator</a></li>
+                        <li><a href="../articles.html"><i class="fas fa-newspaper fa-fw"></i> Articles</a></li>
+                        <li><a href="../index.html#contact"><i class="fas fa-envelope fa-fw"></i> Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-links">
-                    <h3 class="footer-heading">Contact Info</h3>
-                    <ul>
-                        <li><a href="tel:+27736775675"><i class="fas fa-phone"></i> +27 73 677 5675</a></li>
-                        <li><a href="mailto:skhumbuzo@primechainsolutions.co.za"><i class="fas fa-envelope"></i> info@primechainsolutions.co.za</a></li>
-                        <li><a href="https://wa.me/27736775675"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
+    
+                <!-- Services -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-desktop fa-fw"></i> Custom Dashboards</a></li>
+                        <li><a href="#"><i class="fas fa-robot fa-fw"></i> Process Automation</a></li>
+                        <li><a href="#"><i class="fas fa-plug fa-fw"></i> System Integration</a></li>
+                        <li><a href="#"><i class="fas fa-chart-line fa-fw"></i> Analytics & Insights</a></li>
+                        <li><a href="#"><i class="fas fa-headset fa-fw"></i> Consultation</a></li>
                     </ul>
+                </div>
+    
+                <!-- Newsletter & Contact -->
+                <div class="ps-footer-col">
+                    <h4 class="footer-heading">Stay Updated</h4>
+                    <p class="footer-text">Subscribe to our newsletter for insights on automation and business intelligence.</p>
+                    
+                    <form class="ps-newsletter-form" aria-label="Subscribe to newsletter">
+                        <div class="input-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p class="copyright">© 2025 Prime Chain Solutions. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+    
+            <!-- Bottom Bar -->
+            <div class="ps-footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2025 <span class="highlight">Prime Chain Solutions</span>. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="footer-back-to-top">
+                    <button class="back-to-top-btn" aria-label="Back to top">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </footer>
-
+    
     <!-- Back to Top Button -->
     <div class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
@@ -412,15 +1113,18 @@
         }
 
         // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const nav = document.querySelector('nav ul');
-            const isOpen = nav.classList.contains('show');
-            
-            nav.classList.toggle('show');
-            this.innerHTML = isOpen ? 
-                '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
-            document.body.style.overflow = isOpen ? '' : 'hidden';
-        });
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.querySelector('nav ul');
+        
+        if (mobileMenuBtn && nav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('show');
+                this.innerHTML = nav.classList.contains('show') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = nav.classList.contains('show') ? 'hidden' : '';
+            });
+        }
         
         // Close mobile menu when clicking a link
         document.querySelectorAll('nav ul li a').forEach(link => {
@@ -459,7 +1163,9 @@
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
-            scrollProgress.style.width = scrolled + "%";
+            if (scrollProgress) {
+                scrollProgress.style.width = scrolled + "%";
+            }
         });
         
         // Back to top functionality
@@ -496,6 +1202,14 @@
                     document.body.style.overflow = '';
                 }
             });
+        });
+        
+        // Initialize header on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            }
         });
     </script>
 </body>
