@@ -628,84 +628,93 @@
         .approach-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem; /* Slightly reduced gap */
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
         .approach-step {
-            text-align: center;
-            padding: 1.25rem; /* Reduced padding */
-            background: var(--card-bg);
+            background: var(--bg-light);
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            min-height: 200px; /* Ensure consistent height */
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all var(--transition-base);
+            border: 2px solid transparent;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            overflow: hidden; /* Prevent content overflow */
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .approach-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-teal);
         }
         
         .approach-step:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
+            border-color: var(--primary-teal);
         }
         
         .approach-step .step-number {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px; /* Slightly smaller */
-            height: 45px;
-            background: var(--primary);
-            color: white;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-teal);
+            color: var(--text-light);
             border-radius: 50%;
-            font-size: 1.1rem;
             font-weight: 700;
-            margin: 0 auto 0.75rem; /* Center and adjust spacing */
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
         }
         
         .approach-step h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-            padding: 0 0.5rem; /* Prevent text touching edges */
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
         }
         
         .approach-step p {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            padding: 0 0.5rem; /* Prevent text touching edges */
-            flex-grow: 1; /* Make paragraph fill available space */
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 1rem;
+            flex-grow: 1;
         }
         
-        /* Responsive behavior */
+        /* Responsive design for approach section */
         @media (max-width: 1200px) {
             .approach-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-            
-            .approach-step {
-                padding: 1.75rem;
+                gap: 2rem;
+                max-width: 900px;
+                margin: 3rem auto 0;
             }
         }
         
         @media (max-width: 768px) {
             .approach-grid {
                 grid-template-columns: 1fr;
-                gap: 1.25rem;
+                gap: 1.5rem;
                 max-width: 500px;
-                margin: 0 auto;
+                margin: 3rem auto 0;
             }
             
             .approach-step {
-                padding: 1.5rem;
+                padding: 2rem 1.5rem;
             }
         }
-        
+                
         /* ===== CONTACT SECTION ===== */
         .contact-section {
             background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
@@ -1618,7 +1627,7 @@
         </div>
     </section>
     
-    <!-- Approach Section -->
+   <!-- Approach Section -->
     <section class="section" id="approach">
         <div class="container">
             <div class="section-header">
@@ -1626,33 +1635,29 @@
                 <p class="subtitle">A collaborative process that ensures we deliver exactly what you need</p>
             </div>
             
-            <div class="services-grid">
-                <div class="card animate-fade-in delay-100">
-                    <div class="card-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4>1. Understand</h4>
+            <div class="approach-grid">
+                <div class="approach-step animate-fade-in delay-100">
+                    <div class="step-number">1</div>
+                    <h3>Understand</h3>
+                    <p>We start by listening. We'll dive deep into your business processes, challenges, and goals to understand exactly what you need.</p>
                 </div>
                 
-                <div class="card animate-fade-in delay-200">
-                    <div class="card-icon">
-                        <i class="fas fa-pencil-alt"></i>
-                    </div>
-                    <h4>2. Design</h4>
+                <div class="approach-step animate-fade-in delay-200">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>We create a detailed blueprint of your solution, including mockups and specifications, ensuring it aligns perfectly with your requirements.</p>
                 </div>
                 
-                <div class="card animate-fade-in delay-300">
-                    <div class="card-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h4>3. Build</h4>
+                <div class="approach-step animate-fade-in delay-300">
+                    <div class="step-number">3</div>
+                    <h3>Build</h3>
+                    <p>Our team develops your custom solution with clean, efficient code and regular updates so you can track progress every step of the way.</p>
                 </div>
                 
-                <div class="card animate-fade-in delay-400">
-                    <div class="card-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h4>4. Implement</h4>
+                <div class="approach-step animate-fade-in delay-400">
+                    <div class="step-number">4</div>
+                    <h3>Implement</h3>
+                    <p>We deploy your solution, provide training, and offer ongoing support to ensure a smooth transition and maximum value from day one.</p>
                 </div>
             </div>
         </div>
