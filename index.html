@@ -691,7 +691,18 @@
             font-size: 1rem;
             flex-grow: 1;
         }
+        .approach-visual {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         
+        .approach-image {
+          width: 100%;
+          max-width: 1100px;
+          height: auto;
+        }
+                
         /* Responsive design for approach section */
         @media (max-width: 1200px) {
             .approach-grid {
@@ -1625,6 +1636,28 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="section" id="approach">
+      <div class="container">
+    
+        <div class="section-header">
+          <h2>Our Approach</h2>
+          <p class="subtitle">
+            A collaborative process that ensures we deliver exactly what you need
+          </p>
+        </div>
+    
+        <div class="approach-visual">
+          <img 
+            src="images/approach-journey.png"
+            alt="Our Approach: Understand, Design, Build, Implement"
+            class="approach-image"
+          >
+        </div>
+    
+      </div>
     </section>
     
    <!-- Approach Section -->
